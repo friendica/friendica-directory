@@ -1,0 +1,20 @@
+<?php if (!empty($prev) || !empty($next)): ?>
+    <ul class="pagination justify-content-between">
+		<?php if (!empty($prev)): ?>
+            <li class="page-item <?php echo $prev['class'] ?>">
+                <a class="page-link" href="<?php echo $prev['url'] ?>" tabindex="-1">
+                    <span aria-hidden="true">&lsaquo;</span>
+					<?php echo $prev['text'] ?>
+                </a>
+            </li>
+		<?php endif; ?>
+		<?php if (!empty($next)): ?>
+            <li class="page-item <?php echo $next['class'] ?>">
+                <a class="page-link" href="<?php echo $next['url'] ?>" tabindex="-1">
+					<?php echo $next['text'] ?>
+                    <span aria-hidden="true">&rsaquo;</span>
+                </a>
+            </li>
+		<?php endif; ?>
+    </ul>
+<?php endif; ?>

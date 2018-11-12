@@ -1,0 +1,12 @@
+<div>
+    <h3><?php echo $this->e($title) ?></h3>
+    <ul>
+		<?php foreach ($tags as $tag): ?>
+            <li>
+                <a href="search?q=<?php echo $this->escapeUrl($tag['term']) ?>">
+					<?php echo $this->e($tag['term']) ?>
+                </a>
+            </li>
+		<?php endforeach; ?>
+    </ul>
+</div>

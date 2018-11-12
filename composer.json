@@ -1,0 +1,70 @@
+{
+    "name": "friendica/friendica-directory",
+    "description": "Standalone global public directory for Friendica",
+    "type": "project",
+    "keywords": ["friendica", "directory"],
+    "license": "AGPL-3.0+",
+    "authors": [
+        {
+            "name": "Hypolite Petovan",
+            "email": "hypolite@mrpetovan.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "ext-curl": "*",
+        "ext-gd": "*",
+        "ext-json": "*",
+        "asika/simple-console": "^1.0",
+        "atlas/pdo": "^1.1",
+        "byjg/migration": "^2.1",
+        "fxp/composer-asset-plugin": "^1.4",
+        "masterminds/html5": "^2.3",
+        "monolog/monolog": "^1.17",
+        "mrpetovan/net_ping": "^1.0",
+        "sarahman/simple-filesystem-cache": "dev-master",
+        "seld/cli-prompt": "^1.0",
+        "slim/slim": "^3.1",
+        "slim/php-view": "^2.0",
+        "zendframework/zend-escaper": "^2.6",
+        "bower-asset/bootstrap.native": "^2.0",
+        "bower-asset/fontawesome": "^5.5",
+        "gofabian/negotiation-middleware": "^0.1.3"
+    },
+    "require-dev": {
+        "bower-asset/bootstrap": "^4.1",
+        "phpunit/phpunit": ">=4.8 < 6.0",
+        "vimeo/psalm": "^2.0",
+        "leafo/scssphp": "^0.7.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Friendica\\Directory\\": "src/classes/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "process-timeout" : 0,
+        "autoloader-suffix": "FriendicaDirectory",
+		"optimize-autoloader": true,
+		"preferred-install": "dist",
+		"fxp-asset": {
+			"installer-paths": {
+				"npm-asset-library": "public/assets/vendor/",
+				"bower-asset-library": "public/assets/vendor/"
+			}
+		}
+    },
+    "scripts": {
+        "post-create-project-cmd" : [
+            "php bin/console.php install"
+        ],
+        "post-install-cmd" : [
+            "php bin/console.php dbupdate"
+        ]
+    }
+}

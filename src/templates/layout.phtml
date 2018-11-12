@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Friendica Directory</title>
+    <base href="<?php echo $baseUrl ?>">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/css/friendica-directory.min.css">
+    <link rel="stylesheet" href="assets/vendor/fontawesome/web-fonts-with-css/css/solid.css">
+    <link rel="stylesheet" href="assets/vendor/fontawesome/web-fonts-with-css/css/fontawesome.css">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand" href="">
+            <img src="assets/images/friendica-32.png" width="32" height="32" class="d-inline-block align-top" alt="">
+            Friendica Directory
+        </a>
+		<?php if (empty($noNavSearch)): ?>
+            <form class="form-inline my-2 my-lg-0 d-none d-md-flex" action="search">
+                <div class="input-group">
+                    <label class="sr-only" for="header_search">Search terms</label>
+                    <input name="q" class="form-control" type="search" id="header_search" placeholder="Search..."
+                           aria-label="Search terms">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
+		<?php endif; ?>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse pt-2" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+				<?php if (empty($noNavSearch)): ?>
+                    <li class="nav-item d-md-none">
+                        <form action="search">
+                            <div class="input-group">
+                                <label class="sr-only" for="nav_search">Search terms</label>
+                                <input name="q" class="form-control form-control-sm" type="search" id="nav_search"
+                                       placeholder="Search..." aria-label="Search terms">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary btn-sm" type="submit">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </li>
+				<?php endif; ?>
+
+                <li class="nav-item">
+                    <a class="nav-link" href=""><i class="fa fa-address-card"></i> Directory
+                        <!--<span class="sr-only">(current)</span>-->
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="servers"><i class="fa fa-hotel"></i> Public Servers</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Page Content -->
+<div class="container pt-3">
+	<?php echo $content ?>
+</div>
+<script type="text/javascript" src="assets/vendor/bootstrap.native/dist/bootstrap-native-v4.min.js"></script>
+</body>
+</html>
+

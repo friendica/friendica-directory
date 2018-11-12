@@ -1,0 +1,17 @@
+<h1>Tag</h1>
+<div class="row">
+    <h2><?php echo $count ?> results for "<?php echo $this->e($term) ?>"</h2>
+</div>
+<nav aria-label="Bottom search pagination">
+	<?php echo $this->fetch('pager.phtml', $pager) ?>
+</nav>
+<div class="row">
+	<?php foreach ($profiles as $profile) : ?>
+        <div class="col-xl-6">
+			<?php echo $this->fetch('sub/profile.phtml', ['profile' => $profile]) ?>
+        </div>
+	<?php endforeach; ?>
+</div>
+<nav aria-label="Bottom search pagination">
+	<?php echo $this->fetch('pager.phtml', $pager) ?>
+</nav>

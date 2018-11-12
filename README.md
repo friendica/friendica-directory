@@ -1,0 +1,2 @@
+# Friendica Global Directory
+

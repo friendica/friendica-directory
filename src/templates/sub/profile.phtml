@@ -1,0 +1,57 @@
+<?php
+$parts = [];
+if (!empty($profile['locality'])) {
+	$parts[] = $this->escapeHtml($profile['locality']) . ' <a href="search?field=locality&q=' . $this->escapeUrl($profile['locality']) . '"><span class="fa fa-filter" title="Search" aria-hidden="true"></span></a>';
+}
+if (!empty($profile['region'])
+	&& strtolower($profile['locality']) != strtolower($profile['region'])) {
+	$parts[] = $this->escapeHtml($profile['region']) . ' <a href="search?field=region&q=' . $this->escapeUrl($profile['region']) . '"><span class="fa fa-filter" title="Search" aria-hidden="true"></span></a>';
+}
+
+if (!empty($profile['country'])) {
+	$parts[] = $this->escapeHtml($profile['country']) . ' <a href="search?field=country&q=' . $this->escapeUrl($profile['country']) . '"><span class="fa fa-filter" title="Search" aria-hidden="true"></span></a>';
+}
+?>
+
+<figure id="profile-<?php echo $this->escapeHtmlAttr($profile['id']) ?>" class="bg-light p-3 rounded">
+    <div class="media">
+        <a href="<?php echo $this->escapeHtmlAttr($profile['profile_url']) ?>"><img class="mr-3 rounded"
+                                                                                    src="photo/<?php echo $profile['id'] ?>.jpg"></a>
+        <div class="media-body">
+            <h5 class="name">
+				<?php if ($profile['dfrn_request']): ?>
+                    <a href="<?php echo $profile['dfrn_request']; ?>" class="card-link btn btn-primary float-right"><i
+                                class="fa fa-external-link-alt"></i> Follow</a>
+				<?php endif; ?>
+				<?php echo $this->escapeHtml($profile['name']) ?>
+            </h5>
+            <p class="url"><a
+                        href="<?php echo $this->escapeHtmlAttr($profile['profile_url']) ?>"><?php echo $this->escapeHtml($profile['addr']) ?></a>
+            </p>
+            <p class="description d-none d-md-block"><?php echo $this->escapeHtml($profile['pdesc']) ?></p>
+        </div>
+    </div>
+    <p class="description d-md-none"><?php echo $this->escapeHtml($profile['pdesc']) ?></p>
+    <div class="location">
+		<?php if (count($parts)): ?>
+            <i class="fa fa-globe"></i>
+			<?php echo implode(', ', $parts); ?>
+		<?php endif ?>
+    </div>
+
+	<?php if ($profile['tags']): ?>
+        <div class="tags">
+
+			<?php
+			$tags = array_map('trim', explode(' ', $profile['tags']));
+
+			foreach ($tags as $tag):?>
+
+                <span class="badge"><?php echo $this->escapeHtml($tag) ?> <a
+                            href="/search?q=<?php echo $this->escapeUrl($tag) ?>"><i class="fa fa-tag"
+                                                                                     title="Search tag"></i></a></span>
+
+			<?php endforeach; ?>
+        </div>
+	<?php endif; ?>
+</figure>

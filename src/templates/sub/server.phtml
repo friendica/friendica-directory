@@ -1,0 +1,84 @@
+<?php
+
+
+if ($server['health_score'] <= 0) {
+	$badge_class = 'badge-dark';
+} elseif ($server['health_score'] <= 50) {
+	$badge_class = 'badge-danger';
+} elseif ($server['health_score'] <= 80) {
+	$badge_class = 'badge-warning';
+} else {
+	$badge_class = 'badge-success';
+}
+
+if ($server['version'] == $stable_version) {
+	$version_badge = '<span class="badge badge-success"><i class="fa fa-smile"></i> Stable Version</span>';
+} elseif ($server['version'] == $dev_version) {
+	$version_badge = '<span class="badge badge-secondary"><i class="fa fa-poo"></i> Develop Version</span>';
+} else {
+	$version_badge = '<span class="badge badge-warning"><i class="fa fa-frown"></i> Outdated Version</span>';
+}
+
+$base_url = $server['base_url'];
+
+$base_url_display = substr($base_url, strpos($base_url, '/') + 2);
+?>
+    <div class="card mr-2 mb-2 bg-light" id="server-card-<?php echo $server['id'] ?>">
+        <div class="card-body">
+            <h5 class="card-title">
+				<?php echo $this->e($server['name']); ?>
+            </h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+				<?php if ($server['ssl_state']): ?>
+                    <span class="badge badge-success"><i class="fa fa-lock"></i> HTTPS</span>
+				<?php else: ?>
+                    <span class="badge badge-secondary"><i class="fa fa-lock-open"></i> HTTP</span>
+				<?php endif; ?>
+                <a href="<?php echo $base_url; ?>"><?php echo $this->e($base_url_display); ?></a>
+            </h6>
+            <p class="card-text">
+                <span class="badge <?php echo $badge_class ?>"><i
+                            class="fa fa-heartbeat"></i> <?php echo $server['health_score'] ?></span>
+                <span class="badge badge-secondary"><i
+                            class="fa fa-user"></i> <?php echo $this->e($server['user_count'] ?: '~'); ?> Users</span>
+				<?php echo $version_badge; ?>
+				<?php if ($server['admin_profile'] && $server['admin_name']): ?>
+                    <a href="<?php echo $server['admin_profile']; ?>" class="badge badge-primary">
+                        <i class="fa fa-star"></i> Admin: <?php echo $this->e($server['admin_name']); ?>
+                    </a>
+				<?php endif; ?>
+            </p>
+			<?php if ($server['info']) : ?>
+                <p class="card-text"><?php echo $this->e($server['info']); ?></p>
+			<?php else: ?>
+                <p class="card-text text-muted">&lt;No description provided&gt;</p>
+			<?php endif; ?>
+            <a href="<?php echo $base_url; ?>" class="card-link btn btn-primary"><i class="fa fa-external-link-alt"></i>
+                Visit server</a>
+        </div>
+    </div>
+<?php /*
+<div class="site">
+    <div class="site-supports">
+        <em>Features</em>
+		<?php foreach ($server['popular_supports'] as $key => $value): if (!$value) continue; ?>
+
+			<div class="supports <?php echo strtolower($key); ?>">
+				<?php echo $key; ?><?php if ($key == 'HTTPS' && $server['ssl_grade'] != null): ?>,&nbsp;Grade:&nbsp;<?php echo $server['ssl_grade']; ?><?php endif ?>&nbsp;&nbsp;&radic;
+			</div>
+		<?php endforeach ?>
+		<?php if ($server['supports_more'] > 0): ?>
+
+			<?php
+			$more = '';
+			foreach ($server['less_popular_supports'] as $key => $value) {
+				if (!$value)
+					continue;
+				$more .= $key . PHP_EOL;
+			}
+			?>
+			<abbr class="more" title="<?php echo $more ?>">+<?php echo $server['supports_more']; ?> more</abbr>
+		<?php endif ?>
+    </div>
+</div>
+ */

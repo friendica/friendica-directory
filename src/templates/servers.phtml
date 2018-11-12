@@ -1,0 +1,14 @@
+<h1><?php echo $this->e($title) ?></h1>
+<nav aria-label="Top servers pagination">
+	<?php echo $this->fetch('sub/pager_full.phtml', $pager) ?>
+</nav>
+<div class="row">
+	<?php foreach ($servers as $server) : ?>
+        <div class="col-xl-6">
+			<?php echo $this->fetch('sub/server.phtml', ['server' => $server, 'stable_version' => $stable_version, 'dev_version' => $dev_version]) ?>
+        </div>
+	<?php endforeach; ?>
+</div>
+<nav aria-label="Bottom servers pagination">
+	<?php echo $this->fetch('sub/pager_full.phtml', $pager) ?>
+</nav>

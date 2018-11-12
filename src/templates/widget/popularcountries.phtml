@@ -1,0 +1,12 @@
+<div>
+    <h3><?php echo $this->e($title) ?></h3>
+    <ul>
+		<?php foreach ($countries as $country): ?>
+            <li>
+                <a href="search?field=country&q=<?php echo $this->escapeUrl($country['country']) ?>">
+					<?php echo $this->e($country['country']) ?>
+                </a>
+            </li>
+		<?php endforeach; ?>
+    </ul>
+</div>

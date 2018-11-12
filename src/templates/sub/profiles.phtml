@@ -1,0 +1,18 @@
+<nav aria-label="Account type tabs" class="mb-3">
+	<?php echo $accountTypeTabs ?>
+</nav>
+<nav aria-label="Top <?php echo $page ?> pagination" class="d-none d-md-block">
+	<?php echo $this->fetch('sub/pager_full.phtml', $pager_full) ?>
+</nav>
+<nav aria-label="Top <?php echo $page ?> pagination" class="d-md-none">
+	<?php echo $this->fetch('sub/pager_minimal.phtml', $pager_minimal) ?>
+</nav>
+<?php foreach ($profiles as $profile) : ?>
+	<?php echo $this->fetch('sub/profile.phtml', ['profile' => $profile]) ?>
+<?php endforeach; ?>
+<nav aria-label="Bottom <?php echo $page ?> pagination" class="d-none d-md-block">
+	<?php echo $this->fetch('sub/pager_full.phtml', $pager_full) ?>
+</nav>
+<nav aria-label="Bottom <?php echo $page ?> pagination" class="d-md-none">
+	<?php echo $this->fetch('sub/pager_minimal.phtml', $pager_minimal) ?>
+</nav>
