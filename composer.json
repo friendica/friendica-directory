@@ -7,7 +7,8 @@
     "authors": [
         {
             "name": "Hypolite Petovan",
-            "email": "hypolite@mrpetovan.com"
+            "email": "hypolite@mrpetovan.com",
+            "homepage": "https://friendica.mrpetovan.com/profile/hypolite"
         }
     ],
     "require": {
@@ -59,9 +60,18 @@
 			}
 		}
     },
-    "scripts": {
-        "post-create-project-cmd" : [
-            "php bin/console.php install"
+    "archive": {
+        "exclude": [
+            ".idea",
+            ".github",
+            ".gitignore",
+            "/tests",
+            "/*.xml",
+            "/composer.*",
+            "!/vendor",
+            "public/assets/vendor",
+            "!public/assets/vendor/fontawesome/web-fonts-with-css",
+            "!public/assets/vendor/bootstrap.native/dist"
         ]
     }
 }
