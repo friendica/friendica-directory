@@ -28,7 +28,7 @@ composer install
 
 ### Using an archive
 
-On the []Friendica Directory Github Releases page](https://github.com/friendica/friendica-directory/releases), you can find the latest source archive named `friendica-directory-<version>.zip`.
+On the [Friendica Directory Github Releases page](https://github.com/friendica/friendica-directory/releases), you can find the latest source archive named `friendica-directory-<version>.zip`.
 
 Simply unpack the archive in `/path/to/friendica-directory`.
 
