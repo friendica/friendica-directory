@@ -63,7 +63,7 @@ FROM `server` s
 WHERE `reg_policy` = "REGISTER_OPEN"
 AND `available`
 AND NOT `hidden`
-ORDER BY `health_score` DESC, `ssl_state` DESC, `info` != "" DESC, `dt_last_probed` DESC
+ORDER BY `health_score` DESC, `ssl_state` DESC, `info` != "" DESC, `last_seen` DESC
 LIMIT :start, :limit';
 		$servers = $this->atlas->fetchAll($stmt, [
 			'start' => [$pager->getStart(), PDO::PARAM_INT],
