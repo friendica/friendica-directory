@@ -1,5 +1,2 @@
-src/settings.php
 vendor/
-/logs/*
-!/logs/README.md
 cache/
