@@ -62,9 +62,6 @@
     "scripts": {
         "post-create-project-cmd" : [
             "php bin/console.php install"
-        ],
-        "post-install-cmd" : [
-            "php bin/console.php dbupdate"
         ]
     }
 }
