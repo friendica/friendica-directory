@@ -82,5 +82,5 @@ Add this line to your crontab:
 ## Seed your directory
 
 Your directory is ready, but empty. To start filling it, you can:
-- Set your hostname as the main directory in [Friendica][https://github.com/friendica/friendica]'s admin settings
+- Set your hostname as the main directory in [Friendica](https://github.com/friendica/friendica)'s admin settings
 - Add existing directories in your polling queue: `bin/console directory-add https://dir.friendica.social`
