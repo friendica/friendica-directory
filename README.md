@@ -21,6 +21,10 @@ This is an opt-in directory, meaning that each node can choose not to submit its
 
 Please refer to the provided [installation instructions](INSTALL.md).
 
+## Update from a previous version
+
+Please refer to the provided [update instructions](UPDATE.md).
+
 ## See also
 
 - [Project Concepts](docs/Concepts.md)

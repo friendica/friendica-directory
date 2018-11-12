@@ -1,36 +1,30 @@
-# Friendica Directory Install
+# Friendica Directory Install Instructions
 
-## Get the source code
+## 1. Get the source code
 
-If you want to install Friendica Directory in `/path/to/friendica-directory`
+For a planned install of Friendica Directory in the `/path/to/friendica-directory` folder.
 
-### Using Composer
+### Using Git and Composer
 
-Composer is a popular dependency management tool for PHP projects. [Getting Started with Composer](https://getcomposer.org/doc/00-intro.md).
-
-```
-cd /path/to
-composer create-project friendica/friendica-directory --no-dev 
-```
-
-### Using Git
-
-Git is a popular version control management tool. [Getting Started with Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+Git is a popular version control management tool.
+[Getting Started with Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 You'll also need Composer to grab the project dependencies.
+Composer is a popular dependency management tool for PHP projects.
+[Getting Started with Composer](https://getcomposer.org/doc/00-intro.md).
 
 ```
 cd /path/to
-git clone https://github.com/friendica/friendica-directory
+git clone https://github.com/friendica/friendica-directory friendica-directory
 cd friendica-directory
 composer install
 ```
 
-### Using an archive
+### Using a stable release archive
 
 On the [Friendica Directory Github Releases page](https://github.com/friendica/friendica-directory/releases), you can find the latest source archive named `friendica-directory-<version>.zip`.
 
-Simply unpack the archive in `/path/to/friendica-directory`.
+Simply unpack the archive in `/path/to/friendica-directory`, the dependencies are already included.
 
 ## Set up a database and a user
 
@@ -45,7 +39,7 @@ Sample commands from the MariaDB console for a local install:
 > GRANT ALL ON `friendica-directory`.* TO 'friendica-directory'@'localhost' IDENTIFIED BY "password";
 ```
 
-## Initialize database schema
+## 2. Initialize database schema
 
 Using the details gathered from the previous step, follow the instructions in the Friendica Directory Install Wizard.
 
@@ -54,7 +48,7 @@ cd /path/to/friendica-directory
 bin/console install
 ```
 
-## Configure your web server
+## 3. Configure your web server
 
 The document root of Friendica Directory is `/public`.
 
@@ -68,7 +62,7 @@ In your Virtual Host file, set your document root as follow:
 DocumentRoot /path/to/friendica-directory/public/
 ```
 
-## Set up the background task
+## 4. Set up the background task
 
 Friendica Directory relies on a background task running every minute to keep the directory up to date.
 
@@ -79,8 +73,8 @@ Add this line to your crontab:
 * * * * * cd /path/to/friendica-directory && php bin/cron.php
 ```
 
-## Seed your directory
+## 5. Seed your directory
 
 Your directory is ready, but empty. To start filling it, you can:
-- Set your hostname as the main directory in [Friendica](https://github.com/friendica/friendica)'s admin settings
-- Add existing directories in your polling queue: `bin/console directory-add https://dir.friendica.social`
+- Set your host name as the main directory in [Friendica](https://github.com/friendica/friendica)'s admin settings.
+- Add existing directories in your polling queue: `bin/console directory-add https://dir.friendica.social`.
