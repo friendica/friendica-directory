@@ -2,6 +2,8 @@
 
 namespace Friendica\Directory\Models;
 
+use Friendica\Directory\Utils\Network;
+
 /**
  * @author Hypolite Petovan <mrpetovan@gmail.com>
  */
@@ -12,6 +14,15 @@ class ProfilePollQueue extends \Friendica\Directory\Model
 		$url = trim($profile_url);
 
 		if (!$url) {
+			return false;
+		}
+
+		$host = parse_url($url, PHP_URL_HOST);
+		if (!$host) {
+			return false;
+		}
+
+		if (Network::isPublicHost($host)) {
 			return false;
 		}
 
