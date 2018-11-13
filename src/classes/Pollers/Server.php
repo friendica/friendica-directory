@@ -173,7 +173,9 @@ class Server
 			);
 
 			//Add the admin to the directory
-			$this->profilePollQueueModel->add($probe_result['data']['admin']['profile']);
+			if (!empty($probe_result['data']['admin']['profile'])) {
+				$this->profilePollQueueModel->add($probe_result['data']['admin']['profile']);
+			}
 		}
 
 		if ($server) {
