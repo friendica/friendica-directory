@@ -56,7 +56,7 @@ class Scrape
 		$scrape_start = microtime(true);
 
 		$params = [];
-		$html = Network::fetchURL($url, $timeout);
+		$html = Network::fetchURL($url, false, $timeout);
 
 		$scrape_fetch_end = microtime(true);
 
