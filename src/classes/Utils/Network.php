@@ -23,7 +23,7 @@ class Network
 		}
 
 		curl_setopt($ch, CURLOPT_HEADER, 0);
-		curl_setopt($ch, CURLOPT_TIMEOUT, max(intval($timeout), 1)); //Minimum of 1 second timeout.
+		curl_setopt($ch, CURLOPT_TIMEOUT, max($timeout, 1)); //Minimum of 1 second timeout.
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 		curl_setopt($ch, CURLOPT_MAXREDIRS, 8);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -34,6 +34,31 @@ class Network
 		$s = curl_exec($ch);
 		curl_close($ch);
 		return $s;
+	}
+
+	public static function testURL(string $url, int $timeout = 20): bool
+	{
+		$ch = curl_init($url);
+		if (!$ch) {
+			return false;
+		}
+
+		curl_setopt($ch, CURLOPT_HEADER        , 0);
+		curl_setopt($ch, CURLOPT_TIMEOUT       , max($timeout, 1)); //Minimum of 1 second timeout.
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		curl_setopt($ch, CURLOPT_MAXREDIRS     , 8);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
+		curl_setopt($ch, CURLOPT_NOBODY        , true);
+
+		curl_exec($ch);
+
+		$responseCode = intval(curl_getinfo($ch, CURLINFO_RESPONSE_CODE));
+
+		$testSuccess = curl_errno($ch) === 0 && $responseCode < 400;
+
+		curl_close($ch);
+
+		return $testSuccess;
 	}
 
 	/**
