@@ -43,9 +43,7 @@ class Console extends \Asika\SimpleConsole\Console
 	{
 		$commandList = '';
 		foreach ($this->routes as $command => $class) {
-			$this->out($class);
-
-			$commandList .= '	' . $command . ' ' . $class::description . "\n";
+			$commandList .= '	' . $command . "\n";
 		}
 
 		$help = <<<HELP

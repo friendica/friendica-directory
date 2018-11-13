@@ -65,7 +65,6 @@ DocumentRoot /path/to/friendica-directory/public/
 ### Nginx
 Include this line your nginx config file.
 
-<<<<<<< master
 ```
 root /path/to/friendica-directory/public;
 ```
