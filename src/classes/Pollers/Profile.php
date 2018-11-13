@@ -2,6 +2,8 @@
 
 namespace Friendica\Directory\Pollers;
 
+use Friendica\Directory\Utils\Network;
+
 /**
  * @author Hypolite Petovan <mrpetovan@gmail.com>
  */
@@ -127,7 +129,12 @@ class Profile
 			$noscrape = !!$params; //If the result was false, do a scrape after all.
 		}
 
-		if (!$noscrape) {
+		$available = true;
+
+		if ($noscrape) {
+			$available = Network::testURL($profile_uri);
+			$this->logger->debug('Testing ' . $profile_uri . ': ' . ($available?'Success':'Failure'));
+		} else {
 			$this->logger->notice('Parsing profile page ' . $profile_uri);
 			$params = \Friendica\Directory\Utils\Scrape::retrieveProfileData($profile_uri);
 		}
@@ -204,7 +211,7 @@ class Profile
 			`account_type` = :account_type,
 			`filled_fields` = :filled_fields,
 			`last_activity` = :last_activity,
-			`available` = 1,
+			`available` = :available,
 			`created` = NOW(),
 			`updated` = NOW()
 			ON DUPLICATE KEY UPDATE
@@ -223,7 +230,7 @@ class Profile
 			`account_type` = :account_type,
 			`filled_fields` = :filled_fields,
 			`last_activity` = :last_activity,
-			`available` = 1,
+			`available` = :available,
 			`updated` = NOW()',
 			[
 				'profile_id' => $profile_id,
@@ -242,6 +249,7 @@ class Profile
 				'account_type' => $account_type,
 				'filled_fields' => $filled_fields,
 				'last_activity' => $params['last-activity'] ?? null,
+				'available' => $available,
 			]
 		);
 
