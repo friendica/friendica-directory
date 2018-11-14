@@ -23,6 +23,7 @@ class Console extends \Asika\SimpleConsole\Console
 	protected $routes = [
 		'directory-add' => \Friendica\Directory\Routes\Console\DirectoryAdd::class,
 		'directory-poll' => \Friendica\Directory\Routes\Console\DirectoryPoll::class,
+		'profile-add' => \Friendica\Directory\Routes\Console\ProfileAdd::class,
 		'profile-hide' => \Friendica\Directory\Routes\Console\ProfileHide::class,
 		'profile-poll' => \Friendica\Directory\Routes\Console\ProfilePoll::class,
 		'server-hide' => \Friendica\Directory\Routes\Console\ServerHide::class,
