@@ -82,6 +82,13 @@ class Network
 			return false;
 		}
 
+		// RFC 2606 -continued
+		$tld = substr($host, strrpos($host, '.'));
+		if ($tld === '.test' || $tld === '.example' || $tld === '.invalid' || $tld === '.localhost') {
+			return false;
+		}
+
+		// Private/Reserved IP ranges
 		if (filter_var($host, FILTER_VALIDATE_IP) && !filter_var($host, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 | FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE)) {
 			return false;
 		}
