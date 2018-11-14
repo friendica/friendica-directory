@@ -60,7 +60,8 @@ class Directory
 
 			$profiles = $this->getPullResult($directory_url, $last_polled);
 			foreach ($profiles as $profile_url) {
-				$this->profilePollQueueModel->add($profile_url);
+				$result = $this->profilePollQueueModel->add($profile_url);
+				$this->logger->debug('Profile queue add URL: ' . $profile_url . ' - ' . $result);
 			}
 
 			$this->logger->info('Successfully pulled ' . count($profiles) . ' profiles');

@@ -68,7 +68,8 @@ class Submit
 				['base_url' => $profileUriInfo['server_uri']]
 			);
 
-			$this->profilePollQueueModel->add($url);
+			$result = $this->profilePollQueueModel->add($url);
+			$this->logger->debug('Profile queue add URL: ' . $url . ' - ' . $result);
 
 			$this->logger->info('Successfully received profile URL');
 		} catch (\Exception $ex) {
