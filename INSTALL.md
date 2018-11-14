@@ -62,6 +62,22 @@ In your Virtual Host file, set your document root as follow:
 DocumentRoot /path/to/friendica-directory/public/
 ```
 
+### Nginx
+Add these lines to your nginx config file.
+
+```
+root /path/to/friendica-directory/public;
+
+location / {
+    rewrite ^/(.*) /index.php?$args last;
+}
+
+location ~* \.(jpg|jpeg|gif|png|ico|css|js|htm|html|ttf|woff|svg)$ {
+    expires 30d;
+    try_files $uri /index.php?$args;
+}
+```
+
 ## 4. Set up the background task
 
 Friendica Directory relies on a background task running every minute to keep the directory up to date.
