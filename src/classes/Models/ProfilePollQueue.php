@@ -31,7 +31,7 @@ class ProfilePollQueue extends \Friendica\Directory\Model
 			return self::MISSING_HOST;
 		}
 
-		if (Network::isPublicHost($host)) {
+		if (!Network::isPublicHost($host)) {
 			return self::PRIVATE_HOST;
 		}
 
