@@ -54,16 +54,16 @@ HELP;
 
 		$directory_url = $this->getArgument(0);
 
-		$result = $this->atlas->perform('INSERT IGNORE INTO `directory_poll_queue` SET
+		$affected = $this->atlas->fetchAffected('INSERT IGNORE INTO `directory_poll_queue` SET
 			`directory_url` = :directory_url',
 			['directory_url' => $directory_url]
 		);
 
-		if (!$result) {
-			throw new \RuntimeException('Unable to add repository with URL: ' . $directory_url);
+		if (!$affected) {
+			$this->out('Directory already exists in the queue.');
+		} else {
+			$this->out('Successfully added the directory to the queue.');
 		}
-
-		$this->out('Successfully added the repository to the queue.');
 
 		return 0;
 	}
