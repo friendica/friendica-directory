@@ -93,6 +93,8 @@ class Cron
 			ORDER BY ISNULL(`last_polled`) DESC'
 		);
 
+		$this->logger->info('Directories polling queue size: ' . count($directories));
+
 		foreach ($directories as $directory) {
 			if ($time_limit && microtime(true) - $this->startTime > $time_limit) {
 				break;
@@ -132,6 +134,8 @@ class Cron
 			WHERE `next_poll` <= NOW()
 			ORDER BY ISNULL(`last_polled`) DESC, `request_count` DESC'
 		);
+
+		$this->logger->info('Servers polling queue size: ' . count($servers));
 
 		foreach ($servers as $server_queue_item) {
 			if ($time_limit && microtime(true) - $this->startTime > $time_limit) {
@@ -187,6 +191,8 @@ class Cron
 			WHERE `next_poll` <= NOW()
 			ORDER BY RAND() ASC'
 		);
+
+		$this->logger->info('Profiles polling queue size: ' . count($profiles));
 
 		foreach ($profiles as $profile) {
 			if ($time_limit && microtime(true) - $this->startTime > $time_limit) {
