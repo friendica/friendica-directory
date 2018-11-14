@@ -63,10 +63,19 @@ DocumentRoot /path/to/friendica-directory/public/
 ```
 
 ### Nginx
-Include this line your nginx config file.
+Add these lines to your nginx config file.
 
 ```
 root /path/to/friendica-directory/public;
+
+location / {
+    rewrite ^/(.*) /index.php?$args last;
+}
+
+location ~* \.(jpg|jpeg|gif|png|ico|css|js|htm|html|ttf|woff|svg)$ {
+    expires 30d;
+    try_files $uri /index.php?q=$uri&$args;
+}
 ```
 
 ## 4. Set up the background task
