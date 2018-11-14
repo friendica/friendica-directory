@@ -74,7 +74,7 @@ location / {
 
 location ~* \.(jpg|jpeg|gif|png|ico|css|js|htm|html|ttf|woff|svg)$ {
     expires 30d;
-    try_files $uri /index.php?q=$uri&$args;
+    try_files $uri /index.php?$args;
 }
 ```
 
