@@ -58,6 +58,24 @@ $settings = [
 	],
 ];
 
+function settings_merge_recursive($defaults, $local) {
+	$return = [];
+	foreach ($defaults as $key => $value) {
+		if (isset($local[$key])) {
+			if (is_array($value)) {
+				$return[$key] = settings_merge_recursive($value, $local[$key]);
+			} else {
+				$return[$key] = $local[$key];
+			}
+		} else {
+			$return[$key] = $value;
+		}
+	}
+
+	return $return;
+}
+
 return [
-	'settings' => $localSettings + $settings
+	'settings' => settings_merge_recursive($settings, $localSettings)
 ];
+
