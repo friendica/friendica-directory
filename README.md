@@ -29,8 +29,10 @@ Please refer to the provided [update instructions](UPDATE.md).
 
 - [Project Concepts](docs/Concepts.md)
 - [Directory Protocol](docs/Protocol.md)
+- [Translation](docs/Translation.md)
 
 ## Special thanks
 
 - [Beanow](https://github.com/Beanow) for his efforts to spearhead the previous version of the Friendica Directory software.
 - [Scott Arciszewski](https://github.com/paragonie-scott) for his inspiration to use Slim and his invaluable Slim app example.
+- [Saša Stamenković](https://github.com/umpirsky) for his useful list packages like [umpirsky/language-list](https://github.com/umpirsky/language-list).
