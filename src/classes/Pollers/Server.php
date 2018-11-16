@@ -85,7 +85,7 @@ class Server
 
 		$probe_result = $this->getProbeResult($polled_url);
 
-		$parse_success = !empty($probe_result['data']);
+		$parse_success = !empty($probe_result['data']['url']);
 
 		if ($parse_success) {
 			$base_url = $probe_result['data']['url'];
