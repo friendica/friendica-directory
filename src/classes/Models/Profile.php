@@ -85,9 +85,9 @@ class Profile extends \Friendica\Directory\Model
 			'limit' => [$limit, \PDO::PARAM_INT]
 		]);
 
-		$stmt = 'SELECT p.`id`, p.`name`, p.`username`, p.`addr`, p.`account_type`, p.`pdesc`,
- 				p.`locality`, p.`region`, p.`country`, p.`profile_url`, p.`dfrn_request`, p.`photo`,
- 				p.`tags`, p.`last_activity`
+		$stmt = 'SELECT p.`id`, p.`name`, p.`username`, p.`addr`, p.`account_type`, p.`language`,
+				p.`pdesc`, p.`locality`, p.`region`, p.`country`, p.`profile_url`, p.`dfrn_request`,
+				p.`photo`, p.`tags`, p.`last_activity`
 			FROM `profile` p
 			JOIN `server` s ON s.`id` = p.`server_id` AND s.`available` AND NOT s.`hidden`
 			WHERE p.`available`

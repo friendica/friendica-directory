@@ -148,6 +148,7 @@ class Server
 					`last_seen`     = NOW(),
 					`base_url`      = :base_url,
 					`name`          = :name,
+					`language`      = :language,
 					`version`       = :version,
 					`addons`        = :addons,
 					`reg_policy`    = :reg_policy,
@@ -158,17 +159,18 @@ class Server
 					`ssl_state`     = :ssl_state
 				WHERE `id` = :server_id',
 				[
-					'server_id' => $server['id'],
-					'base_url' => strtolower($probe_result['data']['url']),
-					'name' => $probe_result['data']['site_name'],
-					'version' => $probe_result['data']['version'],
-					'addons' => implode(',', $addons),
-					'reg_policy' => $probe_result['data']['register_policy'],
-					'info' => $probe_result['data']['info'],
-					'admin_name' => $probe_result['data']['admin']['name'],
+					'server_id'     => $server['id'],
+					'base_url'      => strtolower($probe_result['data']['url']),
+					'name'          => $probe_result['data']['site_name'],
+					'language'      => $probe_result['data']['language'] ?? null,
+					'version'       => $probe_result['data']['version'],
+					'addons'        => implode(',', $addons),
+					'reg_policy'    => $probe_result['data']['register_policy'],
+					'info'          => $probe_result['data']['info'],
+					'admin_name'    => $probe_result['data']['admin']['name'],
 					'admin_profile' => $probe_result['data']['admin']['profile'],
-					'noscrape_url' => $probe_result['data']['no_scrape_url'] ?? null,
-					'ssl_state' => $probe_result['ssl_state']
+					'noscrape_url'  => $probe_result['data']['no_scrape_url'] ?? null,
+					'ssl_state'     => $probe_result['ssl_state']
 				]
 			);
 

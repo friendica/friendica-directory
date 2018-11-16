@@ -137,6 +137,7 @@ class Profile
 		} else {
 			$this->logger->notice('Parsing profile page ' . $profile_uri);
 			$params = \Friendica\Directory\Utils\Scrape::retrieveProfileData($profile_uri);
+			$params['language'] = $server['language'];
 		}
 
 		// Empty result is due to an offline site.
@@ -195,62 +196,71 @@ class Profile
 
 		$filled_fields = intval(!empty($params['pdesc'])) * 4 + intval(!empty($params['tags'])) * 2 + intval(!empty($params['locality']) || !empty($params['region']) || !empty($params['country-name']));
 
+		$this->logger->debug(var_export($params, true));
+
+		$values = [
+			'profile_id'   => $profile_id,
+			'server_id'    => $server['id'],
+			'username'     => $username,
+			'name'         => $params['fn'],
+			'pdesc'        => $params['pdesc'] ?? '',
+			'locality'     => $params['locality'] ?? '',
+			'region'       => $params['region'] ?? '',
+			'country'      => $params['country-name'] ?? '',
+			'profile_url'  => $profile_uri,
+			'dfrn_request' => $params['dfrn-request'] ?? null,
+			'photo'        => $params['photo'],
+			'tags'         => implode(' ', $tags),
+			'addr'         => $addr,
+			'account_type' => $account_type,
+			'language'     => $params['language'] ?? null,
+			'filled_fields'=> $filled_fields,
+			'last_activity'=> $params['last-activity'] ?? null,
+			'available'    => $available,
+		];
+
+		$this->logger->debug(var_export($values, true));
+
 		$this->atlas->perform('INSERT INTO `profile` SET
-			`id` = :profile_id,
-			`server_id` = :server_id,
-			`username` = :username,
-			`name` = :name,
-			`pdesc` = :pdesc,
-			`locality` = :locality,
-			`region` = :region,
-			`country` = :country,
-			`profile_url` = :profile_url,
-			`dfrn_request` = :dfrn_request,
-			`tags` = :tags,
-			`addr` = :addr,
-			`account_type` = :account_type,
+			`server_id`     = :server_id,
+			`username`      = :username,
+			`name`          = :name,
+			`pdesc`         = :pdesc,
+			`locality`      = :locality,
+			`region`        = :region,
+			`country`       = :country,
+			`profile_url`   = :profile_url,
+			`dfrn_request`  = :dfrn_request,
+			`photo`         = :photo,
+			`tags`          = :tags,
+			`addr`          = :addr,
+			`account_type`  = :account_type,
+			`language`      = :language,
 			`filled_fields` = :filled_fields,
 			`last_activity` = :last_activity,
-			`available` = :available,
+			`available`     = :available,
 			`created` = NOW(),
 			`updated` = NOW()
 			ON DUPLICATE KEY UPDATE
-			`server_id` = :server_id,
-			`username` = :username,
-			`name` = :name,
-			`pdesc` = :pdesc,
-			`locality` = :locality,
-			`region` = :region,
-			`country` = :country,
-			`profile_url` = :profile_url,
-			`dfrn_request` = :dfrn_request,
-			`photo` = :photo,
-			`tags` = :tags,
-			`addr` = :addr,
-			`account_type` = :account_type,
+			`server_id`     = :server_id,
+			`username`      = :username,
+			`name`          = :name,
+			`pdesc`         = :pdesc,
+			`locality`      = :locality,
+			`region`        = :region,
+			`country`       = :country,
+			`profile_url`   = :profile_url,
+			`dfrn_request`  = :dfrn_request,
+			`photo`         = :photo,
+			`tags`          = :tags,
+			`addr`          = :addr,
+			`account_type`  = :account_type,
+			`language`      = :language,
 			`filled_fields` = :filled_fields,
 			`last_activity` = :last_activity,
-			`available` = :available,
-			`updated` = NOW()',
-			[
-				'profile_id' => $profile_id,
-				'server_id' => $server['id'],
-				'username' => $username,
-				'name' => $params['fn'],
-				'pdesc' => $params['pdesc'] ?? '',
-				'locality' => $params['locality'] ?? '',
-				'region' => $params['region'] ?? '',
-				'country' => $params['country-name'] ?? '',
-				'profile_url' => $profile_uri,
-				'dfrn_request' => $params['dfrn-request'] ?? null,
-				'photo' => $params['photo'],
-				'tags' => implode(' ', $tags),
-				'addr' => $addr,
-				'account_type' => $account_type,
-				'filled_fields' => $filled_fields,
-				'last_activity' => $params['last-activity'] ?? null,
-				'available' => $available,
-			]
+			`available`     = :available,
+			`updated`       = NOW()',
+			$values
 		);
 
 		if (!$profile_id) {
