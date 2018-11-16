@@ -10,7 +10,7 @@ use Slim\Http\Response;
 /**
  * @author Hypolite Petovan <mrpetovan@gmail.com>
  */
-class Servers
+class Servers extends BaseController
 {
 	/**
 	 * @var \Atlas\Pdo\Connection
@@ -21,7 +21,7 @@ class Servers
 	 */
 	private $renderer;
 	/**
-	 * @var \Friendica\Directory\Content\L10n
+	 * @var \Gettext\TranslatorInterface
 	 */
 	private $l10n;
 	/**
@@ -32,7 +32,7 @@ class Servers
 	public function __construct(
 		\Atlas\Pdo\Connection $atlas,
 		\Friendica\Directory\Views\PhpRenderer $renderer,
-		\Friendica\Directory\Content\L10n $l10n,
+		\Gettext\TranslatorInterface $l10n,
 		\Psr\SimpleCache\CacheInterface $simplecache
 	)
 	{
@@ -42,7 +42,7 @@ class Servers
 		$this->simplecache = $simplecache;
 	}
 
-	public function render(Request $request, Response $response): Response
+	public function render(Request $request, Response $response): array
 	{
 		$stable_version = $this->simplecache->get('stable_version');
 		if (!$stable_version) {
@@ -72,7 +72,7 @@ LIMIT :start, :limit';
 
 		foreach ($servers as $key => $server) {
 			$servers[$key]['user_count'] = $this->atlas->fetchValue(
-				'SELECT COUNT(*) FROM `profile` WHERE `available` AND `server_id` = :server_id',
+				'SELECT COUNT(*) FROM `profile` WHERE `available` AND NOT `hidden` AND `server_id` = :server_id',
 				['server_id' => [$server['id'], PDO::PARAM_INT]]
 			);
 		}
@@ -85,7 +85,7 @@ AND NOT `hidden`';
 		$count = $this->atlas->fetchValue($stmt);
 
 		$vars = [
-			'title' => $this->l10n->t('Public Servers'),
+			'title' => $this->l10n->gettext('Public Servers'),
 			'servers' => $servers,
 			'pager' => $pager->renderFull($count),
 			'stable_version' => $stable_version,
@@ -95,6 +95,6 @@ AND NOT `hidden`';
 		$content = $this->renderer->fetch('servers.phtml', $vars);
 
 		// Render index view
-		return $this->renderer->render($response, 'layout.phtml', ['baseUrl' => $request->getUri()->getBaseUrl(), 'content' => $content]);
+		return ['content' => $content];
 	}
 }

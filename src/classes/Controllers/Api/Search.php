@@ -21,14 +21,14 @@ class Search
 	 */
 	private $profileModel;
 	/**
-	 * @var \Friendica\Directory\Content\L10n
+	 * @var \Gettext\TranslatorInterface
 	 */
 	private $l10n;
 
 	public function __construct(
 		\Atlas\Pdo\Connection $atlas,
 		\Friendica\Directory\Models\Profile $profileModel,
-		\Friendica\Directory\Content\L10n $l10n
+		\Gettext\TranslatorInterface $l10n
 	)
 	{
 		$this->atlas = $atlas;
@@ -66,11 +66,12 @@ AND `account_type` = :account_type';
 		$count = $this->profileModel->getCountForDisplay($sql_where, $values);
 
 		$vars = [
-			'query' => $originalQuery,
-			'page' => $pager->getPage(),
+			'query'        => $originalQuery,
+			'field'        => $field,
+			'page'         => $pager->getPage(),
 			'itemsperpage' => $pager->getItemsPerPage(),
-			'count' => $count,
-			'profiles' => $profiles
+			'count'        => $count,
+			'profiles'     => $profiles
 		];
 
 		// Render index view

@@ -10,7 +10,7 @@ use Psr\Http\Message\ServerRequestInterface;
 /**
  * @author Hypolite Petovan <mrpetovan@gmail.com>
  */
-class Search
+class Search extends BaseController
 {
 	/**
 	 * @var \Atlas\Pdo\Connection
@@ -29,7 +29,7 @@ class Search
 	 */
 	private $accountTypeTabs;
 	/**
-	 * @var \Friendica\Directory\Content\L10n
+	 * @var \Gettext\TranslatorInterface
 	 */
 	private $l10n;
 
@@ -38,7 +38,7 @@ class Search
 		\Friendica\Directory\Models\Profile $profileModel,
 		\Friendica\Directory\Views\Widget\AccountTypeTabs $accountTypeTabs,
 		\Friendica\Directory\Views\PhpRenderer $renderer,
-		\Friendica\Directory\Content\L10n $l10n
+		\Gettext\TranslatorInterface $l10n
 	)
 	{
 		$this->atlas = $atlas;
@@ -48,7 +48,7 @@ class Search
 		$this->l10n = $l10n;
 	}
 
-	public function render(\Slim\Http\Request $request, \Slim\Http\Response $response, array $args): \Slim\Http\Response
+	public function render(\Slim\Http\Request $request, \Slim\Http\Response $response, array $args): array
 	{
 		$pager = new Pager($this->l10n, $request, 20);
 
@@ -56,9 +56,20 @@ class Search
 
 		$field = filter_input(INPUT_GET, 'field', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW & FILTER_FLAG_STRIP_HIGH);
 
+		$fieldName = '';
+
 		if ($field) {
 			$query .= '%';
-			$sql_where = '`' . $field . '` LIKE :query';
+			$sql_where = 'p.`' . $field . '` LIKE :query';
+
+			switch($field) {
+				case 'language': $fieldName = $this->l10n->pgettext('field', 'Language'); break;
+				case 'locality': $fieldName = $this->l10n->pgettext('field', 'Locality'); break;
+				case 'region'  : $fieldName = $this->l10n->pgettext('field', 'Region')  ; break;
+				case 'country' : $fieldName = $this->l10n->pgettext('field', 'Country') ; break;
+				default: $fieldName = ucfirst($field);
+			}
+
 		} else {
 			$sql_where = "MATCH (p.`name`, p.`pdesc`, p.`profile_url`, p.`locality`, p.`region`, p.`country`, p.`tags` )
 AGAINST (:query IN BOOLEAN MODE)";
@@ -78,10 +89,12 @@ AND `account_type` = :account_type';
 		$count = $this->profileModel->getCountForDisplay($sql_where, $values);
 
 		$vars = [
-			'query' => $originalQuery,
-			'count' => $count,
-			'accountTypeTabs' => $this->accountTypeTabs->render('search', $account_type, ['q' => $originalQuery]),
-			'profiles' => $profiles,
+			'query'      => $originalQuery,
+			'field'      => $field,
+			'fieldName'  => $fieldName,
+			'count'      => $count,
+			'accountTypeTabs' => $this->accountTypeTabs->render('search', $account_type, ['q' => $originalQuery, 'field' => $field]),
+			'profiles'   => $profiles,
 			'pager_full' => $pager->renderFull($count),
 			'pager_minimal' => $pager->renderMinimal($count),
 		];
@@ -89,6 +102,6 @@ AND `account_type` = :account_type';
 		$content = $this->renderer->fetch('search.phtml', $vars);
 
 		// Render index view
-		return $this->renderer->render($response, 'layout.phtml', ['baseUrl' => $request->getUri()->getBaseUrl(), 'content' => $content, 'noNavSearch' => true]);
+		return ['content' => $content, 'noNavSearch' => true];
 	}
 }

@@ -24,7 +24,7 @@ class Pager
 	private $baseQueryString = '';
 
 	/**
-	 * @var \Friendica\Directory\Content\L10n
+	 * @var \Gettext\TranslatorInterface
 	 */
 	private $l10n;
 
@@ -33,11 +33,11 @@ class Pager
 	 *
 	 * Guesses the page number from the GET parameter 'page'.
 	 *
-	 * @param \Friendica\Directory\Content\L10n        $l10n
+	 * @param \Gettext\TranslatorInterface        $l10n
 	 * @param \Psr\Http\Message\ServerRequestInterface $request
 	 * @param integer                                  $itemsPerPage An optional number of items per page to override the default value
 	 */
-	public function __construct(L10n $l10n, \Psr\Http\Message\ServerRequestInterface $request, int $itemsPerPage = 50)
+	public function __construct(\Gettext\TranslatorInterface $l10n, \Psr\Http\Message\ServerRequestInterface $request, int $itemsPerPage = 50)
 	{
 		$this->l10n = $l10n;
 		$this->setQueryString($request);
@@ -157,7 +157,7 @@ class Pager
 	 * @param integer $itemCount The number of displayed items on the page
 	 * @return array of links
 	 */
-	public function renderMinimal(int $itemCount, string $previous_label = 'Previous', string $next_label = 'Next')
+	public function renderMinimal(int $itemCount)
 	{
 		$displayedItemCount = max(0, $itemCount);
 
@@ -165,12 +165,12 @@ class Pager
 			'class' => 'pager',
 			'prev' => [
 				'url' => $this->ensureQueryParameter($this->baseQueryString . '&page=' . ($this->getPage() - 1)),
-				'text' => $this->l10n->t($previous_label),
+				'text' => $this->l10n->gettext('Previous'),
 				'class' => 'previous' . ($this->getPage() == 1 ? ' disabled' : '')
 			],
 			'next' => [
 				'url' => $this->ensureQueryParameter($this->baseQueryString . '&page=' . ($this->getPage() + 1)),
-				'text' => $this->l10n->t($next_label),
+				'text' => $this->l10n->gettext('Next'),
 				'class' => 'next' . ($displayedItemCount <= 0 ? ' disabled' : '')
 			]
 		];
@@ -208,12 +208,12 @@ class Pager
 		if ($totalItemCount > $this->getItemsPerPage()) {
 			$data['first'] = [
 				'url' => $this->ensureQueryParameter($this->baseQueryString . '&page=1'),
-				'text' => $this->l10n->t('First'),
+				'text' => $this->l10n->gettext('First'),
 				'class' => $this->getPage() == 1 ? 'disabled' : ''
 			];
 			$data['prev'] = [
 				'url' => $this->ensureQueryParameter($this->baseQueryString . '&page=' . ($this->getPage() - 1)),
-				'text' => $this->l10n->t('Previous'),
+				'text' => $this->l10n->gettext('Previous'),
 				'class' => $this->getPage() == 1 ? 'disabled' : ''
 			];
 
@@ -270,12 +270,12 @@ class Pager
 
 			$data['next'] = [
 				'url' => $this->ensureQueryParameter($this->baseQueryString . '&page=' . ($this->getPage() + 1)),
-				'text' => $this->l10n->t('Next'),
+				'text' => $this->l10n->gettext('Next'),
 				'class' => $this->getPage() == $lastpage ? 'disabled' : ''
 			];
 			$data['last'] = [
 				'url' => $this->ensureQueryParameter($this->baseQueryString . '&page=' . $lastpage),
-				'text' => $this->l10n->t('Last'),
+				'text' => $this->l10n->gettext('Last'),
 				'class' => $this->getPage() == $lastpage ? 'disabled' : ''
 			];
 		}

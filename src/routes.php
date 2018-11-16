@@ -9,9 +9,17 @@ use Slim\Http\Response;
  * @var $app \Slim\App
  */
 
-$app->get('/servers', \Friendica\Directory\Routes\Http\Servers::class);
+$app->get('/servers', \Friendica\Directory\Routes\Web\Servers::class);
 
-$app->get('/search[/{account_type}]', \Friendica\Directory\Routes\Http\Search::class)->setName('search');
+$app->get('/search[/{account_type}]', function (Request $request, Response $response, $args) {
+	if ($request->getAttribute('negotiation')->getMediaType() == 'application/json') {
+		$route = new \Friendica\Directory\Routes\Http\Search($this);
+	} else {
+		$route = new \Friendica\Directory\Routes\Web\Search($this);
+	}
+
+	return $route($request, $response, $args);
+})->setName('search');
 
 $app->get('/submit', \Friendica\Directory\Routes\Http\Submit::class);
 
@@ -26,4 +34,4 @@ $app->get('/VERSION', function (Request $request, Response $response) {
 	return $response;
 });
 
-$app->get('/[{account_type}]', \Friendica\Directory\Routes\Http\Directory::class)->setName('directory');
+$app->get('/[{account_type}]', \Friendica\Directory\Routes\Web\Directory::class)->setName('directory');

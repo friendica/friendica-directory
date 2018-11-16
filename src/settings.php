@@ -18,6 +18,11 @@ if (\is_readable(__DIR__ . '/../config/local.json')) {
 $settings = [
 	'displayErrorDetails' => false, // set to false in production
 	'addContentLengthHeader' => false, // Allow the web server to send the content-length header
+	'i18n' => [
+		'locales' => ['en', 'fr'],
+		'default' => 'en',
+		'path' => __DIR__ . '/lang'
+	],
 	// Escaper settings
 	'escaper' => [
 		'encoding' => 'utf-8'

@@ -5,9 +5,9 @@ use Interop\Container\ContainerInterface;
 // DIC configuration
 
 // l10n
-$container['l10n'] = function (ContainerInterface $c): Friendica\Directory\Content\L10n {
-	$settings = $c->get('settings')['l10n'];
-	return new Friendica\Directory\Content\L10n($settings['language'] ?: 'en', $settings['lang_path'] ?: '');
+$container['l10n'] = function (ContainerInterface $c): Gettext\TranslatorInterface {
+	$translator = new Gettext\Translator();
+	return $translator;
 };
 
 // simple cache

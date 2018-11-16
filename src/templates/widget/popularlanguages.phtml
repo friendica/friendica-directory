@@ -1,0 +1,12 @@
+<div>
+    <h3><?php echo $this->__('Popular Languages')?></h3>
+    <ul>
+		<?php foreach ($languages as $language): ?>
+            <li>
+                <a href="search?field=language&q=<?php echo $this->escapeUrl($language['language']) ?>">
+					<?php echo $this->e(Friendica\Directory\Utils\L10n::langToString($language['language'])) ?>
+                </a>
+            </li>
+		<?php endforeach; ?>
+    </ul>
+</div>
