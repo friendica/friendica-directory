@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $lang?>">
 <head>
-    <title>Friendica Directory</title>
+    <title><?php echo $this->__('Friendica Directory')?></title>
     <base href="<?php echo $baseUrl ?>">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,22 +15,22 @@
     <div class="container">
         <a class="navbar-brand" href="">
             <img src="assets/images/friendica-32.png" width="32" height="32" class="d-inline-block align-top" alt="">
-            Friendica Directory
+	        <?php echo $this->__('Friendica Directory')?>
         </a>
 		<?php if (empty($noNavSearch)): ?>
             <form class="form-inline my-2 my-lg-0 d-none d-md-flex" action="search">
                 <div class="input-group">
-                    <label class="sr-only" for="header_search">Search terms</label>
-                    <input name="q" class="form-control" type="search" id="header_search" placeholder="Search..."
-                           aria-label="Search terms">
+                    <label class="sr-only" for="header_search"><?php echo $this->__('Search terms')?></label>
+                    <input name="q" class="form-control" type="search" id="header_search" placeholder="<?php echo $this->p__('noun', 'Search')?>..."
+                           aria-label="<?php echo $this->__('Search terms')?>">
                     <div class="input-group-append">
-                        <button class="btn btn-primary" type="submit">Search</button>
+                        <button class="btn btn-primary" type="submit"><?php echo $this->p__('verb', 'Search')?></button>
                     </div>
                 </div>
             </form>
 		<?php endif; ?>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="<?php echo $this->__('Toggle navigation')?>">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -40,11 +40,11 @@
                     <li class="nav-item d-md-none">
                         <form action="search">
                             <div class="input-group">
-                                <label class="sr-only" for="nav_search">Search terms</label>
+                                <label class="sr-only" for="nav_search"><?php echo $this->__('Search terms')?></label>
                                 <input name="q" class="form-control form-control-sm" type="search" id="nav_search"
-                                       placeholder="Search..." aria-label="Search terms">
+                                       placeholder="<?php echo $this->p__('noun', 'Search')?>..." aria-label="<?php echo $this->__('Search terms')?>">
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary btn-sm" type="submit">Search</button>
+                                    <button class="btn btn-primary btn-sm" type="submit"><?php echo $this->p__('verb', 'Search')?></button>
                                 </div>
                             </div>
                         </form>
@@ -52,14 +52,29 @@
 				<?php endif; ?>
 
                 <li class="nav-item">
-                    <a class="nav-link" href=""><i class="fa fa-address-card"></i> Directory
+                    <a class="nav-link" href=""><i class="fa fa-address-card"></i> <?php echo $this->__('Directory')?>
                         <!--<span class="sr-only">(current)</span>-->
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="servers"><i class="fa fa-hotel"></i> Public Servers</a>
+                    <a class="nav-link" href="servers"><i class="fa fa-hotel"></i> <?php echo $this->__('Public servers')?></a>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown">
+                        <button class="btn btn-link nav-link dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-language"></i> Language
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                    <?php foreach($languages as $lang):?>
+                            <a class="dropdown-item" href="?lang=<?php echo $this->escapeUrl($lang)?>">
+	                            <?php echo $this->e(Friendica\Directory\Utils\L10n::langToString($lang)) ?>
+                            </a>
+                    <?php endforeach;?>
+                        </div>
+                    </div>
                 </li>
             </ul>
+            
         </div>
     </div>
 </nav>

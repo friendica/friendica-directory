@@ -24,11 +24,10 @@ class PopularTags
 
 	public function render(): string
 	{
-		$stmt = 'SELECT `term`, COUNT(*) AS `total` FROM `tag` GROUP BY `term` ORDER BY COUNT(`term`) DESC LIMIT 20';
+		$stmt = 'SELECT `term`, COUNT(*) AS `total` FROM `tag` GROUP BY `term` ORDER BY COUNT(`term`) DESC LIMIT 10';
 		$tags = $this->connection->fetchAll($stmt);
 
 		$vars = [
-			'title' => 'Popular Tags',
 			'tags' => $tags
 		];
 

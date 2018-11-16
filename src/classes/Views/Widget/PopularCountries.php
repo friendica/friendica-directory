@@ -31,11 +31,10 @@ WHERE `country` != ""
 AND `available`
 GROUP BY `country`
 ORDER BY COUNT(`country`) DESC
-LIMIT 20';
+LIMIT 10';
 		$countries = $this->connection->fetchAll($stmt);
 
 		$vars = [
-			'title' => 'Popular Countries',
 			'countries' => $countries
 		];
 

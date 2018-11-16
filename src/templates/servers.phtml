@@ -1,5 +1,5 @@
 <h1><?php echo $this->e($title) ?></h1>
-<nav aria-label="Top servers pagination">
+<nav aria-label="<?php echo $this->__('Top servers pagination')?>">
 	<?php echo $this->fetch('sub/pager_full.phtml', $pager) ?>
 </nav>
 <div class="row">
@@ -9,6 +9,6 @@
         </div>
 	<?php endforeach; ?>
 </div>
-<nav aria-label="Bottom servers pagination">
+<nav aria-label="<?php echo $this->__('Bottom servers pagination')?>">
 	<?php echo $this->fetch('sub/pager_full.phtml', $pager) ?>
 </nav>

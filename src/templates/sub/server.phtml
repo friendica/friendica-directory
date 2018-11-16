@@ -12,11 +12,11 @@ if ($server['health_score'] <= 0) {
 }
 
 if ($server['version'] == $stable_version) {
-	$version_badge = '<span class="badge badge-success"><i class="fa fa-smile"></i> Stable Version</span>';
+	$version_badge = '<span class="badge badge-success"><i class="fa fa-smile"></i> ' . $this->__('Stable Version') . '</span>';
 } elseif ($server['version'] == $dev_version) {
-	$version_badge = '<span class="badge badge-secondary"><i class="fa fa-poo"></i> Develop Version</span>';
+	$version_badge = '<span class="badge badge-secondary"><i class="fa fa-poo"></i> ' . $this->__('Develop Version') . '</span>';
 } else {
-	$version_badge = '<span class="badge badge-warning"><i class="fa fa-frown"></i> Outdated Version</span>';
+	$version_badge = '<span class="badge badge-warning"><i class="fa fa-frown"></i> ' . $this->__('Outdated Version') . '</span>';
 }
 
 $base_url = $server['base_url'];
@@ -37,24 +37,32 @@ $base_url_display = substr($base_url, strpos($base_url, '/') + 2);
                 <a href="<?php echo $base_url; ?>"><?php echo $this->e($base_url_display); ?></a>
             </h6>
             <p class="card-text">
-                <span class="badge <?php echo $badge_class ?>"><i
-                            class="fa fa-heartbeat"></i> <?php echo $server['health_score'] ?></span>
-                <span class="badge badge-secondary"><i
-                            class="fa fa-user"></i> <?php echo $this->e($server['user_count'] ?: '~'); ?> Users</span>
+                <span class="badge <?php echo $badge_class ?>">
+                    <i class="fa fa-heartbeat"></i> <?php echo $server['health_score'] ?>
+                </span>
+            <?php if ($server['language']):?>
+                <span class="badge badge-secondary" title="<?php echo $this->__('Default Language')?>">
+                    <i class="fa fa-language" alt="<?php echo $this->__('Default Language')?>"></i>
+                    <?php echo $this->e(Friendica\Directory\Utils\L10n::langToString($server['language'])) ?>
+                </span>
+            <?php endif;?>
+                <span class="badge badge-secondary" title="<?php echo $this->__('Known Users')?>">
+                    <i class="fa fa-user"></i> <?php echo $this->e($server['user_count'] ?: '~'); ?> Users
+                </span>
 				<?php echo $version_badge; ?>
-				<?php if ($server['admin_profile'] && $server['admin_name']): ?>
-                    <a href="<?php echo $server['admin_profile']; ?>" class="badge badge-primary">
-                        <i class="fa fa-star"></i> Admin: <?php echo $this->e($server['admin_name']); ?>
-                    </a>
-				<?php endif; ?>
+            <?php if ($server['admin_profile'] && $server['admin_name']): ?>
+                <a href="<?php echo $server['admin_profile']; ?>" class="badge badge-primary">
+                    <i class="fa fa-star"></i> <?php echo $this->__('Admin')?>: <?php echo $this->e($server['admin_name']); ?>
+                </a>
+            <?php endif; ?>
             </p>
 			<?php if ($server['info']) : ?>
                 <p class="card-text"><?php echo $this->e($server['info']); ?></p>
 			<?php else: ?>
-                <p class="card-text text-muted">&lt;No description provided&gt;</p>
+                <p class="card-text text-muted">&lt;<?php echo $this->__('No description provided')?>&gt;</p>
 			<?php endif; ?>
             <a href="<?php echo $base_url; ?>" class="card-link btn btn-primary"><i class="fa fa-external-link-alt"></i>
-                Visit server</a>
+	            <?php echo $this->__('Visit Server')?></a>
         </div>
     </div>
 <?php /*

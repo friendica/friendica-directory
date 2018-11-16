@@ -1,16 +1,22 @@
 <!--<h1>Search</h1>-->
 <form action="search">
     <div class="input-group">
-        <label class="sr-only" for="search_search">Search terms</label>
-        <input name="q" class="form-control" type="search" id="search_search" placeholder="Search..."
-               aria-label="Search terms" value="<?php echo $this->escapeHtmlAttr($query) ?>">
+        <label class="sr-only" for="search_search"><?php echo $this->__('Search terms')?></label>
+    <?php if ($field):?>
+        <input name="field" type="hidden" value="<?php echo $this->escapeHtmlAttr($field)?>"/>
+        <div class="input-group-prepend">
+            <span class="input-group-text"><?php echo $this->e($fieldName)?></span>
+        </div>
+    <?php endif;?>
+        <input name="q" class="form-control" type="search" id="search_search" placeholder="<?php echo $this->p__('noun', 'Search')?>..."
+               aria-label="<?php echo $this->__('Search terms')?>" value="<?php echo $this->escapeHtmlAttr($query) ?>">
         <div class="input-group-append">
-            <button class="btn btn-primary" type="submit">Search</button>
+            <button class="btn btn-primary" type="submit"><?php echo $this->p__('verb', 'Search')?></button>
         </div>
     </div>
 </form>
 
-<h2><?php echo $count ?> results for "<?php echo $this->e($query) ?>"</h2>
+<h2><?php echo $this->n__('%d result for "%s"', '%d results for "%s"', intval($count), $this->e($query))?></h2>
 <?php echo $this->fetch('sub/profiles.phtml', [
 	'page' => 'search',
 	'profiles' => $profiles,
