@@ -1,6 +1,6 @@
 <?php
 
-namespace Friendica\Directory\Controllers\Web;
+namespace Friendica\Directory\Controllers\Api;
 
 use Slim\Http\Request;
 use Slim\Http\Response;
