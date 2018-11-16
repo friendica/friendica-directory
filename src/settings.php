@@ -24,7 +24,7 @@ $settings = [
 	],
 	// Renderer settings
 	'renderer' => [
-		'template_path' => __DIR__ . '/templates/',
+		'template_path' => __DIR__ . '/templates',
 	],
 	// Monolog settings
 	'logger' => [
@@ -43,7 +43,7 @@ $settings = [
 		'password' => 'friendica-directory',
 	],
 	'simplecache' => [
-		'directory' => __DIR__ . '/../cache/',
+		'directory' => __DIR__ . '/../cache',
 	],
 	'poller' => [
 		// Successful poll delay
