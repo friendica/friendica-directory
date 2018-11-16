@@ -31,6 +31,7 @@ class Console extends \Asika\SimpleConsole\Console
 		'install' => \Friendica\Directory\Routes\Console\Install::class,
 		'updatedb' => \Friendica\Directory\Routes\Console\UpdateDb::class,
 		'dbupdate' => \Friendica\Directory\Routes\Console\UpdateDb::class,
+		'extract-strings' => \Friendica\Directory\Routes\Console\ExtractStrings::class,
 	];
 
 	public function __construct(\Slim\Container $container, ?array $argv = null)
