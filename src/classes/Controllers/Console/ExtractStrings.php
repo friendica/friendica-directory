@@ -109,16 +109,16 @@ HELP;
 //			$updatedPoString = str_replace(realpath(__DIR__ . '/../../../../') . DIRECTORY_SEPARATOR, '', $updatedPoString);
 //			$this->out('Writing ' . realpath($updatedPoFile));
 //			file_put_contents($updatedPoFile, $updatedPoString);
-			
+
+			$updatedTranslations->setLanguage($locale);
+
 			if ($this->getOption('force')) {
 				$existingTranslations = $updatedTranslations;
 			} else {
 				$this->out('Merging with existing translations');
 
-				$existingTranslations->mergeWith($updatedTranslations, Merge::ADD | Merge::REMOVE | Merge::REFERENCES_THEIRS);
+				$existingTranslations->mergeWith($updatedTranslations, Merge::ADD | Merge::REMOVE | Merge::REFERENCES_THEIRS | Merge::HEADERS_ADD);
 			}
-
-			$existingTranslations->setLanguage($locale);
 
 			$poString = $existingTranslations->toPoString();
 
