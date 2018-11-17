@@ -152,5 +152,28 @@ class PhpRenderer extends \Slim\Views\PhpRenderer
 		return is_array($args[1]) ? strtr($text, $args[1]) : vsprintf($text, $args);
 	}
 
+	/**
+	 * Returns the singular/plural translation of a string in a specific context
+	 *
+	 * Usages:
+	 * - $this->n__('search', 'Label', 'Labels', 3)
+	 * - $this->n__('search', '%d Label for %s', '%d Labels for %s', 3, $value)
+	 *
+	 * @param string $context
+	 * @param string $original
+	 * @param string $plural
+	 * @param int    $count
+	 * @param array  ...$args
+	 * @return string
+	 */
+	function np__(string $context, string $original, string $plural, int $count, array ...$args)
+	{
+		$text = $this->l10n->npgettext($context, $original, $plural, $count);
+
+		array_unshift($args, $count);
+
+		return !empty($args[1]) && is_array($args[1]) ? strtr($text, $args[1]) : vsprintf($text, $args);
+	}
+
 
 }
