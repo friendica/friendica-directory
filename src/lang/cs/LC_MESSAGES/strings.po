@@ -1,0 +1,200 @@
+# Translators:
+# Aditoo, 2018
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-16T04:17:37+00:00\n"
+"PO-Revision-Date: 2018-11-17 08:11-0500\n"
+"Last-Translator: Aditoo, 2018\n"
+"Language-Team: Czech (https://www.transifex.com/Friendica/teams/12172/cs/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+"X-Generator: Poedit 2.2\n"
+
+#: src\classes\Content\Pager.php:168 src\classes\Content\Pager.php:216
+msgid "Previous"
+msgstr "Předchozí"
+
+#: src\classes\Content\Pager.php:173 src\classes\Content\Pager.php:273
+msgid "Next"
+msgstr "Další"
+
+#: src\classes\Content\Pager.php:211
+msgid "First"
+msgstr "První"
+
+#: src\classes\Content\Pager.php:278
+msgid "Last"
+msgstr "Poslední"
+
+#: src\classes\Controllers\Web\Directory.php:73
+msgid "People"
+msgstr "Lidé"
+
+#: src\classes\Controllers\Web\Search.php:66
+msgctxt "field"
+msgid "Language"
+msgstr "Jazyk"
+
+#: src\classes\Controllers\Web\Search.php:67
+msgctxt "field"
+msgid "Locality"
+msgstr "Poloha"
+
+#: src\classes\Controllers\Web\Search.php:68
+msgctxt "field"
+msgid "Region"
+msgstr "Region/kraj"
+
+#: src\classes\Controllers\Web\Search.php:69
+msgctxt "field"
+msgid "Country"
+msgstr "Země"
+
+#: src\classes\Controllers\Web\Servers.php:88
+msgid "Public Servers"
+msgstr "Veřejné servery"
+
+#: src\templates\layout.phtml:4 src\templates\layout.phtml:18
+msgid "Friendica Directory"
+msgstr "Adresář Friendica"
+
+#: src\templates\layout.phtml:23 src\templates\layout.phtml:25
+#: src\templates\layout.phtml:43 src\templates\layout.phtml:45
+#: src\templates\search.phtml:4 src\templates\search.phtml:12
+msgid "Search terms"
+msgstr "Termíny vyhledávání"
+
+#: src\templates\layout.phtml:24 src\templates\layout.phtml:45
+#: src\templates\search.phtml:11
+msgctxt "noun"
+msgid "Search"
+msgstr "Hledat"
+
+#: src\templates\layout.phtml:27 src\templates\layout.phtml:47
+#: src\templates\search.phtml:14
+msgctxt "verb"
+msgid "Search"
+msgstr "Hledat"
+
+#: src\templates\layout.phtml:33
+msgid "Toggle navigation"
+msgstr "Přepínat navigaci"
+
+#: src\templates\layout.phtml:55
+msgid "Directory"
+msgstr "Adresář"
+
+#: src\templates\layout.phtml:60
+msgid "Public servers"
+msgstr "Veřejné servery"
+
+#: src\templates\search.phtml:19
+msgid "%d result for \"%s\""
+msgid_plural "%d results for \"%s\""
+msgstr[0] "%d výsledek pro „%s“"
+msgstr[1] "%d výsledky pro „%s“"
+msgstr[2] "%d výsledku pro „%s“"
+msgstr[3] "%d výsledků pro „%s“"
+
+#: src\templates\servers.phtml:2
+msgid "Top servers pagination"
+msgstr "Horní stránkování serverů"
+
+#: src\templates\servers.phtml:12
+msgid "Bottom servers pagination"
+msgstr "Spodní stránkování serverů"
+
+#: src\templates\sub\profile.phtml:5
+msgid "Filter by locality"
+msgstr "Filtrovat dle polohy"
+
+#: src\templates\sub\profile.phtml:11
+msgid "Filter by region"
+msgstr "Filtrovat dle regionu/kraje"
+
+#: src\templates\sub\profile.phtml:17
+msgid "Filter by country"
+msgstr "Filtrovat dle země"
+
+#: src\templates\sub\profile.phtml:31
+msgctxt "verb"
+msgid "Follow"
+msgstr "Sledovat"
+
+#: src\templates\sub\profile.phtml:47
+msgid "Language"
+msgstr "Jazyk"
+
+#: src\templates\sub\profile.phtml:50
+msgid "Filter by language"
+msgstr "Filtrovat dle jazyka"
+
+#: src\templates\sub\profile.phtml:56
+msgid "Location"
+msgstr "Poloha"
+
+#: src\templates\sub\profile.phtml:69
+msgid "Search Tag"
+msgstr "Hledat podle štítku"
+
+#: src\templates\sub\profiles.phtml:1
+msgid "Account type tabs"
+msgstr "Záložky typů účtů"
+
+#: src\templates\sub\profiles.phtml:4 src\templates\sub\profiles.phtml:7
+msgid "Top %s pagination"
+msgstr "Horní stránkování %s"
+
+#: src\templates\sub\profiles.phtml:13 src\templates\sub\profiles.phtml:16
+msgid "Bottom %s pagination"
+msgstr "Spodní stránkování %s"
+
+#: src\templates\sub\server.phtml:15
+msgid "Stable Version"
+msgstr "Stabilní verze"
+
+#: src\templates\sub\server.phtml:17
+msgid "Develop Version"
+msgstr "Vývojová verze"
+
+#: src\templates\sub\server.phtml:19
+msgid "Outdated Version"
+msgstr "Neaktuální verze"
+
+#: src\templates\sub\server.phtml:55
+msgid "Admin"
+msgstr "Administrátor"
+
+#: src\templates\sub\server.phtml:62
+msgid "No description provided"
+msgstr "Není zadán žádný popis"
+
+#: src\templates\sub\server.phtml:65
+msgid "Visit Server"
+msgstr "Navštívit server"
+
+#: src\templates\widget\popularcountries.phtml:2
+msgid "Popular Countries"
+msgstr "Populární země"
+
+#: src\templates\widget\popularlanguages.phtml:2
+msgid "Popular Languages"
+msgstr "Populární jazyky"
+
+#: src\templates\widget\populartags.phtml:2
+msgid "Popular Tags"
+msgstr "Populární štítky"
+
+#: src\templates\sub\server.phtml:44 src\templates\sub\server.phtml:45
+msgid "Default Language"
+msgstr "Výchozí jazyk"
+
+#: src\templates\sub\server.phtml:49
+msgid "Known Users"
+msgstr "Známí uživatelé"
