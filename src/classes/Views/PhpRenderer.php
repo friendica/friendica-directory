@@ -63,7 +63,7 @@ class PhpRenderer extends \Slim\Views\PhpRenderer
 	}
 
 	/**
-	 * Echoes the translation of a string.
+	 * Returns the translation of a string.
 	 *
 	 * Loose copy of Gettext/gettext global __() function
 	 *
@@ -73,10 +73,9 @@ class PhpRenderer extends \Slim\Views\PhpRenderer
 	 *
 	 * @param $original
 	 * @param array  $args
-	 *
 	 * @return string
 	 */
-	public function __($original, ...$args)
+	public function __(string $original, ...$args)
 	{
 		$text = $this->l10n->gettext($original);
 
@@ -92,11 +91,10 @@ class PhpRenderer extends \Slim\Views\PhpRenderer
 	 *
 	 * @param string $context
 	 * @param string $original
-	 *
 	 * @param array  $args
 	 * @return string
 	 */
-	function p__($context, $original, ...$args)
+	function p__(string $context, string $original, ...$args)
 	{
 		$text = $this->l10n->pgettext($context, $original);
 
@@ -112,11 +110,10 @@ class PhpRenderer extends \Slim\Views\PhpRenderer
 	 *
 	 * @param string $domain
 	 * @param string $original
-	 *
 	 * @param array  $args
 	 * @return string
 	 */
-	function d__($domain, $original, ...$args)
+	function d__(string $domain, string $original, ...$args)
 	{
 		$text = $this->l10n->dgettext($domain, $original);
 
@@ -128,7 +125,7 @@ class PhpRenderer extends \Slim\Views\PhpRenderer
 	}
 
 	/**
-	 * Echoes the singular/plural translation of a string.
+	 * Returns the singular/plural translation of a string.
 	 *
 	 * Loose copy of Gettext/gettext global n__() function
 	 *
@@ -138,18 +135,18 @@ class PhpRenderer extends \Slim\Views\PhpRenderer
 	 *
 	 * @param string $original
 	 * @param string $plural
-	 * @param string $count
+	 * @param int    $count
 	 * @param array  $args
 	 *
 	 * @return string
 	 */
-	function n__($original, $plural, $count, ...$args)
+	function n__(string $original, string $plural, int $count, ...$args)
 	{
 		$text = $this->l10n->ngettext($original, $plural, $count);
 
 		array_unshift($args, $count);
 
-		return is_array($args[1]) ? strtr($text, $args[1]) : vsprintf($text, $args);
+		return !empty($args[1]) && is_array($args[1]) ? strtr($text, $args[1]) : vsprintf($text, $args);
 	}
 
 	/**
