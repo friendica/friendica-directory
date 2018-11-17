@@ -27,28 +27,39 @@ class AccountTypeTabs
 		$this->router = $router;
 	}
 
-	public function render(string $route_name, string $current_type = '', array $queryParams = []): string
+	public function render(string $route_name, string $current_type = '', $condition = '', $values = [], array $queryParams = []): string
 	{
-		$stmt = '
-SELECT DISTINCT(`account_type`) AS `account_type`
-FROM `profile`
-WHERE `available`
-AND NOT `hidden`';
-		$account_types = $this->connection->fetchAll($stmt);
+
+		$stmt = 'SELECT `account_type`, COUNT(*) AS `count`
+			FROM `profile` p
+			JOIN `server` s ON s.`id` = p.`server_id` AND s.`available` AND NOT s.`hidden`
+			WHERE p.`available`
+			AND NOT p.`hidden`
+			AND ' . $condition . '
+			GROUP BY p.`account_type`
+			ORDER BY `filled_fields` DESC, `last_activity` DESC, `updated` DESC';
+		$account_types = $this->connection->fetchAll($stmt, $values);
 
 		$tabs = [
 			[
-				'title' => 'All',
+				'title' => $this->renderer->p__('account-type', 'All'),
 				'link' => $this->router->pathFor($route_name, [], $queryParams),
 				'active' => empty($current_type)
 			]
 		];
 
 		foreach ($account_types as $account_type) {
+			switch ($account_type['account_type']) {
+				case 'People': $title = $this->renderer->np__('account-type', 'People (%d)', 'People (%d)', $account_type['count']); break;
+				case 'Forum' : $title = $this->renderer->np__('account-type', 'Forum (%d)', 'Forums (%d)', $account_type['count']); break;
+				default: $title = $this->renderer->np__('account-type', $account_type['account_type']. ' (%d)', $account_type['account_type']. ' (%d)', $account_type['count']);
+			}
+
 			$tabs[] = [
-				'title' => $account_type['account_type'],
+				'title' => $title,
 				'link' => $this->router->pathFor($route_name, ['account_type' => strtolower($account_type['account_type'])], $queryParams),
-				'active' => strtolower($account_type['account_type']) == strtolower($current_type)
+				'active' => strtolower($account_type['account_type']) == strtolower($current_type),
+				'disabled' => $account_type['count'] == 0
 			];
 		}
 

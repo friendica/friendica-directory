@@ -77,7 +77,11 @@ AGAINST (:query IN BOOLEAN MODE)";
 
 		$values = ['query' => $query];
 
+
 		$account_type = $args['account_type'] ?? '';
+
+		$accountTypeTabs = $this->accountTypeTabs->render('search', $account_type, $sql_where, $values, ['q' => $originalQuery, 'field' => $field]);
+
 		if ($account_type) {
 			$sql_where .= '
 AND `account_type` = :account_type';
@@ -93,7 +97,7 @@ AND `account_type` = :account_type';
 			'field'      => $field,
 			'fieldName'  => $fieldName,
 			'count'      => $count,
-			'accountTypeTabs' => $this->accountTypeTabs->render('search', $account_type, ['q' => $originalQuery, 'field' => $field]),
+			'accountTypeTabs' => $accountTypeTabs,
 			'profiles'   => $profiles,
 			'pager_full' => $pager->renderFull($count),
 			'pager_minimal' => $pager->renderMinimal($count),
