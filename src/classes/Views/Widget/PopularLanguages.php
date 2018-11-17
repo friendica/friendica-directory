@@ -24,7 +24,7 @@ class PopularLanguages
 
 	public function render(): string
 	{
-		$stmt = 'SELECT `language`, COUNT(*) AS `total` FROM `profile` WHERE `language` IS NOT NULL GROUP BY `language` ORDER BY COUNT(`language`) DESC LIMIT 10';
+		$stmt = 'SELECT LEFT(`language`, 2) AS `language`, COUNT(*) AS `total` FROM `profile` WHERE `language` IS NOT NULL GROUP BY LEFT(`language`, 2) ORDER BY COUNT(*) DESC LIMIT 10';
 		$languages = $this->connection->fetchAll($stmt);
 
 		$vars = [
