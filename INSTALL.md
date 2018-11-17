@@ -17,7 +17,7 @@ Composer is a popular dependency management tool for PHP projects.
 cd /path/to
 git clone https://github.com/friendica/friendica-directory friendica-directory
 cd friendica-directory
-composer install
+composer install --no-dev
 ```
 
 ### Using a stable release archive
