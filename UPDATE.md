@@ -39,4 +39,7 @@ cd /path/to/friendica-directory
 bin/console dbupdate
 ```
 
-You're all set!
+### Known issues
+
+Before version 2.1, updating the database schema was impossible because the `status` column value of the `migration_version` table was incorrectly set to `partial up` instead of `complete`.  
+Updating from 2.0.x, changing the value allows to update the database schema.
