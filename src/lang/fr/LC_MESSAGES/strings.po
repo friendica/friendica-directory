@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2018-11-16T04:17:37+00:00\n"
-"PO-Revision-Date: 2018-11-16 00:01-0500\n"
+"PO-Revision-Date: 2018-11-17 08:53-0500\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Poedit 2.2\n"
@@ -193,3 +193,22 @@ msgstr "Langage de base"
 #: src\templates\sub\server.phtml:49
 msgid "Known Users"
 msgstr "Utilisateurs connus"
+
+#: src\classes\Views\Widget\AccountTypeTabs.php:45
+msgctxt "account-type"
+msgid "All"
+msgstr "Tous"
+
+#: src\classes\Views\Widget\AccountTypeTabs.php:53
+msgctxt "account-type"
+msgid "People (%d)"
+msgid_plural "People (%d)"
+msgstr[0] "Utilisateur (%d)"
+msgstr[1] "Utilisateurs (%d)"
+
+#: src\classes\Views\Widget\AccountTypeTabs.php:54
+msgctxt "account-type"
+msgid "Forum (%d)"
+msgid_plural "Forums (%d)"
+msgstr[0] "Forum (%s)"
+msgstr[1] "Forums (%d)"

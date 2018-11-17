@@ -13,11 +13,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 2.2\n"
 
-#: src\classes\Content\Pager.php:168 src\classes\Content\Pager.php:216
+#: src\classes\Content\Pager.php:168
+#: src\classes\Content\Pager.php:216
 msgid "Previous"
 msgstr ""
 
-#: src\classes\Content\Pager.php:173 src\classes\Content\Pager.php:273
+#: src\classes\Content\Pager.php:173
+#: src\classes\Content\Pager.php:273
 msgid "Next"
 msgstr ""
 
@@ -57,23 +59,29 @@ msgstr ""
 msgid "Public Servers"
 msgstr ""
 
-#: src\templates\layout.phtml:4 src\templates\layout.phtml:18
+#: src\templates\layout.phtml:4
+#: src\templates\layout.phtml:18
 msgid "Friendica Directory"
 msgstr ""
 
-#: src\templates\layout.phtml:23 src\templates\layout.phtml:25
-#: src\templates\layout.phtml:43 src\templates\layout.phtml:45
-#: src\templates\search.phtml:4 src\templates\search.phtml:12
+#: src\templates\layout.phtml:23
+#: src\templates\layout.phtml:25
+#: src\templates\layout.phtml:43
+#: src\templates\layout.phtml:45
+#: src\templates\search.phtml:4
+#: src\templates\search.phtml:12
 msgid "Search terms"
 msgstr ""
 
-#: src\templates\layout.phtml:24 src\templates\layout.phtml:45
+#: src\templates\layout.phtml:24
+#: src\templates\layout.phtml:45
 #: src\templates\search.phtml:11
 msgctxt "noun"
 msgid "Search"
 msgstr ""
 
-#: src\templates\layout.phtml:27 src\templates\layout.phtml:47
+#: src\templates\layout.phtml:27
+#: src\templates\layout.phtml:47
 #: src\templates\search.phtml:14
 msgctxt "verb"
 msgid "Search"
@@ -142,11 +150,13 @@ msgstr ""
 msgid "Account type tabs"
 msgstr ""
 
-#: src\templates\sub\profiles.phtml:4 src\templates\sub\profiles.phtml:7
+#: src\templates\sub\profiles.phtml:4
+#: src\templates\sub\profiles.phtml:7
 msgid "Top %s pagination"
 msgstr ""
 
-#: src\templates\sub\profiles.phtml:13 src\templates\sub\profiles.phtml:16
+#: src\templates\sub\profiles.phtml:13
+#: src\templates\sub\profiles.phtml:16
 msgid "Bottom %s pagination"
 msgstr ""
 
@@ -186,10 +196,30 @@ msgstr ""
 msgid "Popular Tags"
 msgstr ""
 
-#: src\templates\sub\server.phtml:44 src\templates\sub\server.phtml:45
+#: src\templates\sub\server.phtml:44
+#: src\templates\sub\server.phtml:45
 msgid "Default Language"
 msgstr ""
 
 #: src\templates\sub\server.phtml:49
 msgid "Known Users"
 msgstr ""
+
+#: src\classes\Views\Widget\AccountTypeTabs.php:45
+msgctxt "account-type"
+msgid "All"
+msgstr ""
+
+#: src\classes\Views\Widget\AccountTypeTabs.php:53
+msgctxt "account-type"
+msgid "People (%d)"
+msgid_plural "People (%d)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src\classes\Views\Widget\AccountTypeTabs.php:54
+msgctxt "account-type"
+msgid "Forum (%d)"
+msgid_plural "Forums (%d)"
+msgstr[0] ""
+msgstr[1] ""

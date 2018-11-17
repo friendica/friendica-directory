@@ -1,26 +1,25 @@
-# Translators:
-# Aditoo, 2018
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-16T04:17:37+00:00\n"
-"PO-Revision-Date: 2018-11-17 08:11-0500\n"
 "Last-Translator: Aditoo, 2018\n"
 "Language-Team: Czech (https://www.transifex.com/Friendica/teams/12172/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2018-11-16T04:17:37+00:00\n"
+"PO-Revision-Date: 2018-11-17 08:11-0500\n"
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 "X-Generator: Poedit 2.2\n"
 
-#: src\classes\Content\Pager.php:168 src\classes\Content\Pager.php:216
+#: src\classes\Content\Pager.php:168
+#: src\classes\Content\Pager.php:216
 msgid "Previous"
 msgstr "Předchozí"
 
-#: src\classes\Content\Pager.php:173 src\classes\Content\Pager.php:273
+#: src\classes\Content\Pager.php:173
+#: src\classes\Content\Pager.php:273
 msgid "Next"
 msgstr "Další"
 
@@ -60,23 +59,29 @@ msgstr "Země"
 msgid "Public Servers"
 msgstr "Veřejné servery"
 
-#: src\templates\layout.phtml:4 src\templates\layout.phtml:18
+#: src\templates\layout.phtml:4
+#: src\templates\layout.phtml:18
 msgid "Friendica Directory"
 msgstr "Adresář Friendica"
 
-#: src\templates\layout.phtml:23 src\templates\layout.phtml:25
-#: src\templates\layout.phtml:43 src\templates\layout.phtml:45
-#: src\templates\search.phtml:4 src\templates\search.phtml:12
+#: src\templates\layout.phtml:23
+#: src\templates\layout.phtml:25
+#: src\templates\layout.phtml:43
+#: src\templates\layout.phtml:45
+#: src\templates\search.phtml:4
+#: src\templates\search.phtml:12
 msgid "Search terms"
 msgstr "Termíny vyhledávání"
 
-#: src\templates\layout.phtml:24 src\templates\layout.phtml:45
+#: src\templates\layout.phtml:24
+#: src\templates\layout.phtml:45
 #: src\templates\search.phtml:11
 msgctxt "noun"
 msgid "Search"
 msgstr "Hledat"
 
-#: src\templates\layout.phtml:27 src\templates\layout.phtml:47
+#: src\templates\layout.phtml:27
+#: src\templates\layout.phtml:47
 #: src\templates\search.phtml:14
 msgctxt "verb"
 msgid "Search"
@@ -147,11 +152,13 @@ msgstr "Hledat podle štítku"
 msgid "Account type tabs"
 msgstr "Záložky typů účtů"
 
-#: src\templates\sub\profiles.phtml:4 src\templates\sub\profiles.phtml:7
+#: src\templates\sub\profiles.phtml:4
+#: src\templates\sub\profiles.phtml:7
 msgid "Top %s pagination"
 msgstr "Horní stránkování %s"
 
-#: src\templates\sub\profiles.phtml:13 src\templates\sub\profiles.phtml:16
+#: src\templates\sub\profiles.phtml:13
+#: src\templates\sub\profiles.phtml:16
 msgid "Bottom %s pagination"
 msgstr "Spodní stránkování %s"
 
@@ -191,10 +198,34 @@ msgstr "Populární jazyky"
 msgid "Popular Tags"
 msgstr "Populární štítky"
 
-#: src\templates\sub\server.phtml:44 src\templates\sub\server.phtml:45
+#: src\templates\sub\server.phtml:44
+#: src\templates\sub\server.phtml:45
 msgid "Default Language"
 msgstr "Výchozí jazyk"
 
 #: src\templates\sub\server.phtml:49
 msgid "Known Users"
 msgstr "Známí uživatelé"
+
+#: src\classes\Views\Widget\AccountTypeTabs.php:45
+msgctxt "account-type"
+msgid "All"
+msgstr ""
+
+#: src\classes\Views\Widget\AccountTypeTabs.php:53
+msgctxt "account-type"
+msgid "People (%d)"
+msgid_plural "People (%d)"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+
+#: src\classes\Views\Widget\AccountTypeTabs.php:54
+msgctxt "account-type"
+msgid "Forum (%d)"
+msgid_plural "Forums (%d)"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
