@@ -29,13 +29,16 @@ class AccountTypeTabs
 
 	public function render(string $route_name, string $current_type = '', $condition = '', $values = [], array $queryParams = []): string
 	{
-
+		if ($condition) {
+			$condition .= 'AND ' . $condition;
+		}
+		
 		$stmt = 'SELECT `account_type`, COUNT(*) AS `count`
 			FROM `profile` p
 			JOIN `server` s ON s.`id` = p.`server_id` AND s.`available` AND NOT s.`hidden`
 			WHERE p.`available`
 			AND NOT p.`hidden`
-			AND ' . $condition . '
+			' . $condition . '
 			GROUP BY p.`account_type`
 			ORDER BY `filled_fields` DESC, `last_activity` DESC, `updated` DESC';
 		$account_types = $this->connection->fetchAll($stmt, $values);
