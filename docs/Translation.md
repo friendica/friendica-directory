@@ -12,13 +12,22 @@ The translations files are located in `src/lang/<locale>/LC_MESSAGES/`:
 
 ## Main scenarios
 
-### Add a new locale
+Thanks for your interest in translating the Friendica Directory interface!
+
+### On Transifex
+
+Please head over to [the Friendica Directory Transifex page](https://www.transifex.com/Friendica/friendica/directory/) where you will need an account to start translating the existing strings.
+The translations will be included in the next release.
+
+### Manually
+
+#### Add a new locale
 
 Adding a new locale requires to edit `src/settings.php` to add it to the `$settings['i18n']['locales']` array.
 
 The base translation file can then be generated with `bin/console extract-string <locale>`.
 
-### Translate existing strings
+#### Translate existing strings
 
 PO files can be edited with translation software like [Poedit](https://poedit.net).
 Please make sure your software is able to compile MO files to update the existing one.
@@ -26,7 +35,7 @@ Please make sure your software is able to compile MO files to update the existin
 Both PO and MO files should be committed with Git before being submitted in a GitHub pull request.
 Please refer to the [GitHub flow documentation](https://help.github.com/articles/github-flow/) if you're unfamiliar with it.
 
-### Add new translation strings
+#### Add new translation strings
 
 Once templates/controllers files have been edited with new translation strings, you can run `bin/console extract-strings --all` to update the PO files of all available languages at once.
 
