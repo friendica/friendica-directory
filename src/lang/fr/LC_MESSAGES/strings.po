@@ -8,16 +8,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2018-11-16T04:17:37+00:00\n"
-"PO-Revision-Date: 2018-11-17 08:53-0500\n"
+"PO-Revision-Date: 2018-11-18 11:27-0500\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Poedit 2.2\n"
 
-#: src\classes\Content\Pager.php:168 src\classes\Content\Pager.php:216
+#: src\classes\Content\Pager.php:168
+#: src\classes\Content\Pager.php:216
 msgid "Previous"
 msgstr "Précédent"
 
-#: src\classes\Content\Pager.php:173 src\classes\Content\Pager.php:273
+#: src\classes\Content\Pager.php:173
+#: src\classes\Content\Pager.php:273
 msgid "Next"
 msgstr "Suivant"
 
@@ -31,7 +33,7 @@ msgstr "Fin"
 
 #: src\classes\Controllers\Web\Directory.php:73
 msgid "People"
-msgstr "Utilisateurs"
+msgstr "Utilisateur·rice·s"
 
 #: src\classes\Controllers\Web\Search.php:66
 msgctxt "field"
@@ -57,23 +59,29 @@ msgstr "Pays"
 msgid "Public Servers"
 msgstr "Serveurs publics"
 
-#: src\templates\layout.phtml:4 src\templates\layout.phtml:18
+#: src\templates\layout.phtml:4
+#: src\templates\layout.phtml:18
 msgid "Friendica Directory"
 msgstr "Répertoire Friendica"
 
-#: src\templates\layout.phtml:23 src\templates\layout.phtml:25
-#: src\templates\layout.phtml:43 src\templates\layout.phtml:45
-#: src\templates\search.phtml:4 src\templates\search.phtml:12
+#: src\templates\layout.phtml:23
+#: src\templates\layout.phtml:25
+#: src\templates\layout.phtml:43
+#: src\templates\layout.phtml:45
+#: src\templates\search.phtml:4
+#: src\templates\search.phtml:12
 msgid "Search terms"
 msgstr "Mots-clés"
 
-#: src\templates\layout.phtml:24 src\templates\layout.phtml:45
+#: src\templates\layout.phtml:24
+#: src\templates\layout.phtml:45
 #: src\templates\search.phtml:11
 msgctxt "noun"
 msgid "Search"
 msgstr "Recherche"
 
-#: src\templates\layout.phtml:27 src\templates\layout.phtml:47
+#: src\templates\layout.phtml:27
+#: src\templates\layout.phtml:47
 #: src\templates\search.phtml:14
 msgctxt "verb"
 msgid "Search"
@@ -142,21 +150,25 @@ msgstr "Rechercher ce tag"
 msgid "Account type tabs"
 msgstr "Onglets de type de compte"
 
-#: src\templates\sub\profiles.phtml:4 src\templates\sub\profiles.phtml:7
+#: src\templates\sub\profiles.phtml:4
+#: src\templates\sub\profiles.phtml:7
 msgid "Top %s pagination"
 msgstr "Pagination %s haute"
 
-#: src\templates\sub\profiles.phtml:13 src\templates\sub\profiles.phtml:16
+#: src\templates\sub\profiles.phtml:13
+#: src\templates\sub\profiles.phtml:16
 msgid "Bottom %s pagination"
 msgstr "Pagination %s basse"
 
+#: src\templates\statistics.phtml:64
 #: src\templates\sub\server.phtml:15
 msgid "Stable Version"
 msgstr "Version stable"
 
+#: src\templates\statistics.phtml:66
 #: src\templates\sub\server.phtml:17
 msgid "Develop Version"
-msgstr "Version instable"
+msgstr "Version de développement"
 
 #: src\templates\sub\server.phtml:19
 msgid "Outdated Version"
@@ -164,7 +176,7 @@ msgstr "Version périmée"
 
 #: src\templates\sub\server.phtml:55
 msgid "Admin"
-msgstr "Administrateur"
+msgstr "Administrateur·rice"
 
 #: src\templates\sub\server.phtml:62
 msgid "No description provided"
@@ -186,29 +198,99 @@ msgstr "Language populaires"
 msgid "Popular Tags"
 msgstr "Tags populaires"
 
-#: src\templates\sub\server.phtml:44 src\templates\sub\server.phtml:45
+#: src\templates\sub\server.phtml:44
+#: src\templates\sub\server.phtml:45
 msgid "Default Language"
 msgstr "Langage de base"
 
 #: src\templates\sub\server.phtml:49
 msgid "Known Users"
-msgstr "Utilisateurs connus"
+msgstr "Utilisateur·rice·s connu·e·s"
 
-#: src\classes\Views\Widget\AccountTypeTabs.php:45
+#: src\classes\Views\Widget\AccountTypeTabs.php:48
 msgctxt "account-type"
 msgid "All"
 msgstr "Tous"
 
-#: src\classes\Views\Widget\AccountTypeTabs.php:53
+#: src\classes\Views\Widget\AccountTypeTabs.php:56
 msgctxt "account-type"
 msgid "People (%d)"
 msgid_plural "People (%d)"
-msgstr[0] "Utilisateur (%d)"
+msgstr[0] "Utilisateur·rice (%d)"
 msgstr[1] "Utilisateurs (%d)"
 
-#: src\classes\Views\Widget\AccountTypeTabs.php:54
+#: src\classes\Views\Widget\AccountTypeTabs.php:57
 msgctxt "account-type"
 msgid "Forum (%d)"
 msgid_plural "Forums (%d)"
 msgstr[0] "Forum (%s)"
 msgstr[1] "Forums (%d)"
+
+#: src\templates\layout.phtml:62
+msgid "Stats"
+msgstr "Stats"
+
+#: src\templates\statistics.phtml:4
+msgid "Directory statistics"
+msgstr "Statistiques du répertoire"
+
+#: src\templates\statistics.phtml:5
+msgid "Profiles"
+msgstr "Utilisateur·rice·s"
+
+#: src\templates\statistics.phtml:6
+msgid "This directory knows about <strong>%s distinct potential profile URLs</strong>."
+msgstr "Ce répertoire a connaissance de <strong>%s potentielles URLs d'utilisateur·rice·s</strong>."
+
+#: src\templates\statistics.phtml:15
+#: src\templates\statistics.phtml:44
+msgid "Languages"
+msgstr "Langues"
+
+#: src\templates\statistics.phtml:16
+msgid "Out of <strong>%s</strong> profiles reporting their language there are:"
+msgstr "Parmi <strong>%s</strong> utilisateur·rice·s mentionnant leur langue principale, il y a:"
+
+#: src\templates\statistics.phtml:26
+msgid "Servers"
+msgstr "Serveurs"
+
+#: src\templates\statistics.phtml:27
+msgid "This directory knows about <strong>%s distinct potential server URLs</strong>."
+msgstr "Ce répertoire a connaissance de <strong>%s potentielles URLs de serveur</strong>."
+
+#: src\templates\statistics.phtml:28
+msgid "Out of those, there are <strong>%s domains (%s)</strong> that have been a Friendica server at least once."
+msgstr "Parmi elles, il y a <strong>%s domaines (%s)</strong> qui ont été un serveur Friendica au moins une fois."
+
+#: src\templates\statistics.phtml:32
+msgid "Out of those, there are:"
+msgstr "Parmi eux, il y a:"
+
+#: src\templates\statistics.phtml:38
+msgid "<strong>%s public servers (%s)</strong> currently open for registration. <a href=\"/servers\">Check them out!</a>"
+msgstr "<strong>%s serveurs publics (%s)</strong> ouverts aux inscriptions. <a href=\"/servers\">Voir la liste</a>."
+
+#: src\templates\statistics.phtml:45
+msgid "Out of <strong>%s</strong> servers reporting their language there are:"
+msgstr "Parmi <strong>%s</strong> serveurs mentionnant leur langue principale, il y a:"
+
+#: src\templates\statistics.phtml:55
+msgid "Versions"
+msgstr "Versions"
+
+#: src\templates\statistics.phtml:56
+msgid "Out of <strong>%s</strong> servers reporting their version there are:"
+msgstr "Parmi <strong>%s</strong> serveurs mentionnant leur version, il y a:"
+
+#: src\templates\statistics.phtml:7
+msgid "Out of those, there are <strong>%s profiles (%s)</strong> that opted in the public directory at least once."
+msgstr "Parmi elleux, il y a <strong>%s utilisateur·rice·s (%s)</strong> qui ont choisi d'être inscrit·e·s dans un répertoire public au moins une fois."
+
+#: src\templates\statistics.phtml:11
+msgid "Out of those, there currently are <strong>%s available profiles (%s)</strong>. <a href=\"/\">Check them out!</a>"
+msgstr "Parmi elleux, il y a actuellement <strong>%s utilisateur·rice·s joignables (%s)</strong> via ce répertoire. <a href=\"/\">Voir la liste</a>."
+
+#: src\templates\statistics.phtml:34
+msgid "<strong>%s available servers (%s)</strong>"
+msgstr "<strong>%s serveurs joignables (%s)</strong>"

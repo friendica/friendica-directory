@@ -162,10 +162,12 @@ msgstr "Horní stránkování %s"
 msgid "Bottom %s pagination"
 msgstr "Spodní stránkování %s"
 
+#: src\templates\statistics.phtml:64
 #: src\templates\sub\server.phtml:15
 msgid "Stable Version"
 msgstr "Stabilní verze"
 
+#: src\templates\statistics.phtml:66
 #: src\templates\sub\server.phtml:17
 msgid "Develop Version"
 msgstr "Vývojová verze"
@@ -207,12 +209,12 @@ msgstr "Výchozí jazyk"
 msgid "Known Users"
 msgstr "Známí uživatelé"
 
-#: src\classes\Views\Widget\AccountTypeTabs.php:45
+#: src\classes\Views\Widget\AccountTypeTabs.php:48
 msgctxt "account-type"
 msgid "All"
 msgstr ""
 
-#: src\classes\Views\Widget\AccountTypeTabs.php:53
+#: src\classes\Views\Widget\AccountTypeTabs.php:56
 msgctxt "account-type"
 msgid "People (%d)"
 msgid_plural "People (%d)"
@@ -221,7 +223,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: src\classes\Views\Widget\AccountTypeTabs.php:54
+#: src\classes\Views\Widget\AccountTypeTabs.php:57
 msgctxt "account-type"
 msgid "Forum (%d)"
 msgid_plural "Forums (%d)"
@@ -229,3 +231,72 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
+
+#: src\templates\layout.phtml:62
+msgid "Stats"
+msgstr ""
+
+#: src\templates\statistics.phtml:4
+msgid "Directory statistics"
+msgstr ""
+
+#: src\templates\statistics.phtml:5
+msgid "Profiles"
+msgstr ""
+
+#: src\templates\statistics.phtml:6
+msgid "This directory knows about <strong>%s distinct potential profile URLs</strong>."
+msgstr ""
+
+#: src\templates\statistics.phtml:15
+#: src\templates\statistics.phtml:44
+msgid "Languages"
+msgstr ""
+
+#: src\templates\statistics.phtml:16
+msgid "Out of <strong>%s</strong> profiles reporting their language there are:"
+msgstr ""
+
+#: src\templates\statistics.phtml:26
+msgid "Servers"
+msgstr ""
+
+#: src\templates\statistics.phtml:27
+msgid "This directory knows about <strong>%s distinct potential server URLs</strong>."
+msgstr ""
+
+#: src\templates\statistics.phtml:28
+msgid "Out of those, there are <strong>%s domains (%s)</strong> that have been a Friendica server at least once."
+msgstr ""
+
+#: src\templates\statistics.phtml:32
+msgid "Out of those, there are:"
+msgstr ""
+
+#: src\templates\statistics.phtml:38
+msgid "<strong>%s public servers (%s)</strong> currently open for registration. <a href=\"/servers\">Check them out!</a>"
+msgstr ""
+
+#: src\templates\statistics.phtml:45
+msgid "Out of <strong>%s</strong> servers reporting their language there are:"
+msgstr ""
+
+#: src\templates\statistics.phtml:55
+msgid "Versions"
+msgstr ""
+
+#: src\templates\statistics.phtml:56
+msgid "Out of <strong>%s</strong> servers reporting their version there are:"
+msgstr ""
+
+#: src\templates\statistics.phtml:7
+msgid "Out of those, there are <strong>%s profiles (%s)</strong> that opted in the public directory at least once."
+msgstr ""
+
+#: src\templates\statistics.phtml:11
+msgid "Out of those, there currently are <strong>%s available profiles (%s)</strong>. <a href=\"/\">Check them out!</a>"
+msgstr ""
+
+#: src\templates\statistics.phtml:34
+msgid "<strong>%s available servers (%s)</strong>"
+msgstr ""
