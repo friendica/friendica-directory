@@ -12,18 +12,18 @@ use Gettext\Translations;
 class ExtractStrings extends \Asika\SimpleConsole\Console
 {
 	/**
-	 * @var array
+	 * @var string
 	 */
-	protected $locales;
+	protected $translationPath;
 
 	protected $helpOptions = ['h', 'help', '?'];
 
 	public function __construct(
-		array $locales,
+		string $translationPath,
 		?array $argv = null
 	)
 	{
-		$this->locales = $locales;
+		$this->translationPath = $translationPath;
 
 		parent::__construct($argv);
 	}
@@ -39,7 +39,7 @@ Description
 	Extract translation strings
 
 Options
-    --all        Generate po files for all available languages
+    --all        Update PO files for all existing languages
     --force      Generate po file from scratch, discarding existing translations
     -h|--help|-? Show help information
     -v           Show more debug information.
@@ -54,7 +54,7 @@ HELP;
 		}
 
 		if ($this->getOption('all')) {
-			$langs = $this->locales;
+			$langs = array_map('basename', glob(realpath($this->translationPath) . '/*', GLOB_ONLYDIR));
 		} else {
 			$lang = $this->getArgument(0);
 			if (!$lang) {
@@ -62,8 +62,6 @@ HELP;
 			}
 			$langs = [$lang];
 		}
-
-		$outputDir = __DIR__ . '/../../../lang';
 
 		$dir_iterator = new \RecursiveDirectoryIterator(realpath(__DIR__ . '/../../../'), \FilesystemIterator::SKIP_DOTS);
 		$iterator = new \RecursiveIteratorIterator($dir_iterator, \RecursiveIteratorIterator::SELF_FIRST);
@@ -88,31 +86,20 @@ HELP;
 		foreach ($langs as $locale) {
 			$existingTranslations = new Translations();
 
-			$stringsPoFile = $outputDir . '/' . $locale . '/LC_MESSAGES/strings.po';
+			$stringsPoFile = $this->translationPath . '/' . $locale . '/LC_MESSAGES/strings.po';
 			if (is_file($stringsPoFile)) {
 				if (!$this->getOption('force')) {
 					$this->out('Loading existing ' . $locale . ' translations');
 					$existingTranslations->addFromPoFile($stringsPoFile);
 				}
 			} else {
-				mkdir(dirname($stringsPoFile), true);
+				$this->out('Creating directory ' . dirname($stringsPoFile));
+				mkdir(dirname($stringsPoFile), 0755, true);
 			}
-
-//			$existingPoFile = $outputDir . '/' . $locale . '/LC_MESSAGES/existing.po';
-//			$existingPoString = $existingTranslations->toPoString();
-//			$existingPoString = str_replace(realpath(__DIR__ . '/../../../../') . DIRECTORY_SEPARATOR, '', $existingPoString);
-//			$this->out('Writing ' . realpath($existingPoFile));
-//			file_put_contents($existingPoFile, $existingPoString);
-
-//			$updatedPoFile = $outputDir . '/' . $locale . '/LC_MESSAGES/updated.po';
-//			$updatedPoString = $updatedTranslations->toPoString();
-//			$updatedPoString = str_replace(realpath(__DIR__ . '/../../../../') . DIRECTORY_SEPARATOR, '', $updatedPoString);
-//			$this->out('Writing ' . realpath($updatedPoFile));
-//			file_put_contents($updatedPoFile, $updatedPoString);
 
 			$updatedTranslations->setLanguage($locale);
 
-			if ($this->getOption('force')) {
+			if ($this->getOption('force') || !is_file($stringsPoFile)) {
 				$existingTranslations = $updatedTranslations;
 			} else {
 				$this->out('Merging with existing translations');
