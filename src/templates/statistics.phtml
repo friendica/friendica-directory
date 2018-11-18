@@ -1,0 +1,55 @@
+<?php
+use \Friendica\Directory\Utils\L10n;
+?>
+<h1><?php echo $this->__('Directory statistics') ?></h1>
+<h2><?php echo $this->__('Profiles') ?></h2>
+<p>This directory knows about <strong><?php echo L10n::formatNumber($stats['profile_queue']['total'])?> distinct potential profile URLs</strong>.</p>
+<p>Out of those, there are <strong><?php echo L10n::formatNumber($stats['profile']['total'])?> URLs (<?php echo L10n::formatNumber($stats['profile']['ratio'], L10n::PERCENT)?>)</strong> that have been an opt-in profile URL at least once.</p>
+<p>Out of those, there are <strong><?php echo L10n::formatNumber($stats['profile']['available']['total'])?> profiles (<?php echo L10n::formatNumber($stats['profile']['available']['ratio'], L10n::PERCENT)?>)</strong> that are currently available.  <a href="/">Check them out!</a></p>
+<h3><?php echo $this->__('Languages') ?></h3>
+Out of <strong><?php echo L10n::formatNumber($stats['profile']['language']['total'])?></strong> profiles reporting their language there are:
+<ul>
+    <?php foreach($stats['profile']['languages'] as $language):?>
+    <li>
+        <strong><?php echo L10n::formatNumber($language['total'])?></strong>
+        <?php echo empty($language['language']) ? 'N/A' : L10n::localeToLanguageString($language['language'])?>
+        (<?php echo L10n::formatNumber($language['ratio'], L10n::PERCENT)?>)
+    </li>
+    <?php endforeach;?>
+</ul>
+<h2><?php echo $this->__('Servers') ?></h2>
+<p>This directory knows about <strong><?php echo L10n::formatNumber($stats['server_queue']['total'])?> distinct potential server URLs</strong>.</p>
+<p>Out of those, there are <strong><?php echo L10n::formatNumber($stats['server']['total'])?> domains (<?php echo L10n::formatNumber($stats['server']['ratio'], L10n::PERCENT)?>)</strong> that have been a server at least once.</p>
+<p>Out of those, there are :</p>
+<ul>
+    <li><strong><?php echo L10n::formatNumber($stats['server']['available']['total'])?> servers (<?php echo L10n::formatNumber($stats['server']['available']['ratio'], L10n::PERCENT)?>%)</strong> that are currently available.</li>
+    <li><strong><?php echo L10n::formatNumber($stats['server']['open']['total'])?> public servers (<?php echo L10n::formatNumber($stats['server']['open']['ratio'], L10n::PERCENT)?>%)</strong> currently open for registration. <a href="/servers">Check them out!</a></li>
+</ul>
+
+<h3><?php echo $this->__('Languages') ?></h3>
+Out of <strong><?php echo L10n::formatNumber($stats['server']['language']['total'])?></strong> servers reporting their language there are:
+<ul>
+	<?php foreach($stats['server']['languages'] as $language):?>
+        <li>
+            <strong><?php echo L10n::formatNumber($language['total'])?></strong>
+			<?php echo empty($language['language']) ? 'N/A' : L10n::localeToLanguageString($language['language'])?>
+            (<?php echo L10n::formatNumber($language['ratio'], L10n::PERCENT)?>)
+        </li>
+	<?php endforeach;?>
+</ul>
+<h3><?php echo $this->__('Versions') ?></h3>
+Out of <strong><?php echo L10n::formatNumber($stats['server']['version']['total'])?></strong> servers reporting their version there are:
+<ul>
+	<?php foreach($stats['server']['versions'] as $version):?>
+        <li>
+            <strong><?php echo L10n::formatNumber($version['total'])?></strong>
+            <code><?php echo $this->e($version['version'])?></code>
+            (<?php echo L10n::formatNumber($version['ratio'], L10n::PERCENT)?>)
+            <?php if ($version['version'] == $stable_version):?>
+            <span class="badge badge-success"><i class="fa fa-smile"></i> <?php echo $this->__('Stable Version')?></span>
+            <?php elseif ($version['version'] == $dev_version):?>
+            <span class="badge badge-secondary"><i class="fa fa-poo"></i> <?php echo $this->__('Develop Version')?></span>
+            <?php endif;?>
+        </li>
+	<?php endforeach;?>
+</ul>

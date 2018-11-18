@@ -21,6 +21,8 @@ $app->get('/search[/{account_type}]', function (Request $request, Response $resp
 	return $route($request, $response, $args);
 })->setName('search');
 
+$app->get('/stats', \Friendica\Directory\Routes\Web\Statistics::class);
+
 $app->get('/submit', \Friendica\Directory\Routes\Http\Submit::class);
 
 $app->get('/photo/{profile_id:[0-9]+}.jpg', \Friendica\Directory\Routes\Http\Photo::class)->setName('photo');
