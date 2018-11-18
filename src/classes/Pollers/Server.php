@@ -2,6 +2,8 @@
 
 namespace Friendica\Directory\Pollers;
 
+use ByJG\Util\WebRequest;
+
 /**
  * @author Hypolite Petovan <mrpetovan@gmail.com>
  */
@@ -179,6 +181,8 @@ class Server
 				$result = $this->profilePollQueueModel->add($probe_result['data']['admin']['profile']);
 				$this->logger->debug('Profile queue add URL: ' . $probe_result['data']['admin']['profile'] . ' - ' . $result);
 			}
+
+			$this->discoverPoco($base_url);
 		}
 
 		if ($server) {
@@ -370,5 +374,47 @@ class Server
 		}
 
 		return max(min($max_health, $original_health + $delta), -100);
+	}
+
+	function discoverPoco($base_url): void
+	{
+		$pocoUrl = $base_url . '/poco';
+
+		$webrequest = new WebRequest($pocoUrl);
+		$pocoJsonData = $webrequest->get(['fields' => 'urls', 'count' => 1000]);
+
+		$this->logger->debug('WebRequest: ' . $webrequest->getLastFetchedUrl() . ' Status: ' . $webrequest->getLastStatus());
+
+		if ($webrequest->getLastStatus() != 200) {
+			$this->logger->info('Unsuccessful poco request: ' . $webrequest->getLastFetchedUrl());
+			return;
+		}
+
+		try {
+			$pocoFetchData = json_decode($pocoJsonData);
+		} catch (\Throwable $e) {
+			$this->logger->notice('Invalid JSON string for PoCo URL: ' . $webrequest->getLastFetchedUrl());
+			return;
+		}
+
+		if (!isset($pocoFetchData->entry)) {
+			$this->logger->notice('Invalid JSON structure for PoCo URL: ' . $webrequest->getLastFetchedUrl());
+			return;
+		}
+
+		foreach($pocoFetchData->entry as $entry) {
+			if (empty($entry->urls)) {
+				continue;
+			}
+
+			foreach ($entry->urls as $url) {
+				if (!empty($url->type) && !empty($url->value) && $url->type == 'profile') {
+					$result = $this->profilePollQueueModel->add($url->value);
+					if ($result === 0) {
+						$this->logger->info('Discovered profile URL ' . $url->value);
+					}
+				}
+			}
+		}
 	}
 }
