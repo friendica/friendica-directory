@@ -130,6 +130,7 @@ msgctxt "verb"
 msgid "Follow"
 msgstr ""
 
+#: src\templates\layout.phtml:67
 #: src\templates\sub\profile.phtml:47
 msgid "Language"
 msgstr ""
