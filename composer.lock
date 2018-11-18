@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3ef085734bde78d7ca14e43582929b0",
+    "content-hash": "09c66f7a0d6f0eea77cfe40057f26e50",
     "packages": [
         {
             "name": "asika/simple-console",
@@ -88,16 +88,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.71.3",
+            "version": "3.72.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "fa7f498cb41c7eb47e952355b8be2061816a9a60"
+                "reference": "5e36d7d70917133a244f62ff81d38871669951b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/fa7f498cb41c7eb47e952355b8be2061816a9a60",
-                "reference": "fa7f498cb41c7eb47e952355b8be2061816a9a60",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5e36d7d70917133a244f62ff81d38871669951b5",
+                "reference": "5e36d7d70917133a244f62ff81d38871669951b5",
                 "shasum": ""
             },
             "require": {
@@ -167,7 +167,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-11-09T21:57:53+00:00"
+            "time": "2018-11-16T21:17:38+00:00"
         },
         {
             "name": "boronczyk/localization-middleware",
@@ -1022,19 +1022,21 @@
         },
         {
             "name": "masterminds/html5",
-            "version": "2.3.1",
+            "version": "2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Masterminds/html5-php.git",
-                "reference": "33f8d475d28741398be26cdff7a10a63003324a3"
+                "reference": "cadcfaaa13153e0e8eb92c49a53e140cf1a85dea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Masterminds/html5-php/zipball/33f8d475d28741398be26cdff7a10a63003324a3",
-                "reference": "33f8d475d28741398be26cdff7a10a63003324a3",
+                "url": "https://api.github.com/repos/Masterminds/html5-php/zipball/cadcfaaa13153e0e8eb92c49a53e140cf1a85dea",
+                "reference": "cadcfaaa13153e0e8eb92c49a53e140cf1a85dea",
                 "shasum": ""
             },
             "require": {
+                "ext-ctype": "*",
+                "ext-dom": "*",
                 "ext-libxml": "*",
                 "php": ">=5.3.0"
             },
@@ -1083,7 +1085,7 @@
                 "serializer",
                 "xml"
             ],
-            "time": "2018-10-22T16:58:34+00:00"
+            "time": "2018-11-17T20:24:36+00:00"
         },
         {
             "name": "monolog/monolog",
