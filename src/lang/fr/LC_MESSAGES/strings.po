@@ -8,18 +8,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2018-11-16T04:17:37+00:00\n"
-"PO-Revision-Date: 2018-11-18 11:27-0500\n"
+"PO-Revision-Date: 2018-11-18 11:45-0500\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Poedit 2.2\n"
 
-#: src\classes\Content\Pager.php:168
-#: src\classes\Content\Pager.php:216
+#: src\classes\Content\Pager.php:168 src\classes\Content\Pager.php:216
 msgid "Previous"
 msgstr "Précédent"
 
-#: src\classes\Content\Pager.php:173
-#: src\classes\Content\Pager.php:273
+#: src\classes\Content\Pager.php:173 src\classes\Content\Pager.php:273
 msgid "Next"
 msgstr "Suivant"
 
@@ -59,29 +57,23 @@ msgstr "Pays"
 msgid "Public Servers"
 msgstr "Serveurs publics"
 
-#: src\templates\layout.phtml:4
-#: src\templates\layout.phtml:18
+#: src\templates\layout.phtml:4 src\templates\layout.phtml:18
 msgid "Friendica Directory"
 msgstr "Répertoire Friendica"
 
-#: src\templates\layout.phtml:23
-#: src\templates\layout.phtml:25
-#: src\templates\layout.phtml:43
-#: src\templates\layout.phtml:45
-#: src\templates\search.phtml:4
-#: src\templates\search.phtml:12
+#: src\templates\layout.phtml:23 src\templates\layout.phtml:25
+#: src\templates\layout.phtml:43 src\templates\layout.phtml:45
+#: src\templates\search.phtml:4 src\templates\search.phtml:12
 msgid "Search terms"
 msgstr "Mots-clés"
 
-#: src\templates\layout.phtml:24
-#: src\templates\layout.phtml:45
+#: src\templates\layout.phtml:24 src\templates\layout.phtml:45
 #: src\templates\search.phtml:11
 msgctxt "noun"
 msgid "Search"
 msgstr "Recherche"
 
-#: src\templates\layout.phtml:27
-#: src\templates\layout.phtml:47
+#: src\templates\layout.phtml:27 src\templates\layout.phtml:47
 #: src\templates\search.phtml:14
 msgctxt "verb"
 msgid "Search"
@@ -130,8 +122,7 @@ msgctxt "verb"
 msgid "Follow"
 msgstr "Suivre"
 
-#: src\templates\layout.phtml:67
-#: src\templates\sub\profile.phtml:47
+#: src\templates\layout.phtml:67 src\templates\sub\profile.phtml:47
 msgid "Language"
 msgstr "Langue"
 
@@ -151,23 +142,19 @@ msgstr "Rechercher ce tag"
 msgid "Account type tabs"
 msgstr "Onglets de type de compte"
 
-#: src\templates\sub\profiles.phtml:4
-#: src\templates\sub\profiles.phtml:7
+#: src\templates\sub\profiles.phtml:4 src\templates\sub\profiles.phtml:7
 msgid "Top %s pagination"
 msgstr "Pagination %s haute"
 
-#: src\templates\sub\profiles.phtml:13
-#: src\templates\sub\profiles.phtml:16
+#: src\templates\sub\profiles.phtml:13 src\templates\sub\profiles.phtml:16
 msgid "Bottom %s pagination"
 msgstr "Pagination %s basse"
 
-#: src\templates\statistics.phtml:64
-#: src\templates\sub\server.phtml:15
+#: src\templates\statistics.phtml:64 src\templates\sub\server.phtml:15
 msgid "Stable Version"
 msgstr "Version stable"
 
-#: src\templates\statistics.phtml:66
-#: src\templates\sub\server.phtml:17
+#: src\templates\statistics.phtml:66 src\templates\sub\server.phtml:17
 msgid "Develop Version"
 msgstr "Version de développement"
 
@@ -193,14 +180,13 @@ msgstr "Pays populaires"
 
 #: src\templates\widget\popularlanguages.phtml:2
 msgid "Popular Languages"
-msgstr "Language populaires"
+msgstr "Langues populaires"
 
 #: src\templates\widget\populartags.phtml:2
 msgid "Popular Tags"
 msgstr "Tags populaires"
 
-#: src\templates\sub\server.phtml:44
-#: src\templates\sub\server.phtml:45
+#: src\templates\sub\server.phtml:44 src\templates\sub\server.phtml:45
 msgid "Default Language"
 msgstr "Langage de base"
 
@@ -243,8 +229,7 @@ msgstr "Utilisateur·rice·s"
 msgid "This directory knows about <strong>%s distinct potential profile URLs</strong>."
 msgstr "Ce répertoire a connaissance de <strong>%s potentielles URLs d'utilisateur·rice·s</strong>."
 
-#: src\templates\statistics.phtml:15
-#: src\templates\statistics.phtml:44
+#: src\templates\statistics.phtml:15 src\templates\statistics.phtml:44
 msgid "Languages"
 msgstr "Langues"
 
