@@ -30,9 +30,9 @@ class AccountTypeTabs
 	public function render(string $route_name, string $current_type = '', $condition = '', $values = [], array $queryParams = []): string
 	{
 		if ($condition) {
-			$condition .= 'AND ' . $condition;
+			$condition = 'AND ' . $condition;
 		}
-		
+
 		$stmt = 'SELECT `account_type`, COUNT(*) AS `count`
 			FROM `profile` p
 			JOIN `server` s ON s.`id` = p.`server_id` AND s.`available` AND NOT s.`hidden`
