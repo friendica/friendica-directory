@@ -45,7 +45,7 @@ if (!empty($profile['country'])) {
 	<?php if ($profile['language']):?>
     <div class="language">
         <i class="fa fa-language" alt="<?php echo $this->__('Language')?>" title="<?php echo $this->__('Language')?>"></i>
-        <?php echo $this->e(Friendica\Directory\Utils\L10n::langToString($profile['language'])) ?>
+        <?php echo $this->e(Friendica\Directory\Utils\L10n::localeToLanguageString($profile['language'])) ?>
         <a href="/search?field=language&amp;q=<?php echo $this->escapeUrl($profile['language']) ?>">
             <i class="fa fa-filter" title="<?php echo $this->__('Filter by language')?>"></i>
         </a>

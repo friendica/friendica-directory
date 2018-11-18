@@ -67,7 +67,7 @@
                         <div class="dropdown-menu" aria-labelledby="languageDropdown">
                     <?php foreach($languages as $lang):?>
                             <a class="dropdown-item" href="?lang=<?php echo $this->escapeUrl($lang)?>">
-	                            <?php echo $this->e(Friendica\Directory\Utils\L10n::langToString($lang)) ?>
+	                            <?php echo $this->e(Friendica\Directory\Utils\L10n::localeToLanguageString($lang)) ?>
                             </a>
                     <?php endforeach;?>
                         </div>

@@ -10,6 +10,9 @@ use Gettext\Translator;
  */
 class L10n
 {
+	const DECIMAL = 1;
+	const PERCENT = 2;
+
 	public static $languages = [
 		'af' => 'Afrikaans',
 		'ak' => 'Akan',
@@ -80,6 +83,7 @@ class L10n
 		'ks' => 'کٲشُر',
 		'kw' => 'Kernewek',
 		'ky' => 'Кыргызча',
+		'la' => 'Lingua Latina',
 		'lb' => 'Lëtzebuergesch',
 		'lg' => 'Luganda',
 		'ln' => 'Lingála',
@@ -150,16 +154,62 @@ class L10n
 		'zu' => 'Isizulu',
 	];
 
-	public static function langToString($lang)
+	public static function localeToLanguageString($locale)
 	{
-		$found = false;
+		$lang = substr($locale, 0, 2);
+
+		$foundLocale = false;
+		$foundLang = false;
 		foreach(self::$languages as $key => $language) {
-			if (strtolower($key) == strtolower(str_replace('-', '_', $lang))) {
-				$found = true;
+			if (strtolower($key) == strtolower($lang)) {
+				$foundLang = $language;
+			}
+			if (strtolower($key) == strtolower(str_replace('-', '_', $locale))) {
+				$foundLocale = true;
 				break;
 			}
 		}
 
-		return $found ? $language : $lang;
+		return $foundLocale ? $language : $foundLang ?: $locale;
+	}
+
+	/**
+	 * @param float|int $number
+	 * @param int       $style
+	 * @return string
+	 */
+	public static function formatNumber($number, $style = self::DECIMAL)
+	{
+		$locale = localeconv();
+
+		switch($style) {
+			case self::PERCENT:
+				$number *= 100;
+
+				if (\intval($number) == $number) {
+					$decimals = 0;
+				} else {
+					$decimals = 2;
+				}
+
+				$return = number_format($number, $decimals,
+					$locale['decimal_point'],
+					$locale['thousands_sep']) . '%';
+				break;
+			case self::DECIMAL:
+			default:
+				if (\intval($number) == $number) {
+					$decimals = 0;
+				} else {
+					$decimals = 2;
+				}
+
+				$return = number_format($number, $decimals,
+					$locale['decimal_point'],
+					$locale['thousands_sep']);
+				break;
+		}
+
+		return $return;
 	}
 }

@@ -43,7 +43,7 @@ $base_url_display = substr($base_url, strpos($base_url, '/') + 2);
             <?php if ($server['language']):?>
                 <span class="badge badge-secondary" title="<?php echo $this->__('Default Language')?>">
                     <i class="fa fa-language" alt="<?php echo $this->__('Default Language')?>"></i>
-                    <?php echo $this->e(Friendica\Directory\Utils\L10n::langToString($server['language'])) ?>
+                    <?php echo $this->e(Friendica\Directory\Utils\L10n::localeToLanguageString($server['language'])) ?>
                 </span>
             <?php endif;?>
                 <span class="badge badge-secondary" title="<?php echo $this->__('Known Users')?>">
