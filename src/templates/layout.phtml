@@ -98,7 +98,7 @@
             </li>
             <?php foreach ($pages as $page):?>
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo strtolower(basename($page, '.html'))?>"><?php echo basename($page, '.html')?></a>
+                <a class="nav-link" href="<?php echo strtolower(basename($page, '.html'))?>"><?php echo str_replace('_', ' ', basename($page, '.html'))?></a>
             </li>
             <?php endforeach;?>
         </ul>
