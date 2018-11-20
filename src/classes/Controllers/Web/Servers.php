@@ -42,7 +42,7 @@ class Servers extends BaseController
 		$this->simplecache = $simplecache;
 	}
 
-	public function render(Request $request, Response $response): array
+	public function render(Request $request, Response $response, array $args): array
 	{
 		$stable_version = $this->simplecache->get('stable_version');
 		if (!$stable_version) {
