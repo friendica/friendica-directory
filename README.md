@@ -28,7 +28,11 @@ Please refer to the provided [update instructions](UPDATE.md).
 ## Custom pages
 
 If you need to add custom HTML pages as required by law to publish any website processing data in some countries, simply add your HTML files in the `config/pages` folder, they will be automatically linked from the footer.
-The expected extension is `.html`.
+
+Tips:
+- The expected extension is `.html`.
+- Underscores in the page file name are replaced by spaces in the page link label.
+- Accents aren't supported.
 
 ## See also
 
