@@ -96,6 +96,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="stats"><i class="fa fa-clipboard-list"></i> <?php echo $this->__('Stats')?></a>
             </li>
+            <?php foreach ($pages as $page):?>
+            <li class="nav-item">
+                <a class="nav-link" href="<?php echo strtolower(basename($page, '.html'))?>"><?php echo basename($page, '.html')?></a>
+            </li>
+            <?php endforeach;?>
         </ul>
     </div>
 </nav>

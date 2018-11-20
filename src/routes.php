@@ -36,4 +36,13 @@ $app->get('/VERSION', function (Request $request, Response $response) {
 	return $response;
 });
 
+
+foreach(glob(__DIR__ . '/../config/pages/*.html') as $page) {
+	$app->get('/' . strtolower(basename($page, '.html')), function (Request $request, Response $response, $args) use ($page) {
+		$route = new \Friendica\Directory\Routes\Web\Pages($this, $page);
+
+		return $route($request, $response, $args);
+	});
+}
+
 $app->get('/[{account_type}]', \Friendica\Directory\Routes\Web\Directory::class)->setName('directory');

@@ -27,6 +27,7 @@ abstract class BaseRoute
 	public function __invoke(\Slim\Http\Request $request, \Slim\Http\Response $response, array $args): \Slim\Http\Response
 	{
 		$defaults = [
+			'pages'       => glob(__DIR__ . '/../../../../config/pages/*.html'),
 			'version'     => file_get_contents(__DIR__ . '/../../../../VERSION'),
 			'languages'   => $this->container->settings['i18n']['locales'],
 			'lang'        => $request->getAttribute('locale'),
