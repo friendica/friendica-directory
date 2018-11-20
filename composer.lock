@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "09c66f7a0d6f0eea77cfe40057f26e50",
+    "content-hash": "dcef13a8b9735b0678fb0020e80e666d",
     "packages": [
         {
             "name": "asika/simple-console",
@@ -88,16 +88,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.72.1",
+            "version": "3.73.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "5e36d7d70917133a244f62ff81d38871669951b5"
+                "reference": "3b6ebec911d85503f107f2b748acacb2e8485ebb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5e36d7d70917133a244f62ff81d38871669951b5",
-                "reference": "5e36d7d70917133a244f62ff81d38871669951b5",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3b6ebec911d85503f107f2b748acacb2e8485ebb",
+                "reference": "3b6ebec911d85503f107f2b748acacb2e8485ebb",
                 "shasum": ""
             },
             "require": {
@@ -167,7 +167,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-11-16T21:17:38+00:00"
+            "time": "2018-11-20T00:09:45+00:00"
         },
         {
             "name": "boronczyk/localization-middleware",
