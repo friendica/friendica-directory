@@ -3,9 +3,6 @@
 namespace Friendica\Directory\Controllers\Web;
 
 use \Friendica\Directory\Content\Pager;
-use PDO;
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestInterface;
 
 /**
  * @author Hypolite Petovan <mrpetovan@gmail.com>

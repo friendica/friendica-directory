@@ -25,6 +25,11 @@ Please refer to the provided [installation instructions](INSTALL.md).
 
 Please refer to the provided [update instructions](UPDATE.md).
 
+## Custom pages
+
+If you need to add custom HTML pages as required by law to publish any website processing data in some countries, simply add your HTML files in the `config/pages` folder, they will be automatically linked from the footer.
+The expected extension is `.html`.
+
 ## See also
 
 - [Project Concepts](docs/Concepts.md)
