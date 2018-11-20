@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2018-11-16T04:17:37+00:00\n"
-"PO-Revision-Date: 2018-11-18 11:45-0500\n"
+"PO-Revision-Date: 2018-11-19 22:19-0500\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Poedit 2.2\n"
@@ -33,22 +33,22 @@ msgstr "Fin"
 msgid "People"
 msgstr "Utilisateur·rice·s"
 
-#: src\classes\Controllers\Web\Search.php:66
+#: src\classes\Controllers\Web\Search.php:63
 msgctxt "field"
 msgid "Language"
 msgstr "Langue"
 
-#: src\classes\Controllers\Web\Search.php:67
+#: src\classes\Controllers\Web\Search.php:64
 msgctxt "field"
 msgid "Locality"
 msgstr "Localité"
 
-#: src\classes\Controllers\Web\Search.php:68
+#: src\classes\Controllers\Web\Search.php:65
 msgctxt "field"
 msgid "Region"
 msgstr "Région"
 
-#: src\classes\Controllers\Web\Search.php:69
+#: src\classes\Controllers\Web\Search.php:66
 msgctxt "field"
 msgid "Country"
 msgstr "Pays"
@@ -122,7 +122,7 @@ msgctxt "verb"
 msgid "Follow"
 msgstr "Suivre"
 
-#: src\templates\layout.phtml:67 src\templates\sub\profile.phtml:47
+#: src\templates\layout.phtml:65 src\templates\sub\profile.phtml:47
 msgid "Language"
 msgstr "Langue"
 
@@ -213,7 +213,7 @@ msgid_plural "Forums (%d)"
 msgstr[0] "Forum (%s)"
 msgstr[1] "Forums (%d)"
 
-#: src\templates\layout.phtml:62
+#: src\templates\layout.phtml:97
 msgid "Stats"
 msgstr "Stats"
 
@@ -280,3 +280,11 @@ msgstr "Parmi elleux, il y a actuellement <strong>%s utilisateur·rice·s joigna
 #: src\templates\statistics.phtml:34
 msgid "<strong>%s available servers (%s)</strong>"
 msgstr "<strong>%s serveurs joignables (%s)</strong>"
+
+#: src\templates\layout.phtml:91
+msgid "Friendica Directory version %s"
+msgstr "Répertoire Friendica version %s"
+
+#: src\templates\layout.phtml:94
+msgid "Source Code on GitHub"
+msgstr "Code source sur GitHub"

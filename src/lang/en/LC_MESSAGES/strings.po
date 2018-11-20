@@ -35,22 +35,22 @@ msgstr ""
 msgid "People"
 msgstr ""
 
-#: src\classes\Controllers\Web\Search.php:66
+#: src\classes\Controllers\Web\Search.php:63
 msgctxt "field"
 msgid "Language"
 msgstr ""
 
-#: src\classes\Controllers\Web\Search.php:67
+#: src\classes\Controllers\Web\Search.php:64
 msgctxt "field"
 msgid "Locality"
 msgstr ""
 
-#: src\classes\Controllers\Web\Search.php:68
+#: src\classes\Controllers\Web\Search.php:65
 msgctxt "field"
 msgid "Region"
 msgstr ""
 
-#: src\classes\Controllers\Web\Search.php:69
+#: src\classes\Controllers\Web\Search.php:66
 msgctxt "field"
 msgid "Country"
 msgstr ""
@@ -130,7 +130,7 @@ msgctxt "verb"
 msgid "Follow"
 msgstr ""
 
-#: src\templates\layout.phtml:67
+#: src\templates\layout.phtml:65
 #: src\templates\sub\profile.phtml:47
 msgid "Language"
 msgstr ""
@@ -227,7 +227,7 @@ msgid_plural "Forums (%d)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src\templates\layout.phtml:62
+#: src\templates\layout.phtml:97
 msgid "Stats"
 msgstr ""
 
@@ -294,4 +294,12 @@ msgstr ""
 
 #: src\templates\statistics.phtml:34
 msgid "<strong>%s available servers (%s)</strong>"
+msgstr ""
+
+#: src\templates\layout.phtml:91
+msgid "Friendica Directory version %s"
+msgstr ""
+
+#: src\templates\layout.phtml:94
+msgid "Source Code on GitHub"
 msgstr ""
