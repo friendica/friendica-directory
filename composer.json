@@ -73,7 +73,8 @@
             "/composer.*",
             "!/vendor",
             "public/assets/vendor",
-            "!public/assets/vendor/fontawesome/web-fonts-with-css",
+            "!public/assets/vendor/fontawesome/css",
+            "!public/assets/vendor/fontawesome/webfonts",
             "!public/assets/vendor/bootstrap.native/dist"
         ]
     }
