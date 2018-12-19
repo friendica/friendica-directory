@@ -19,7 +19,7 @@
         "asika/simple-console": "^1.0",
         "atlas/pdo": "^1.1",
         "boronczyk/localization-middleware": "^1.4",
-        "byjg/migration": "^2.1",
+        "byjg/migration": "^4.0",
         "byjg/webrequest": "^1.0",
         "gettext/gettext": "^4.6",
         "gofabian/negotiation-middleware": "^0.1.3",
