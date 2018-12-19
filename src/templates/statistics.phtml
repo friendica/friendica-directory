@@ -62,7 +62,7 @@ use \Friendica\Directory\Utils\L10n;
             (<?php echo L10n::formatNumber($version['ratio'], L10n::PERCENT)?>)
             <?php if ($version['version'] == $stable_version):?>
             <span class="badge badge-success"><i class="fa fa-smile"></i> <?php echo $this->__('Stable Version')?></span>
-            <?php elseif ($version['version'] == $dev_version):?>
+            <?php elseif ($version['version'] == $dev_version || $version['version'] == $rc_version):?>
             <span class="badge badge-secondary"><i class="fa fa-poo"></i> <?php echo $this->__('Develop Version')?></span>
             <?php endif;?>
         </li>

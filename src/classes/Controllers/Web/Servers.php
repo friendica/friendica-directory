@@ -56,6 +56,8 @@ class Servers extends BaseController
 			$this->simplecache->set('dev_version', $dev_version);
 		}
 
+		$rc_version = str_replace('-dev', '-rc', $dev_version);
+
 		$pager = new Pager($this->l10n, $request, 20);
 
 		$stmt = 'SELECT *
@@ -89,6 +91,7 @@ AND NOT `hidden`';
 			'servers' => $servers,
 			'pager' => $pager->renderFull($count),
 			'stable_version' => $stable_version,
+			'rc_version' => $rc_version,
 			'dev_version' => $dev_version,
 		];
 

@@ -13,7 +13,7 @@ if ($server['health_score'] <= 0) {
 
 if ($server['version'] == $stable_version) {
 	$version_badge = '<span class="badge badge-success"><i class="fa fa-smile"></i> ' . $this->__('Stable Version') . '</span>';
-} elseif ($server['version'] == $dev_version) {
+} elseif ($server['version'] == $dev_version || $server['version'] == $rc_version) {
 	$version_badge = '<span class="badge badge-secondary"><i class="fa fa-poo"></i> ' . $this->__('Develop Version') . '</span>';
 } else {
 	$version_badge = '<span class="badge badge-warning"><i class="fa fa-frown"></i> ' . $this->__('Outdated Version') . '</span>';

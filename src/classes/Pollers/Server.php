@@ -365,8 +365,10 @@ class Server
 					$this->simplecache->set('dev_version', $dev_version);
 				}
 
-				if ($version == $dev_version) {
-					$max_health = 95; //Develop can be unstable
+				$rc_version = str_replace('-dev', '-rc', $dev_version);
+
+				if ($version == $dev_version || $version == $rc_version) {
+					$max_health = 95; //Develop/RC can be unstable
 				} elseif ($version !== $stable_version) {
 					$delta = min($delta, 0) - 10; // Losing score as time passes if node isn't updated
 				}

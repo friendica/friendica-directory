@@ -5,7 +5,7 @@
 <div class="row">
 	<?php foreach ($servers as $server) : ?>
         <div class="col-xl-6">
-			<?php echo $this->fetch('sub/server.phtml', ['server' => $server, 'stable_version' => $stable_version, 'dev_version' => $dev_version]) ?>
+			<?php echo $this->fetch('sub/server.phtml', ['server' => $server, 'stable_version' => $stable_version, 'rc_version' => $rc_version, 'dev_version' => $dev_version]) ?>
         </div>
 	<?php endforeach; ?>
 </div>

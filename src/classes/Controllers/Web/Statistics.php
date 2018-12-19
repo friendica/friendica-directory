@@ -65,6 +65,8 @@ class Statistics extends BaseController
 			$this->simplecache->set('dev_version', $dev_version);
 		}
 
+		$rc_version = str_replace('-dev', '-rc', $dev_version);
+
 		$serverPollQueueCount = $this->connection->fetchValue('SELECT COUNT(*) FROM `server_poll_queue`');
 
 		$serverCounts = $this->connection->fetchOne(
@@ -74,11 +76,11 @@ class Statistics extends BaseController
 				SUM(CASE WHEN `available` AND `language` IS NOT NULL THEN 1 ELSE 0 END) AS `language`,
 				SUM(CASE WHEN `available` AND `reg_policy` = "REGISTER_OPEN" THEN 1 ELSE 0 END) AS `open`,
 				SUM(CASE WHEN `available` AND `version` IS NOT NULL THEN 1 ELSE 0 END) AS `version`,
-				SUM(CASE WHEN `available` AND `version` = :dev_version THEN 1 ELSE 0 END) AS `dev_version`,
+				SUM(CASE WHEN `available` AND (`version` = :dev_version OR `version` = :rc_version) THEN 1 ELSE 0 END) AS `dev_version`,
 				SUM(CASE WHEN `available` AND `version` = :stable_version THEN 1 ELSE 0 END) AS `stable_version`,
-				SUM(CASE WHEN `available` AND `version` != :dev_version AND `version` != :stable_version THEN 1 ELSE 0 END) AS `outdated_version`
+				SUM(CASE WHEN `available` AND `version` != :dev_version AND `version` != :stable_version AND `version` != :rc_version THEN 1 ELSE 0 END) AS `outdated_version`
 			FROM `server`
-			WHERE NOT `hidden`', ['dev_version' => $dev_version, 'stable_version' => $stable_version]);
+			WHERE NOT `hidden`', ['dev_version' => $dev_version, 'rc_version' => $rc_version, 'stable_version' => $stable_version]);
 
 		$stmt = 'SELECT LEFT(`language`, 2) AS `language`, COUNT(*) AS `total`, COUNT(*) / :total AS `ratio`
 			FROM `server`
@@ -145,6 +147,7 @@ class Statistics extends BaseController
 				],
 			],
 			'dev_version' => $dev_version,
+			'rc_version' => $rc_version,
 			'stable_version' => $stable_version,
 		];
 
