@@ -2,8 +2,7 @@
 
 namespace Friendica\Directory\Controllers\Api;
 
-use \Friendica\Directory\Content\Pager;
-use PDO;
+use Friendica\Directory\Content\Pager;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
@@ -74,7 +73,6 @@ AND `account_type` = :account_type';
 			'profiles'     => $profiles
 		];
 
-		// Render index view
 		return $response->withJson($vars);
 	}
 }
