@@ -21,6 +21,8 @@ $app->get('/search[/{account_type}]', function (Request $request, Response $resp
 	return $route($request, $response, $args);
 })->setName('search');
 
+$app->post('/msearch', \Friendica\Directory\Routes\Http\MatchSearch::class);
+
 $app->get('/stats', \Friendica\Directory\Routes\Web\Statistics::class);
 
 $app->get('/submit', \Friendica\Directory\Routes\Http\Submit::class);
