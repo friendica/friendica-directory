@@ -65,24 +65,14 @@ Example:
 {
       "query": "videogame gaming boardgame politics philosophy development programming php",
       "page": 1,
-      "itemsperpage": 80,
-      "count": 93,
-      "profiles": [
+      "items_page": 100,
+      "total": 32,
+      "results": [
             {
-                  "id": "2259",
                   "name": "Hyp🌧lite Pe☂ov🍃n (he/him)",
-                  "username": "hypolite",
-                  "addr": "hypolite@friendica.mrpetovan.com",
-                  "account_type": "People",
-                  "pdesc": "Subpar geek, french/english, science, games, feminism, jokes and anything in between. Avatar by @DearMsDear@mastodon.art",
-                  "locality": "Brooklyn",
-                  "region": "New York",
-                  "country": "USA",
-                  "profile_url": "https://friendica.mrpetovan.com/profile/hypolite",
-                  "dfrn_request": "https://friendica.mrpetovan.com/dfrn_request/hypolite",
-                  "photo": "https://friendica.mrpetovan.com/photo/27330388315ae4ed2b03e3c116980490-4.jpg?ts=1541567135",
-                  "tags": "videogame gaming boardgame politics philosophy development programming php",
-                  "last_activity": "2018-45"
+                  "url": "https://friendica.mrpetovan.com/profile/hypolite",
+                  "photo": "https://friendica.mrpetovan.com/photo/27330388315ae4ed2b03e3c116980490-4.jpg?ts=1545521478",
+                  "tags": "videogame gaming boardgame politics philosophy development programming php"
             },
             ...
       ]

@@ -53,14 +53,24 @@ class MatchSearch
 
 		$profiles = $this->profileModel->getListForDisplay($pager->getItemsPerPage(), $pager->getStart(), $sql_where, $values);
 
+		$results = [];
+		foreach ($profiles as $profile) {
+			$results[] = [
+				'name'  => $profile['name'],
+				'url'   => $profile['profile_url'],
+				'photo' => $profile['photo'],
+				'tags'  => $profile['tags'],
+			];
+		}
+
 		$count = $this->profileModel->getCountForDisplay($sql_where, $values);
 
 		$vars = [
-			'query'        => $query,
-			'page'         => $pager->getPage(),
-			'itemsperpage' => $pager->getItemsPerPage(),
-			'count'        => $count,
-			'profiles'     => $profiles
+			'query'      => $query,
+			'page'       => $pager->getPage(),
+			'items_page' => $pager->getItemsPerPage(),
+			'total'      => $count,
+			'results'    => $results
 		];
 
 		return $response->withJson($vars);
