@@ -27,7 +27,13 @@ class Surprise
 	{
 		$redirectUrl = '';
 
-		$sql = 'SELECT base_url FROM server WHERE reg_policy = "REGISTER_OPEN" AND health_score > 75 ORDER BY health_score DESC, RAND()';
+		$sql = 'SELECT `base_url`, server.*
+			FROM `server`
+			WHERE `reg_policy` = "REGISTER_OPEN"
+			AND `health_score` > 75
+			AND `ssl_state`
+			AND `available`
+			ORDER BY `health_score` DESC, RAND()';
 
 		$server = $this->atlas->fetchOne($sql);
 		if ($server) {
