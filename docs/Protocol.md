@@ -1,5 +1,13 @@
 # Friendica Directory Protocol
 
+## Surprise
+
+```
+GET /servers/surprise
+```
+
+Redirects to the base URL of a random server with open registration policy and above 75 health.
+
 ## Search
 
 ```

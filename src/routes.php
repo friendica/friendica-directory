@@ -9,6 +9,7 @@ use Slim\Http\Response;
  * @var $app \Slim\App
  */
 
+$app->get('/servers/surprise', \Friendica\Directory\Routes\Http\Surprise::class);
 $app->get('/servers', \Friendica\Directory\Routes\Web\Servers::class);
 
 $app->get('/search[/{account_type}]', function (Request $request, Response $response, $args) {
