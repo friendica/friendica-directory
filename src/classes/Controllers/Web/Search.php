@@ -49,9 +49,10 @@ class Search extends BaseController
 	{
 		$pager = new Pager($this->l10n, $request, 20);
 
-		$originalQuery = $query = filter_input(INPUT_GET, 'q');
+		$originalQuery = $query = $request->getParam('q', '');
+		$field = $request->getParam('field', '');
 
-		$field = filter_input(INPUT_GET, 'field', FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW & FILTER_FLAG_STRIP_HIGH);
+		$field = filter_var($field, FILTER_SANITIZE_STRING, FILTER_FLAG_STRIP_LOW | FILTER_FLAG_STRIP_HIGH | FILTER_FLAG_STRIP_BACKTICK);
 
 		$fieldName = '';
 
@@ -73,7 +74,6 @@ AGAINST (:query IN BOOLEAN MODE)";
 		}
 
 		$values = ['query' => $query];
-
 
 		$account_type = $args['account_type'] ?? '';
 
