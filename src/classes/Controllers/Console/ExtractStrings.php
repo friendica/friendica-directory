@@ -2,7 +2,6 @@
 
 namespace Friendica\Directory\Controllers\Console;
 
-use Friendica\Directory\Utils\L10n;
 use Gettext\Merge;
 use Gettext\Translations;
 
