@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5eb39ba139e34a3dca80e1859ef5d303",
+    "content-hash": "0179cccd89f6bd7fd8ade738431b1a3b",
     "packages": [
         {
             "name": "asika/simple-console",
@@ -1393,20 +1393,20 @@
         },
         {
             "name": "sarahman/simple-filesystem-cache",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sarahman/simple-cache.git",
-                "reference": "676ab9210b8d8b148e9decc5255d1c5e4e54a697"
+                "url": "https://github.com/sarahman/simple-filesystem-cache.git",
+                "reference": "9cc152e022aca8009dc4f5a18d07ff27c67e6495"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sarahman/simple-cache/zipball/676ab9210b8d8b148e9decc5255d1c5e4e54a697",
-                "reference": "676ab9210b8d8b148e9decc5255d1c5e4e54a697",
+                "url": "https://api.github.com/repos/sarahman/simple-filesystem-cache/zipball/9cc152e022aca8009dc4f5a18d07ff27c67e6495",
+                "reference": "9cc152e022aca8009dc4f5a18d07ff27c67e6495",
                 "shasum": ""
             },
             "require": {
-                "psr/cache": "~1.0",
+                "ext-json": "*",
                 "psr/simple-cache": "*"
             },
             "provide": {
@@ -1429,7 +1429,7 @@
                 }
             ],
             "description": "Simple file system cache library for PHP built on top of PSR-16.",
-            "time": "2018-08-23T21:45:37+00:00"
+            "time": "2019-03-04T19:15:42+00:00"
         },
         {
             "name": "seld/cli-prompt",
@@ -2852,6 +2852,7 @@
                 "mock",
                 "xunit"
             ],
+            "abandoned": true,
             "time": "2017-06-30T09:13:00+00:00"
         },
         {
@@ -3817,9 +3818,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "sarahman/simple-filesystem-cache": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
