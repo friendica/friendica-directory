@@ -41,16 +41,16 @@
         },
         {
             "name": "atlas/pdo",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/atlasphp/Atlas.Pdo.git",
-                "reference": "3fad08d7732b0760b7706c65bc727426483610dd"
+                "reference": "31e9aa28f86d999260ac842da45a81f46b8c4826"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/atlasphp/Atlas.Pdo/zipball/3fad08d7732b0760b7706c65bc727426483610dd",
-                "reference": "3fad08d7732b0760b7706c65bc727426483610dd",
+                "url": "https://api.github.com/repos/atlasphp/Atlas.Pdo/zipball/31e9aa28f86d999260ac842da45a81f46b8c4826",
+                "reference": "31e9aa28f86d999260ac842da45a81f46b8c4826",
                 "shasum": ""
             },
             "require": {
@@ -84,7 +84,7 @@
                 "pdo",
                 "sql"
             ],
-            "time": "2018-08-08T13:04:27+00:00"
+            "time": "2019-03-01T14:17:13+00:00"
         },
         {
             "name": "boronczyk/localization-middleware",
@@ -173,16 +173,16 @@
         },
         {
             "name": "bower-asset/fontawesome",
-            "version": "5.7.1",
+            "version": "5.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FortAwesome/Font-Awesome.git",
-                "reference": "def7d5bda0d2df311fe069f805093c2fe019139d"
+                "reference": "1cf1062e0cfda5e9b5b2cac7844721b345e1a9c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/def7d5bda0d2df311fe069f805093c2fe019139d",
-                "reference": "def7d5bda0d2df311fe069f805093c2fe019139d",
+                "url": "https://api.github.com/repos/FortAwesome/Font-Awesome/zipball/1cf1062e0cfda5e9b5b2cac7844721b345e1a9c5",
+                "reference": "1cf1062e0cfda5e9b5b2cac7844721b345e1a9c5",
                 "shasum": ""
             },
             "type": "bower-asset-library"
@@ -1700,16 +1700,16 @@
     "packages-dev": [
         {
             "name": "bower-asset/bootstrap",
-            "version": "v4.2.1",
+            "version": "v4.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "9e4e94747bd698f4f61d48ed54c9c6d4d199bd32"
+                "reference": "8fa0d3010112dca5dd6dd501173415856001ba8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/9e4e94747bd698f4f61d48ed54c9c6d4d199bd32",
-                "reference": "9e4e94747bd698f4f61d48ed54c9c6d4d199bd32",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/8fa0d3010112dca5dd6dd501173415856001ba8b",
+                "reference": "8fa0d3010112dca5dd6dd501173415856001ba8b",
                 "shasum": ""
             },
             "type": "bower-asset-library"
@@ -2100,16 +2100,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.2.0",
+            "version": "v4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "594bcae1fc0bccd3993d2f0d61a018e26ac2865a"
+                "reference": "5221f49a608808c1e4d436df32884cbc1b821ac0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/594bcae1fc0bccd3993d2f0d61a018e26ac2865a",
-                "reference": "594bcae1fc0bccd3993d2f0d61a018e26ac2865a",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/5221f49a608808c1e4d436df32884cbc1b821ac0",
+                "reference": "5221f49a608808c1e4d436df32884cbc1b821ac0",
                 "shasum": ""
             },
             "require": {
@@ -2147,7 +2147,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2019-01-12T16:31:37+00:00"
+            "time": "2019-02-16T20:54:15+00:00"
         },
         {
             "name": "openlss/lib-array2xml",
@@ -3539,16 +3539,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.2.3",
+            "version": "v4.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "d461670ee145092b7e2a56c1da7118f19cadadb0"
+                "reference": "761fa560a937fd7686e5274ff89dcfa87a5047df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/d461670ee145092b7e2a56c1da7118f19cadadb0",
-                "reference": "d461670ee145092b7e2a56c1da7118f19cadadb0",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/761fa560a937fd7686e5274ff89dcfa87a5047df",
+                "reference": "761fa560a937fd7686e5274ff89dcfa87a5047df",
                 "shasum": ""
             },
             "require": {
@@ -3594,7 +3594,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-16T20:35:37+00:00"
+            "time": "2019-02-23T15:17:42+00:00"
         },
         {
             "name": "vimeo/psalm",
