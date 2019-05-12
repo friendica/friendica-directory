@@ -40,7 +40,7 @@ class AccountTypeTabs
 			AND NOT p.`hidden`
 			' . $condition . '
 			GROUP BY p.`account_type`
-			ORDER BY `filled_fields` DESC, `last_activity` DESC, `updated` DESC';
+			ORDER BY `count` DESC';
 		$account_types = $this->connection->fetchAll($stmt, $values);
 
 		$tabs = [

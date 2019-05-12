@@ -30,7 +30,7 @@ FROM `profile`
 WHERE `country` != ""
 AND `available`
 GROUP BY `country`
-ORDER BY COUNT(`country`) DESC
+ORDER BY `total` DESC
 LIMIT 10';
 		$countries = $this->connection->fetchAll($stmt);
 

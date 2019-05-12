@@ -93,7 +93,7 @@ class Profile extends \Friendica\Directory\Model
 			WHERE p.`available`
 			AND NOT p.`hidden`
 			' . $condition . '
-			GROUP BY p.`id`
+			GROUP BY p.`id`, `filled_fields`, `last_activity`, `updated`
 			ORDER BY `filled_fields` DESC, `last_activity` DESC, `updated` DESC
 			LIMIT :start, :limit';
 		$profiles = $this->atlas->fetchAll($stmt, $values);

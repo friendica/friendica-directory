@@ -49,7 +49,7 @@ class Statistics extends BaseController
 			AND `available` 
 			AND NOT `hidden`
 			GROUP BY `language`
-			ORDER BY COUNT(*) DESC';
+			ORDER BY `total` DESC';
 
 		$profileLanguages = $this->connection->fetchAll($stmt, ['total' => $profileCounts['language']]);
 
@@ -88,7 +88,7 @@ class Statistics extends BaseController
 			AND `available` 
 			AND NOT `hidden`
 			GROUP BY LEFT(`language`, 2)
-			ORDER BY COUNT(*) DESC';
+			ORDER BY `total` DESC';
 
 		$serverLanguages = $this->connection->fetchAll($stmt, ['total' => $serverCounts['language']]);
 
@@ -98,7 +98,7 @@ class Statistics extends BaseController
 			AND `available` 
 			AND NOT `hidden`
 			GROUP BY `version`
-			ORDER BY COUNT(*) DESC';
+			ORDER BY `total` DESC';
 
 		$serverVersions = $this->connection->fetchAll($stmt, ['total' => $serverCounts['version']]);
 
