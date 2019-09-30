@@ -1,6 +1,5 @@
 # Translators:
-# Tobias Diekershoff <tobias.diekershoff@gmx.net>, 2018
-# Vladimir Núñez <lapoubelle111@gmail.com>, 2018
+# ButterflyOfFire, 2019
 # 
 msgid ""
 msgstr ""
@@ -8,200 +7,204 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-16T04:17:37+00:00\n"
 "PO-Revision-Date: 2018-11-16 20:30+0000\n"
-"Last-Translator: Vladimir Núñez <lapoubelle111@gmail.com>, 2018\n"
-"Language-Team: French (https://www.transifex.com/Friendica/teams/12172/fr/)\n"
+"Last-Translator: ButterflyOfFire, 2019\n"
+"Language-Team: Arabic (https://www.transifex.com/Friendica/teams/12172/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Language: ar\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: Poedit 2.2\n"
 
 #: src\classes\Content\Pager.php:168 src\classes\Content\Pager.php:216
 msgid "Previous"
-msgstr "Précédent"
+msgstr "السابقة"
 
 #: src\classes\Content\Pager.php:173 src\classes\Content\Pager.php:273
 msgid "Next"
-msgstr "Suivant"
+msgstr "التالية"
 
 #: src\classes\Content\Pager.php:211
 msgid "First"
-msgstr "Début"
+msgstr "الأولى"
 
 #: src\classes\Content\Pager.php:278
 msgid "Last"
-msgstr "Fin"
+msgstr "الأخيرة"
 
 #: src\classes\Controllers\Web\Directory.php:73
 msgid "People"
-msgstr "Utilisateurs"
+msgstr "أشخاص"
 
 #: src\classes\Controllers\Web\Search.php:63
 msgctxt "field"
 msgid "Language"
-msgstr "Langue"
+msgstr "اللغة"
 
 #: src\classes\Controllers\Web\Search.php:64
 msgctxt "field"
 msgid "Locality"
-msgstr "Localité"
+msgstr ""
 
 #: src\classes\Controllers\Web\Search.php:65
 msgctxt "field"
 msgid "Region"
-msgstr "Région"
+msgstr "المنطقة"
 
 #: src\classes\Controllers\Web\Search.php:66
 msgctxt "field"
 msgid "Country"
-msgstr "Pays"
+msgstr "البلد"
 
 #: src\classes\Controllers\Web\Servers.php:88
 msgid "Public Servers"
-msgstr "Serveurs publics"
+msgstr "الخوادم العمومية"
 
 #: src\templates\layout.phtml:4 src\templates\layout.phtml:18
 msgid "Friendica Directory"
-msgstr "Répertoire Friendica"
+msgstr ""
 
 #: src\templates\layout.phtml:23 src\templates\layout.phtml:25
 #: src\templates\layout.phtml:43 src\templates\layout.phtml:45
 #: src\templates\search.phtml:4 src\templates\search.phtml:12
 msgid "Search terms"
-msgstr "Mots-clés"
+msgstr ""
 
 #: src\templates\layout.phtml:24 src\templates\layout.phtml:45
 #: src\templates\search.phtml:11
 msgctxt "noun"
 msgid "Search"
-msgstr "Recherche"
+msgstr "البحث"
 
 #: src\templates\layout.phtml:27 src\templates\layout.phtml:47
 #: src\templates\search.phtml:14
 msgctxt "verb"
 msgid "Search"
-msgstr "Rechercher"
+msgstr "البحث"
 
 #: src\templates\layout.phtml:33
 msgid "Toggle navigation"
-msgstr "Basculer la navigation"
+msgstr ""
 
 #: src\templates\layout.phtml:55
 msgid "Directory"
-msgstr "Répertoire"
+msgstr ""
 
 #: src\templates\layout.phtml:60
 msgid "Public servers"
-msgstr "Serveurs publics"
+msgstr "الخوادم العمومية"
 
 #: src\templates\search.phtml:19
 msgid "%d result for \"%s\""
 msgid_plural "%d results for \"%s\""
-msgstr[0] "%d résultat pour \"%s\""
-msgstr[1] "%d résultats pour \"%s\""
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 #: src\templates\servers.phtml:2
 msgid "Top servers pagination"
-msgstr "Pagination des serveurs haute"
+msgstr ""
 
 #: src\templates\servers.phtml:12
 msgid "Bottom servers pagination"
-msgstr "Pagination des serveurs basse"
+msgstr ""
 
 #: src\templates\sub\profile.phtml:5
 msgid "Filter by locality"
-msgstr "Filtrer par localité"
+msgstr ""
 
 #: src\templates\sub\profile.phtml:11
 msgid "Filter by region"
-msgstr "Filtrer par région"
+msgstr "تصفية حسب المنطقة"
 
 #: src\templates\sub\profile.phtml:17
 msgid "Filter by country"
-msgstr "Filtrer par pays"
+msgstr "تصفية حسب الدولة"
 
 #: src\templates\sub\profile.phtml:31
 msgctxt "verb"
 msgid "Follow"
-msgstr "Suivre"
+msgstr "اتبع"
 
 #: src\templates\layout.phtml:65 src\templates\sub\profile.phtml:47
 msgid "Language"
-msgstr "Langue"
+msgstr "اللغة"
 
 #: src\templates\sub\profile.phtml:50
 msgid "Filter by language"
-msgstr "Filtrer par langue"
+msgstr "تصفية حسب اللغة"
 
 #: src\templates\sub\profile.phtml:56
 msgid "Location"
-msgstr "Localisation"
+msgstr ""
 
 #: src\templates\sub\profile.phtml:69
 msgid "Search Tag"
-msgstr "Rechercher ce tag"
+msgstr ""
 
 #: src\templates\sub\profiles.phtml:1
 msgid "Account type tabs"
-msgstr "Onglets de type de compte"
+msgstr ""
 
 #: src\templates\sub\profiles.phtml:4 src\templates\sub\profiles.phtml:7
 msgid "Top %s pagination"
-msgstr "Pagination %s haute"
+msgstr ""
 
 #: src\templates\sub\profiles.phtml:13 src\templates\sub\profiles.phtml:16
 msgid "Bottom %s pagination"
-msgstr "Pagination %s basse"
+msgstr ""
 
 #: src\templates\statistics.phtml:64 src\templates\sub\server.phtml:15
 msgid "Stable Version"
-msgstr "Version stable"
+msgstr "إصدار ثابت"
 
 #: src\templates\statistics.phtml:66 src\templates\sub\server.phtml:17
 msgid "Develop Version"
-msgstr "Version instable"
+msgstr "إصدار قيد التطوير"
 
 #: src\templates\sub\server.phtml:19
 msgid "Outdated Version"
-msgstr "Version périmée"
+msgstr "إصدار قديم"
 
 #: src\templates\sub\server.phtml:55
 msgid "Admin"
-msgstr "Administrateur"
+msgstr "المدير"
 
 #: src\templates\sub\server.phtml:62
 msgid "No description provided"
-msgstr "Pas de description fournie"
+msgstr "لم يتم تقديم أي وصف"
 
 #: src\templates\sub\server.phtml:65
 msgid "Visit Server"
-msgstr "Visiter ce serveur"
+msgstr "زُر الخادم"
 
 #: src\templates\widget\popularcountries.phtml:2
 msgid "Popular Countries"
-msgstr "Pays populaires"
+msgstr "البلدان الشائعة"
 
 #: src\templates\widget\popularlanguages.phtml:2
 msgid "Popular Languages"
-msgstr "Language populaires"
+msgstr "اللغات الشائعة"
 
 #: src\templates\widget\populartags.phtml:2
 msgid "Popular Tags"
-msgstr "Tags populaires"
+msgstr "الوسوم الشائعة"
 
 #: src\templates\sub\server.phtml:44 src\templates\sub\server.phtml:45
 msgid "Default Language"
-msgstr "Langage de base"
+msgstr "اللغة الافتراضية"
 
 #: src\templates\sub\server.phtml:49
 msgid "Known Users"
-msgstr "Utilisateurs connus"
+msgstr "المستخدِمون المعروفون"
 
 #: src\classes\Views\Widget\AccountTypeTabs.php:48
 msgctxt "account-type"
 msgid "All"
-msgstr "Tout"
+msgstr "الكل"
 
 #: src\classes\Views\Widget\AccountTypeTabs.php:56
 msgctxt "account-type"
@@ -209,6 +212,10 @@ msgid "People (%d)"
 msgid_plural "People (%d)"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 #: src\classes\Views\Widget\AccountTypeTabs.php:57
 msgctxt "account-type"
@@ -216,18 +223,22 @@ msgid "Forum (%d)"
 msgid_plural "Forums (%d)"
 msgstr[0] ""
 msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
 
 #: src\templates\layout.phtml:97
 msgid "Stats"
-msgstr "Statistiques"
+msgstr "الإحصائيات"
 
 #: src\templates\statistics.phtml:4
 msgid "Directory statistics"
-msgstr "Statistiques d'annuaire"
+msgstr "إحصائيات السِجِل"
 
 #: src\templates\statistics.phtml:5
 msgid "Profiles"
-msgstr "Profils"
+msgstr "الملفات الشخصية"
 
 #: src\templates\statistics.phtml:6
 msgid ""
@@ -237,16 +248,16 @@ msgstr ""
 
 #: src\templates\statistics.phtml:15 src\templates\statistics.phtml:44
 msgid "Languages"
-msgstr "Langages"
+msgstr "اللغات"
 
 #: src\templates\statistics.phtml:16
 msgid ""
 "Out of <strong>%s</strong> profiles reporting their language there are:"
-msgstr "parmi <strong>%s</strong>profil mentionnant leur langage il y a:"
+msgstr ""
 
 #: src\templates\statistics.phtml:26
 msgid "Servers"
-msgstr "Serveurs"
+msgstr "الخوادم"
 
 #: src\templates\statistics.phtml:27
 msgid ""
@@ -262,7 +273,7 @@ msgstr ""
 
 #: src\templates\statistics.phtml:32
 msgid "Out of those, there are:"
-msgstr "Parmi ceux-là, il y a:"
+msgstr ""
 
 #: src\templates\statistics.phtml:38
 msgid ""
@@ -276,11 +287,11 @@ msgstr ""
 
 #: src\templates\statistics.phtml:55
 msgid "Versions"
-msgstr "Versions"
+msgstr "الإصدارات"
 
 #: src\templates\statistics.phtml:56
 msgid "Out of <strong>%s</strong> servers reporting their version there are:"
-msgstr "Parmi <strong>%s</strong> serveurs mentionnant leur version il y a:"
+msgstr ""
 
 #: src\templates\statistics.phtml:7
 msgid ""
@@ -293,17 +304,15 @@ msgid ""
 "Out of those, there currently are <strong>%s available profiles "
 "(%s)</strong>. <a href=\"/\">Check them out!</a>"
 msgstr ""
-"Parmi ceux-là, il y a actuellement <strong>%sprofils disponibles "
-"(%s)</strong>. <a href=\"/\">Vérifiez-les!</a>"
 
 #: src\templates\statistics.phtml:34
 msgid "<strong>%s available servers (%s)</strong>"
-msgstr "<strong>%sserveurs disponibles(%s)</strong>"
+msgstr ""
 
 #: src\templates\layout.phtml:91
 msgid "Friendica Directory version %s"
-msgstr "Friendica Annuaire version %s"
+msgstr ""
 
 #: src\templates\layout.phtml:94
 msgid "Source Code on GitHub"
-msgstr "Code source sur GitHub"
+msgstr "الشفرة المصدرية على غيت هب"
