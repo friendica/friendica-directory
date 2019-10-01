@@ -19,7 +19,7 @@ $settings = [
 	'displayErrorDetails' => false, // set to false in production
 	'addContentLengthHeader' => false, // Allow the web server to send the content-length header
 	'i18n' => [
-		'locales' => ['en_US', 'fr_FR', 'cs_CZ', 'de_DE'],
+		'locales' => ['en_US', 'fr_FR', 'cs_CZ', 'de_DE', 'pl_PL', 'ja_JP', 'en_GB', 'it_IT', 'fr_FR', 'et_EE', 'nl_NL', 'th_TH', 'zh_CN', 'ar'],
 		'default' => 'en_US',
 		'path' => __DIR__ . '/lang'
 	],
