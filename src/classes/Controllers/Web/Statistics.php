@@ -74,7 +74,7 @@ class Statistics extends BaseController
 				COUNT(*) AS `total`,
 				SUM(CASE WHEN `available` THEN 1 ELSE 0 END) AS `available`,
 				SUM(CASE WHEN `available` AND `language` IS NOT NULL THEN 1 ELSE 0 END) AS `language`,
-				SUM(CASE WHEN `available` AND `reg_policy` = "REGISTER_OPEN" THEN 1 ELSE 0 END) AS `open`,
+				SUM(CASE WHEN `available` AND `reg_policy` != "REGISTER_CLOSED" THEN 1 ELSE 0 END) AS `open`,
 				SUM(CASE WHEN `available` AND `version` IS NOT NULL THEN 1 ELSE 0 END) AS `version`,
 				SUM(CASE WHEN `available` AND (`version` = :dev_version OR `version` = :rc_version) THEN 1 ELSE 0 END) AS `dev_version`,
 				SUM(CASE WHEN `available` AND `version` = :stable_version THEN 1 ELSE 0 END) AS `stable_version`,
