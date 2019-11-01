@@ -62,7 +62,7 @@ class Servers extends BaseController
 
 		$stmt = 'SELECT *
 FROM `server` s
-WHERE `reg_policy` = "REGISTER_OPEN"
+WHERE `reg_policy` != "REGISTER_CLOSED"
 AND `available`
 AND NOT `hidden`
 ORDER BY `health_score` DESC, `ssl_state` DESC, `info` != "" DESC, `last_seen` DESC
@@ -81,7 +81,7 @@ LIMIT :start, :limit';
 
 		$stmt = 'SELECT COUNT(*)
 FROM `server` s
-WHERE `reg_policy` = "REGISTER_OPEN"
+WHERE `reg_policy` != "REGISTER_CLOSED"
 AND `available`
 AND NOT `hidden`';
 		$count = $this->atlas->fetchValue($stmt);
