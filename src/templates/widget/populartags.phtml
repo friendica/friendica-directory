@@ -3,7 +3,7 @@
     <ul>
 		<?php foreach ($tags as $tag): ?>
             <li>
-                <a href="search?q=<?php echo $this->escapeUrl($tag['term']) ?>">
+                <a href="<?php echo $this->escapeHtmlAttr($this->r('search', [], ['q' => $tag['term']])) ?>">
 					<?php echo $this->e($tag['term']) ?>
                 </a>
             </li>
