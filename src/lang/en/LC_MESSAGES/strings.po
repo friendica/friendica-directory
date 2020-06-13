@@ -35,27 +35,27 @@ msgstr ""
 msgid "People"
 msgstr ""
 
-#: src\classes\Controllers\Web\Search.php:63
+#: src\classes\Controllers\Web\Search.php:64
 msgctxt "field"
 msgid "Language"
 msgstr ""
 
-#: src\classes\Controllers\Web\Search.php:64
+#: src\classes\Controllers\Web\Search.php:65
 msgctxt "field"
 msgid "Locality"
 msgstr ""
 
-#: src\classes\Controllers\Web\Search.php:65
+#: src\classes\Controllers\Web\Search.php:66
 msgctxt "field"
 msgid "Region"
 msgstr ""
 
-#: src\classes\Controllers\Web\Search.php:66
+#: src\classes\Controllers\Web\Search.php:67
 msgctxt "field"
 msgid "Country"
 msgstr ""
 
-#: src\classes\Controllers\Web\Servers.php:88
+#: src\classes\Controllers\Web\Servers.php:90
 msgid "Public Servers"
 msgstr ""
 
@@ -161,12 +161,12 @@ msgstr ""
 msgid "Bottom %s pagination"
 msgstr ""
 
-#: src\templates\statistics.phtml:64
+#: src\templates\statistics.phtml:66
 #: src\templates\sub\server.phtml:15
 msgid "Stable Version"
 msgstr ""
 
-#: src\templates\statistics.phtml:66
+#: src\templates\statistics.phtml:68
 #: src\templates\sub\server.phtml:17
 msgid "Develop Version"
 msgstr ""
@@ -243,44 +243,40 @@ msgstr ""
 msgid "This directory knows about <strong>%s distinct potential profile URLs</strong>."
 msgstr ""
 
-#: src\templates\statistics.phtml:15
-#: src\templates\statistics.phtml:44
+#: src\templates\statistics.phtml:16
+#: src\templates\statistics.phtml:46
 msgid "Languages"
 msgstr ""
 
-#: src\templates\statistics.phtml:16
+#: src\templates\statistics.phtml:17
 msgid "Out of <strong>%s</strong> profiles reporting their language there are:"
 msgstr ""
 
-#: src\templates\statistics.phtml:26
+#: src\templates\statistics.phtml:27
 msgid "Servers"
 msgstr ""
 
-#: src\templates\statistics.phtml:27
+#: src\templates\statistics.phtml:28
 msgid "This directory knows about <strong>%s distinct potential server URLs</strong>."
 msgstr ""
 
-#: src\templates\statistics.phtml:28
+#: src\templates\statistics.phtml:29
 msgid "Out of those, there are <strong>%s domains (%s)</strong> that have been a Friendica server at least once."
 msgstr ""
 
-#: src\templates\statistics.phtml:32
+#: src\templates\statistics.phtml:33
 msgid "Out of those, there are:"
 msgstr ""
 
-#: src\templates\statistics.phtml:38
-msgid "<strong>%s public servers (%s)</strong> currently open for registration. <a href=\"/servers\">Check them out!</a>"
-msgstr ""
-
-#: src\templates\statistics.phtml:45
+#: src\templates\statistics.phtml:47
 msgid "Out of <strong>%s</strong> servers reporting their language there are:"
 msgstr ""
 
-#: src\templates\statistics.phtml:55
+#: src\templates\statistics.phtml:57
 msgid "Versions"
 msgstr ""
 
-#: src\templates\statistics.phtml:56
+#: src\templates\statistics.phtml:58
 msgid "Out of <strong>%s</strong> servers reporting their version there are:"
 msgstr ""
 
@@ -288,11 +284,7 @@ msgstr ""
 msgid "Out of those, there are <strong>%s profiles (%s)</strong> that opted in the public directory at least once."
 msgstr ""
 
-#: src\templates\statistics.phtml:11
-msgid "Out of those, there currently are <strong>%s available profiles (%s)</strong>. <a href=\"/\">Check them out!</a>"
-msgstr ""
-
-#: src\templates\statistics.phtml:34
+#: src\templates\statistics.phtml:35
 msgid "<strong>%s available servers (%s)</strong>"
 msgstr ""
 
@@ -302,4 +294,12 @@ msgstr ""
 
 #: src\templates\layout.phtml:94
 msgid "Source Code on GitHub"
+msgstr ""
+
+#: src\templates\statistics.phtml:11
+msgid "Out of those, there currently are <strong>%s available profiles (%s)</strong>. <a href=\"%s\">Check them out!</a>"
+msgstr ""
+
+#: src\templates\statistics.phtml:39
+msgid "<strong>%s public servers (%s)</strong> currently open for registration. <a href=\"%s\">Check them out!</a>"
 msgstr ""
