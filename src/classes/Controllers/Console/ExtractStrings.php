@@ -6,7 +6,7 @@ use Gettext\Merge;
 use Gettext\Translations;
 
 /**
- * @author Hypolite Petovan <mrpetovan@gmail.com>
+ * @author Hypolite Petovan <hypolite@mrpetovan.com>
  */
 class ExtractStrings extends \Asika\SimpleConsole\Console
 {

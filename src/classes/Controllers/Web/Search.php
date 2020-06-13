@@ -5,7 +5,7 @@ namespace Friendica\Directory\Controllers\Web;
 use \Friendica\Directory\Content\Pager;
 
 /**
- * @author Hypolite Petovan <mrpetovan@gmail.com>
+ * @author Hypolite Petovan <hypolite@mrpetovan.com>
  */
 class Search extends BaseController
 {

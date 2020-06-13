@@ -5,7 +5,7 @@ namespace Friendica\Directory\Content;
 /**
  * The Pager has two very different output, Minimal and Full, see renderMinimal() and renderFull() for more details.
  *
- * @author Hypolite Petovan <mrpetovan@gmail.com>
+ * @author Hypolite Petovan <hypolite@mrpetovan.com>
  */
 class Pager
 {

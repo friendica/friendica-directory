@@ -6,7 +6,7 @@ use Gettext\Languages\Language;
 use Gettext\Translator;
 
 /**
- * @author Hypolite Petovan <mrpetovan@gmail.com>
+ * @author Hypolite Petovan <hypolite@mrpetovan.com>
  */
 class L10n
 {

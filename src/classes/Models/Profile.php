@@ -3,7 +3,7 @@
 namespace Friendica\Directory\Models;
 
 /**
- * @author Hypolite Petovan <mrpetovan@gmail.com>
+ * @author Hypolite Petovan <hypolite@mrpetovan.com>
  */
 class Profile extends \Friendica\Directory\Model
 {

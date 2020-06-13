@@ -5,7 +5,7 @@ namespace Friendica\Directory\Routes\Web;
 use Friendica\Directory\Controllers\Web\BaseController;
 
 /**
- * @author Hypolite Petovan <mrpetovan@gmail.com>
+ * @author Hypolite Petovan <hypolite@mrpetovan.com>
  */
 abstract class BaseRoute
 {

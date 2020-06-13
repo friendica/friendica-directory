@@ -5,7 +5,7 @@ namespace Friendica\Directory\Views;
 /**
  * Zend-Escaper wrapper for Slim PHP Renderer
  *
- * @author Hypolite Petovan <mrpetovan@gmail.com>
+ * @author Hypolite Petovan <hypolite@mrpetovan.com>
  *
  * @method string escapeHtml(string $value)
  * @method string escapeHtmlAttr(string $value)

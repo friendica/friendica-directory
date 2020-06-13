@@ -3,7 +3,7 @@
 namespace Friendica\Directory\Routes\Console;
 
 /**
- * @author Hypolite Petovan <mrpetovan@gmail.com>
+ * @author Hypolite Petovan <hypolite@mrpetovan.com>
  */
 class DirectoryAdd extends BaseRoute
 {

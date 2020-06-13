@@ -5,7 +5,7 @@ namespace Friendica\Directory\Controllers\Console;
 use Friendica\Directory\Models\Profile;
 
 /**
- * @author Hypolite Petovan <mrpetovan@gmail.com>
+ * @author Hypolite Petovan <hypolite@mrpetovan.com>
  */
 class ProfileHide extends \Asika\SimpleConsole\Console
 {

@@ -5,7 +5,7 @@ namespace Friendica\Directory\Controllers\Console;
 use Friendica\Directory\Models\ProfilePollQueue;
 
 /**
- * @author Hypolite Petovan <mrpetovan@gmail.com>
+ * @author Hypolite Petovan <hypolite@mrpetovan.com>
  */
 class ProfileAdd extends \Asika\SimpleConsole\Console
 {
