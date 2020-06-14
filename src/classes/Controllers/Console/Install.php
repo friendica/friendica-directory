@@ -7,7 +7,7 @@ use Monolog\Logger;
 use Seld\CliPrompt\CliPrompt;
 
 /**
- * @author Hypolite Petovan <mrpetovan@gmail.com>
+ * @author Hypolite Petovan <hypolite@mrpetovan.com>
  */
 class Install extends \Asika\SimpleConsole\Console
 {

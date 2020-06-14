@@ -34,7 +34,7 @@ $base_url_display = substr($base_url, strpos($base_url, '/') + 2);
 				<?php else: ?>
                     <span class="badge badge-secondary"><i class="fa fa-lock-open"></i> HTTP</span>
 				<?php endif; ?>
-                <a href="<?php echo $base_url; ?>"><?php echo $this->e($base_url_display); ?></a>
+                <a href="<?php echo $this->escapeHtmlAttr($this->u($base_url)); ?>"><?php echo $this->e($base_url_display); ?></a>
             </h6>
             <p class="card-text">
                 <span class="badge <?php echo $badge_class ?>">
@@ -51,7 +51,7 @@ $base_url_display = substr($base_url, strpos($base_url, '/') + 2);
                 </span>
 				<?php echo $version_badge; ?>
             <?php if ($server['admin_profile'] && $server['admin_name']): ?>
-                <a href="<?php echo $server['admin_profile']; ?>" class="badge badge-primary">
+                <a href="<?php echo $this->escapeHtmlAttr($this->u($server['admin_profile'])); ?>" class="badge badge-primary">
                     <i class="fa fa-star"></i> <?php echo $this->__('Admin')?>: <?php echo $this->e($server['admin_name']); ?>
                 </a>
             <?php endif; ?>
@@ -61,7 +61,7 @@ $base_url_display = substr($base_url, strpos($base_url, '/') + 2);
 			<?php else: ?>
                 <p class="card-text text-muted">&lt;<?php echo $this->__('No description provided')?>&gt;</p>
 			<?php endif; ?>
-            <a href="<?php echo $base_url; ?>" class="card-link btn btn-primary"><i class="fa fa-external-link-alt"></i>
+            <a href="<?php echo $this->escapeHtmlAttr($this->u($base_url)); ?>" class="card-link btn btn-primary"><i class="fa fa-external-link-alt"></i>
 	            <?php echo $this->__('Visit Server')?></a>
         </div>
     </div>

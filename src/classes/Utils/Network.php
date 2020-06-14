@@ -11,7 +11,7 @@ namespace Friendica\Directory\Utils;
 /**
  * Description of Network
  *
- * @author Hypolite Petovan <mrpetovan@gmail.com>
+ * @author Hypolite Petovan <hypolite@mrpetovan.com>
  */
 class Network
 {

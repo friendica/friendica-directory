@@ -5,7 +5,7 @@ namespace Friendica\Directory\Pollers;
 use ByJG\Util\WebRequest;
 
 /**
- * @author Hypolite Petovan <mrpetovan@gmail.com>
+ * @author Hypolite Petovan <hypolite@mrpetovan.com>
  */
 class Server
 {

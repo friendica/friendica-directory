@@ -2,10 +2,13 @@
 
 namespace Friendica\Directory\Views;
 
+use Friendica\Directory\Utils\Url;
+use Slim\Router;
+
 /**
  * Zend-Escaper wrapper for Slim PHP Renderer
  *
- * @author Hypolite Petovan <mrpetovan@gmail.com>
+ * @author Hypolite Petovan <hypolite@mrpetovan.com>
  *
  * @method string escapeHtml(string $value)
  * @method string escapeHtmlAttr(string $value)
@@ -32,10 +35,15 @@ class PhpRenderer extends \Slim\Views\PhpRenderer
 	 * @var \Gettext\TranslatorInterface
 	 */
 	private $l10n;
+	/**
+	 * @var Router
+	 */
+	private $router;
 
 	public function __construct(
 		\Zend\Escaper\Escaper $escaper,
 		\Gettext\TranslatorInterface $l10n,
+		Router $router,
 		string $templatePath = "",
 		array $attributes = array()
 	)
@@ -44,6 +52,7 @@ class PhpRenderer extends \Slim\Views\PhpRenderer
 
 		$this->escaper = $escaper;
 		$this->l10n = $l10n;
+		$this->router = $router;
 	}
 
 	public function e(string $value): string
@@ -58,7 +67,7 @@ class PhpRenderer extends \Slim\Views\PhpRenderer
 		} elseif (method_exists($this->l10n, $name)) {
 			return $this->l10n->$name(...$arguments);
 		} else {
-			throw new \Exception('Unknown PhpRendere magic method: ' . $name);
+			throw new \Exception('Unknown PhpRenderer magic method: ' . $name);
 		}
 	}
 
@@ -172,5 +181,45 @@ class PhpRenderer extends \Slim\Views\PhpRenderer
 		return !empty($args[1]) && is_array($args[1]) ? strtr($text, $args[1]) : vsprintf($text, $args);
 	}
 
+	/**
+	 * Return the URL of the provided route and parameters
+	 *
+	 * @param string $name
+	 * @param array  $data
+	 * @param array  $queryParams
+	 * @return string
+	 */
+	function r(string $name, array $data = [], array $queryParams = [])
+	{
+		if ($this->getAttribute('zrl')) {
+			$queryParams['zrl'] = $this->getAttribute('zrl');
+		}
 
+		return $this->router->pathFor($name, $data, $queryParams);
+	}
+
+	/**
+	 * Add sitewide ZRL support for external URLs
+	 *
+	 * @param string $url
+	 */
+	function u(string $url)
+	{
+		if ($this->getAttribute('zrl')) {
+			$queryParameters = [];
+
+			$parsed = parse_url($url);
+			if (!empty($parsed['query'])) {
+				parse_str($parsed['query'], $queryParameters);
+			}
+
+			$queryParameters['zrl'] = $this->getAttribute('zrl');
+
+			$parsed['query'] = http_build_query($queryParameters);
+
+			$url = Url::unparse($parsed);
+		}
+
+		return $url;
+	}
 }

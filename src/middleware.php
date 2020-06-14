@@ -52,3 +52,5 @@ $middleware->setLocaleCallback(function (string $locale) use ($container) {
 $middleware->setUriParamName('lang');
 
 $app->add($middleware);
+
+$app->add(new \Friendica\Directory\Middleware\ZrlMiddleware($container->get('renderer')));

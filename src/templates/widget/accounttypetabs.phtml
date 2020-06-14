@@ -2,7 +2,7 @@
 	<?php foreach ($tabs as $tab): ?>
         <li class="nav-item">
             <a class="nav-link<?php echo $tab['active'] ? ' active' : '' ?>"
-               href="<?php echo $this->escapeHtmlAttr($tab['link']) ?>"><?php echo $this->e($tab['title']) ?></a>
+               href="<?php echo $this->escapeHtmlAttr($this->u($tab['link'])) ?>"><?php echo $this->e($tab['title']) ?></a>
         </li>
 	<?php endforeach; ?>
 </ul>

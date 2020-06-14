@@ -8,9 +8,10 @@ use \Friendica\Directory\Utils\L10n;
         L10n::formatNumber($stats['profile']['total']),
         L10n::formatNumber($stats['profile']['ratio'], L10n::PERCENT)
     )?></p>
-<p><?php echo $this->__('Out of those, there currently are <strong>%s available profiles (%s)</strong>. <a href="/">Check them out!</a>',
+<p><?php echo $this->__('Out of those, there currently are <strong>%s available profiles (%s)</strong>. <a href="%s">Check them out!</a>',
 		L10n::formatNumber($stats['profile']['available']['total']),
-        L10n::formatNumber($stats['profile']['available']['ratio'], L10n::PERCENT)
+        L10n::formatNumber($stats['profile']['available']['ratio'], L10n::PERCENT),
+		$this->escapeHtmlAttr($this->u(''))
     )?></p>
 <h3><?php echo $this->__('Languages') ?></h3>
 <p><?php echo $this->__('Out of <strong>%s</strong> profiles reporting their language there are:', L10n::formatNumber($stats['profile']['language']['total']))?></p>
@@ -35,9 +36,10 @@ use \Friendica\Directory\Utils\L10n;
         L10n::formatNumber($stats['server']['available']['total']),
         L10n::formatNumber($stats['server']['available']['ratio'], L10n::PERCENT)
     )?></li>
-    <li><?php echo $this->__('<strong>%s public servers (%s)</strong> currently open for registration. <a href="/servers">Check them out!</a>',
+    <li><?php echo $this->__('<strong>%s public servers (%s)</strong> currently open for registration. <a href="%s">Check them out!</a>',
         L10n::formatNumber($stats['server']['open']['total']),
-        L10n::formatNumber($stats['server']['open']['ratio'], L10n::PERCENT)
+        L10n::formatNumber($stats['server']['open']['ratio'], L10n::PERCENT),
+		$this->escapeHtmlAttr($this->r('servers'))
     )?></li>
 </ul>
 

@@ -3,7 +3,7 @@
 namespace Friendica\Directory\Utils;
 
 /**
- * @author Hypolite Petovan <mrpetovan@gmail.com>
+ * @author Hypolite Petovan <hypolite@mrpetovan.com>
  */
 class Photo
 {

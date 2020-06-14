@@ -25,7 +25,12 @@ $container['escaper'] = function (ContainerInterface $c): Zend\Escaper\Escaper {
 // view renderer
 $container['renderer'] = function (ContainerInterface $c): Friendica\Directory\Views\PhpRenderer {
 	$settings = $c->get('settings')['renderer'];
-	return new Friendica\Directory\Views\PhpRenderer($c->get('escaper'), $c->get('l10n'), $settings['template_path']);
+	return new Friendica\Directory\Views\PhpRenderer(
+		$c->get('escaper'),
+		$c->get('l10n'),
+		$c->get('router'),
+		$settings['template_path']
+	);
 };
 
 // monolog

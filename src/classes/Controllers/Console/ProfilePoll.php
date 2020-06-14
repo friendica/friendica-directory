@@ -3,7 +3,7 @@
 namespace Friendica\Directory\Controllers\Console;
 
 /**
- * @author Hypolite Petovan <mrpetovan@gmail.com>
+ * @author Hypolite Petovan <hypolite@mrpetovan.com>
  */
 class ProfilePoll extends \Asika\SimpleConsole\Console
 {

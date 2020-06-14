@@ -1,19 +1,19 @@
 <?php
 $parts = [];
 if (!empty($profile['locality'])) {
-	$parts[] = $this->escapeHtml($profile['locality']) . ' <a href="search?field=locality&q=' . $this->escapeUrl($profile['locality']) . '">
+	$parts[] = $this->escapeHtml($profile['locality']) . ' <a href="' . $this->escapeHtmlAttr($this->r('search', [], ['field' => 'locality', 'q' => $profile['locality']])) . '">
         <span class="fa fa-filter" title="' . $this->__('Filter by locality') . '" aria-hidden="true"></span>
     </a>';
 }
 if (!empty($profile['region'])
 	&& strtolower($profile['locality']) != strtolower($profile['region'])) {
-	$parts[] = $this->escapeHtml($profile['region']) . ' <a href="search?field=region&q=' . $this->escapeUrl($profile['region']) . '">
+	$parts[] = $this->escapeHtml($profile['region']) . ' <a href="' . $this->escapeHtmlAttr($this->r('search', [], ['field' => 'region', 'q' => $profile['region']])) . '">
         <span class="fa fa-filter" title="' . $this->__('Filter by region') . '" aria-hidden="true"></span>
     </a>';
 }
 
 if (!empty($profile['country'])) {
-	$parts[] = $this->escapeHtml($profile['country']) . ' <a href="search?field=country&q=' . $this->escapeUrl($profile['country']) . '">
+	$parts[] = $this->escapeHtml($profile['country']) . ' <a href="' . $this->escapeHtmlAttr($this->r('search', [], ['field' => 'country', 'q' => $profile['country']])) . '">
         <span class="fa fa-filter" title="' . $this->__('Filter by country') . '" aria-hidden="true"></span>
     </a>';
 }
@@ -21,20 +21,20 @@ if (!empty($profile['country'])) {
 
 <figure id="profile-<?php echo $this->escapeHtmlAttr($profile['id']) ?>" class="bg-light p-3 rounded">
     <div class="media">
-        <a href="<?php echo $this->escapeHtmlAttr($profile['profile_url']) ?>">
+        <a href="<?php echo $this->escapeHtmlAttr($this->u($profile['profile_url'])) ?>">
             <img class="mr-3 rounded" src="photo/<?php echo $profile['id'] ?>.jpg">
         </a>
         <div class="media-body">
             <h5 class="name">
 				<?php if ($profile['dfrn_request']): ?>
-                    <a href="<?php echo $profile['dfrn_request']; ?>" class="card-link btn btn-primary float-right">
+                    <a href="<?php echo $this->escapeHtmlAttr($this->u($profile['dfrn_request'])); ?>" class="card-link btn btn-primary float-right">
                         <i class="fa fa-external-link-alt"></i> <?php echo $this->p__('verb', 'Follow')?>
                     </a>
 				<?php endif; ?>
 				<?php echo $this->escapeHtml($profile['name']) ?>
             </h5>
             <p class="url">
-                <a href="<?php echo $this->escapeHtmlAttr($profile['profile_url']) ?>">
+                <a href="<?php echo $this->escapeHtmlAttr($this->u($profile['profile_url'])) ?>">
                     <?php echo $this->escapeHtml($profile['addr']) ?>
                 </a>
             </p>
@@ -46,7 +46,7 @@ if (!empty($profile['country'])) {
     <div class="language">
         <i class="fa fa-language" alt="<?php echo $this->__('Language')?>" title="<?php echo $this->__('Language')?>"></i>
         <?php echo $this->e(Friendica\Directory\Utils\L10n::localeToLanguageString($profile['language'])) ?>
-        <a href="/search?field=language&amp;q=<?php echo $this->escapeUrl($profile['language']) ?>">
+        <a href="<?php echo $this->escapeHtmlAttr($this->r('search', [], ['field' => 'language', 'q' => $profile['language']])) ?>">
             <i class="fa fa-filter" title="<?php echo $this->__('Filter by language')?>"></i>
         </a>
     </div>
@@ -65,7 +65,7 @@ if (!empty($profile['country'])) {
 			foreach ($tags as $tag):?>
                 <span class="badge">
                     <?php echo $this->escapeHtml($tag) ?>
-                    <a href="/search?q=<?php echo $this->escapeUrl($tag) ?>">
+                    <a href="<?php echo $this->escapeHtmlAttr($this->r('search', [], ['q' => $tag])) ?>">
                         <i class="fa fa-tag" title="<?php echo $this->__('Search Tag')?>"></i>
                     </a>
                 </span>

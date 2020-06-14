@@ -5,7 +5,7 @@ namespace Friendica\Directory\Controllers\Console;
 use Monolog\Logger;
 
 /**
- * @author Hypolite Petovan <mrpetovan@gmail.com>
+ * @author Hypolite Petovan <hypolite@mrpetovan.com>
  */
 class UpdateDb extends \Asika\SimpleConsole\Console
 {
