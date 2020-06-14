@@ -20,6 +20,7 @@
         "atlas/pdo": "^1.1",
         "boronczyk/localization-middleware": "^1.4",
         "byjg/migration": "^4.0",
+        "byjg/uri": "^1.0.4",
         "byjg/webrequest": "^1.0",
         "gettext/gettext": "^4.6",
         "gofabian/negotiation-middleware": "^0.1.3",
