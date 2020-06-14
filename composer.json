@@ -39,8 +39,8 @@
     "require-dev": {
         "bower-asset/bootstrap": "^4.1",
         "phpunit/phpunit": ">=4.8 < 6.0",
-        "vimeo/psalm": "^2.0",
-        "leafo/scssphp": "^0.7.7"
+        "scssphp/scssphp": "^1.1",
+        "vimeo/psalm": "^2.0"
     },
     "autoload": {
         "psr-4": {
