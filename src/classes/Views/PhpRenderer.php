@@ -2,7 +2,6 @@
 
 namespace Friendica\Directory\Views;
 
-use Friendica\Directory\Utils\Url;
 use Slim\Router;
 
 /**
@@ -206,18 +205,9 @@ class PhpRenderer extends \Slim\Views\PhpRenderer
 	function u(string $url)
 	{
 		if ($this->getAttribute('zrl')) {
-			$queryParameters = [];
-
-			$parsed = parse_url($url);
-			if (!empty($parsed['query'])) {
-				parse_str($parsed['query'], $queryParameters);
-			}
-
-			$queryParameters['zrl'] = $this->getAttribute('zrl');
-
-			$parsed['query'] = http_build_query($queryParameters);
-
-			$url = Url::unparse($parsed);
+			$uri = new \ByJG\Util\Uri($url);
+			$uri->withQueryKeyValue('zrl', $this->getAttribute('zrl'));
+			$url = $uri->__toString();
 		}
 
 		return $url;
