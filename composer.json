@@ -53,6 +53,9 @@
         }
     },
     "config": {
+        "platform": {
+            "php": "7.1.0"
+        },
         "process-timeout" : 0,
         "autoloader-suffix": "FriendicaDirectory",
 		"optimize-autoloader": true,
