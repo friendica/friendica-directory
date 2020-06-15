@@ -46,7 +46,7 @@ class Servers extends BaseController
 	{
 		$stable_version = $this->simplecache->get('stable_version');
 		if (!$stable_version) {
-			$stable_version = trim(file_get_contents('https://git.friendi.ca/friendica/friendica/raw/branch/master/VERSION'));
+			$stable_version = trim(file_get_contents('https://git.friendi.ca/friendica/friendica/raw/branch/stable/VERSION'));
 			$this->simplecache->set('stable_version', $stable_version);
 		}
 
