@@ -1,25 +1,27 @@
+# 
+# Translators:
+# fabrixxm <fabrix.xm@gmail.com>, 2019
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-16T04:17:37+00:00\n"
+"PO-Revision-Date: 2018-11-16 20:30+0000\n"
 "Last-Translator: fabrixxm <fabrix.xm@gmail.com>, 2019\n"
 "Language-Team: Italian (https://www.transifex.com/Friendica/teams/12172/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2018-11-16T04:17:37+00:00\n"
-"PO-Revision-Date: 2018-11-16 20:30+0000\n"
 "Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.2\n"
 
-#: src\classes\Content\Pager.php:168
-#: src\classes\Content\Pager.php:216
+#: src\classes\Content\Pager.php:168 src\classes\Content\Pager.php:216
 msgid "Previous"
 msgstr "Precedente"
 
-#: src\classes\Content\Pager.php:173
-#: src\classes\Content\Pager.php:273
+#: src\classes\Content\Pager.php:173 src\classes\Content\Pager.php:273
 msgid "Next"
 msgstr "Successivo"
 
@@ -59,29 +61,23 @@ msgstr "Nazione"
 msgid "Public Servers"
 msgstr "Server Pubblici"
 
-#: src\templates\layout.phtml:4
-#: src\templates\layout.phtml:18
+#: src\templates\layout.phtml:4 src\templates\layout.phtml:18
 msgid "Friendica Directory"
 msgstr "Directory Friendica"
 
-#: src\templates\layout.phtml:23
-#: src\templates\layout.phtml:25
-#: src\templates\layout.phtml:43
-#: src\templates\layout.phtml:45
-#: src\templates\search.phtml:4
-#: src\templates\search.phtml:12
+#: src\templates\layout.phtml:23 src\templates\layout.phtml:25
+#: src\templates\layout.phtml:43 src\templates\layout.phtml:45
+#: src\templates\search.phtml:4 src\templates\search.phtml:12
 msgid "Search terms"
 msgstr "Termini di ricerca"
 
-#: src\templates\layout.phtml:24
-#: src\templates\layout.phtml:45
+#: src\templates\layout.phtml:24 src\templates\layout.phtml:45
 #: src\templates\search.phtml:11
 msgctxt "noun"
 msgid "Search"
 msgstr "Cerca"
 
-#: src\templates\layout.phtml:27
-#: src\templates\layout.phtml:47
+#: src\templates\layout.phtml:27 src\templates\layout.phtml:47
 #: src\templates\search.phtml:14
 msgctxt "verb"
 msgid "Search"
@@ -130,8 +126,7 @@ msgctxt "verb"
 msgid "Follow"
 msgstr "Segui"
 
-#: src\templates\layout.phtml:65
-#: src\templates\sub\profile.phtml:47
+#: src\templates\layout.phtml:65 src\templates\sub\profile.phtml:47
 msgid "Language"
 msgstr "Lingua"
 
@@ -151,23 +146,19 @@ msgstr "Cerca Tag"
 msgid "Account type tabs"
 msgstr "Tab tipo account"
 
-#: src\templates\sub\profiles.phtml:4
-#: src\templates\sub\profiles.phtml:7
+#: src\templates\sub\profiles.phtml:4 src\templates\sub\profiles.phtml:7
 msgid "Top %s pagination"
 msgstr "Paginazione superiore %s"
 
-#: src\templates\sub\profiles.phtml:13
-#: src\templates\sub\profiles.phtml:16
+#: src\templates\sub\profiles.phtml:13 src\templates\sub\profiles.phtml:16
 msgid "Bottom %s pagination"
 msgstr "Paginazione inferiore %s"
 
-#: src\templates\statistics.phtml:66
-#: src\templates\sub\server.phtml:15
+#: src\templates\statistics.phtml:66 src\templates\sub\server.phtml:15
 msgid "Stable Version"
 msgstr "Versione Stabile"
 
-#: src\templates\statistics.phtml:68
-#: src\templates\sub\server.phtml:17
+#: src\templates\statistics.phtml:68 src\templates\sub\server.phtml:17
 msgid "Develop Version"
 msgstr "Versione di Sviluppo"
 
@@ -199,8 +190,7 @@ msgstr "Lingue Popolari"
 msgid "Popular Tags"
 msgstr "Tag Popolari"
 
-#: src\templates\sub\server.phtml:44
-#: src\templates\sub\server.phtml:45
+#: src\templates\sub\server.phtml:44 src\templates\sub\server.phtml:45
 msgid "Default Language"
 msgstr "Lingua di Default"
 
@@ -240,16 +230,20 @@ msgid "Profiles"
 msgstr "Profili"
 
 #: src\templates\statistics.phtml:6
-msgid "This directory knows about <strong>%s distinct potential profile URLs</strong>."
-msgstr "Questa directory conosce <strong> %s distinti URL profili potenziali</strong>."
+msgid ""
+"This directory knows about <strong>%s distinct potential profile "
+"URLs</strong>."
+msgstr ""
+"Questa directory conosce <strong> %s distinti URL profili "
+"potenziali</strong>."
 
-#: src\templates\statistics.phtml:16
-#: src\templates\statistics.phtml:46
+#: src\templates\statistics.phtml:16 src\templates\statistics.phtml:46
 msgid "Languages"
 msgstr "Lingue"
 
 #: src\templates\statistics.phtml:17
-msgid "Out of <strong>%s</strong> profiles reporting their language there are:"
+msgid ""
+"Out of <strong>%s</strong> profiles reporting their language there are:"
 msgstr "Di <strong>%s</strong> profili che riportano la loro lingua, ci sono:"
 
 #: src\templates\statistics.phtml:27
@@ -257,12 +251,20 @@ msgid "Servers"
 msgstr "Server"
 
 #: src\templates\statistics.phtml:28
-msgid "This directory knows about <strong>%s distinct potential server URLs</strong>."
-msgstr "Questa directory conosce <strong>%s distinti URL di server potenziali</strong>."
+msgid ""
+"This directory knows about <strong>%s distinct potential server "
+"URLs</strong>."
+msgstr ""
+"Questa directory conosce <strong>%s distinti URL di server "
+"potenziali</strong>."
 
 #: src\templates\statistics.phtml:29
-msgid "Out of those, there are <strong>%s domains (%s)</strong> that have been a Friendica server at least once."
-msgstr "Di questi, ci sono <strong>%s domini (%s)</strong> che sono stati un server Friendica almeno una volta."
+msgid ""
+"Out of those, there are <strong>%s domains (%s)</strong> that have been a "
+"Friendica server at least once."
+msgstr ""
+"Di questi, ci sono <strong>%s domini (%s)</strong> che sono stati un server "
+"Friendica almeno una volta."
 
 #: src\templates\statistics.phtml:33
 msgid "Out of those, there are:"
@@ -278,11 +280,16 @@ msgstr "Versioni"
 
 #: src\templates\statistics.phtml:58
 msgid "Out of <strong>%s</strong> servers reporting their version there are:"
-msgstr "Di <strong>%s</strong> server che riportano la loro versione, ci sono:"
+msgstr ""
+"Di <strong>%s</strong> server che riportano la loro versione, ci sono:"
 
 #: src\templates\statistics.phtml:7
-msgid "Out of those, there are <strong>%s profiles (%s)</strong> that opted in the public directory at least once."
-msgstr "Di questi, ci sono <strong>%s profili (%s</strong> che hanno deciso di venir pubblicati nella directory pubblica almeno una volta."
+msgid ""
+"Out of those, there are <strong>%s profiles (%s)</strong> that opted in the "
+"public directory at least once."
+msgstr ""
+"Di questi, ci sono <strong>%s profili (%s</strong> che hanno deciso di venir"
+" pubblicati nella directory pubblica almeno una volta."
 
 #: src\templates\statistics.phtml:35
 msgid "<strong>%s available servers (%s)</strong>"
@@ -297,9 +304,13 @@ msgid "Source Code on GitHub"
 msgstr "Codice Sorgente su GitHub"
 
 #: src\templates\statistics.phtml:11
-msgid "Out of those, there currently are <strong>%s available profiles (%s)</strong>. <a href=\"%s\">Check them out!</a>"
+msgid ""
+"Out of those, there currently are <strong>%s available profiles "
+"(%s)</strong>. <a href=\"%s\">Check them out!</a>"
 msgstr ""
 
 #: src\templates\statistics.phtml:39
-msgid "<strong>%s public servers (%s)</strong> currently open for registration. <a href=\"%s\">Check them out!</a>"
+msgid ""
+"<strong>%s public servers (%s)</strong> currently open for registration. <a "
+"href=\"%s\">Check them out!</a>"
 msgstr ""

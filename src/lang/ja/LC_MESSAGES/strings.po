@@ -1,25 +1,27 @@
+# 
+# Translators:
+# ozero dien <rgfx0020+misc@gmail.com>, 2019
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-16T04:17:37+00:00\n"
+"PO-Revision-Date: 2018-11-16 20:30+0000\n"
 "Last-Translator: ozero dien <rgfx0020+misc@gmail.com>, 2019\n"
 "Language-Team: Japanese (https://www.transifex.com/Friendica/teams/12172/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2018-11-16T04:17:37+00:00\n"
-"PO-Revision-Date: 2018-11-16 20:30+0000\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 2.2\n"
 
-#: src\classes\Content\Pager.php:168
-#: src\classes\Content\Pager.php:216
+#: src\classes\Content\Pager.php:168 src\classes\Content\Pager.php:216
 msgid "Previous"
 msgstr "前"
 
-#: src\classes\Content\Pager.php:173
-#: src\classes\Content\Pager.php:273
+#: src\classes\Content\Pager.php:173 src\classes\Content\Pager.php:273
 msgid "Next"
 msgstr "次"
 
@@ -59,29 +61,23 @@ msgstr "国"
 msgid "Public Servers"
 msgstr "パブリックサーバー"
 
-#: src\templates\layout.phtml:4
-#: src\templates\layout.phtml:18
+#: src\templates\layout.phtml:4 src\templates\layout.phtml:18
 msgid "Friendica Directory"
 msgstr "Friendicaディレクトリ"
 
-#: src\templates\layout.phtml:23
-#: src\templates\layout.phtml:25
-#: src\templates\layout.phtml:43
-#: src\templates\layout.phtml:45
-#: src\templates\search.phtml:4
-#: src\templates\search.phtml:12
+#: src\templates\layout.phtml:23 src\templates\layout.phtml:25
+#: src\templates\layout.phtml:43 src\templates\layout.phtml:45
+#: src\templates\search.phtml:4 src\templates\search.phtml:12
 msgid "Search terms"
 msgstr "検索ワード"
 
-#: src\templates\layout.phtml:24
-#: src\templates\layout.phtml:45
+#: src\templates\layout.phtml:24 src\templates\layout.phtml:45
 #: src\templates\search.phtml:11
 msgctxt "noun"
 msgid "Search"
 msgstr "サーチ"
 
-#: src\templates\layout.phtml:27
-#: src\templates\layout.phtml:47
+#: src\templates\layout.phtml:27 src\templates\layout.phtml:47
 #: src\templates\search.phtml:14
 msgctxt "verb"
 msgid "Search"
@@ -129,8 +125,7 @@ msgctxt "verb"
 msgid "Follow"
 msgstr "フォロー"
 
-#: src\templates\layout.phtml:65
-#: src\templates\sub\profile.phtml:47
+#: src\templates\layout.phtml:65 src\templates\sub\profile.phtml:47
 msgid "Language"
 msgstr "言語"
 
@@ -150,23 +145,19 @@ msgstr "検索タグ"
 msgid "Account type tabs"
 msgstr "アカウントタイプタブ"
 
-#: src\templates\sub\profiles.phtml:4
-#: src\templates\sub\profiles.phtml:7
+#: src\templates\sub\profiles.phtml:4 src\templates\sub\profiles.phtml:7
 msgid "Top %s pagination"
 msgstr "トップ %s のページネーション"
 
-#: src\templates\sub\profiles.phtml:13
-#: src\templates\sub\profiles.phtml:16
+#: src\templates\sub\profiles.phtml:13 src\templates\sub\profiles.phtml:16
 msgid "Bottom %s pagination"
 msgstr "下位 %s のページネーション"
 
-#: src\templates\statistics.phtml:66
-#: src\templates\sub\server.phtml:15
+#: src\templates\statistics.phtml:66 src\templates\sub\server.phtml:15
 msgid "Stable Version"
 msgstr "安定版"
 
-#: src\templates\statistics.phtml:68
-#: src\templates\sub\server.phtml:17
+#: src\templates\statistics.phtml:68 src\templates\sub\server.phtml:17
 msgid "Develop Version"
 msgstr "バージョンを開発"
 
@@ -198,8 +189,7 @@ msgstr "人気のある言語"
 msgid "Popular Tags"
 msgstr "人気のタグ"
 
-#: src\templates\sub\server.phtml:44
-#: src\templates\sub\server.phtml:45
+#: src\templates\sub\server.phtml:44 src\templates\sub\server.phtml:45
 msgid "Default Language"
 msgstr "既定の言語"
 
@@ -216,7 +206,7 @@ msgstr "すべて"
 msgctxt "account-type"
 msgid "People (%d)"
 msgid_plural "People (%d)"
-msgstr[0] "\"個人（ %d ）"
+msgstr[0] "個人（ %d ）"
 
 #: src\classes\Views\Widget\AccountTypeTabs.php:57
 msgctxt "account-type"
@@ -237,16 +227,18 @@ msgid "Profiles"
 msgstr "プロフィール"
 
 #: src\templates\statistics.phtml:6
-msgid "This directory knows about <strong>%s distinct potential profile URLs</strong>."
+msgid ""
+"This directory knows about <strong>%s distinct potential profile "
+"URLs</strong>."
 msgstr "このディレクトリは、<strong> %s の異なる潜在的なプロファイルURL </strong>を認識しています。"
 
-#: src\templates\statistics.phtml:16
-#: src\templates\statistics.phtml:46
+#: src\templates\statistics.phtml:16 src\templates\statistics.phtml:46
 msgid "Languages"
 msgstr "言語"
 
 #: src\templates\statistics.phtml:17
-msgid "Out of <strong>%s</strong> profiles reporting their language there are:"
+msgid ""
+"Out of <strong>%s</strong> profiles reporting their language there are:"
 msgstr "<strong> %s </strong>の言語を報告するプロフィールには、次のものがあります。"
 
 #: src\templates\statistics.phtml:27
@@ -254,12 +246,17 @@ msgid "Servers"
 msgstr "サーバー"
 
 #: src\templates\statistics.phtml:28
-msgid "This directory knows about <strong>%s distinct potential server URLs</strong>."
+msgid ""
+"This directory knows about <strong>%s distinct potential server "
+"URLs</strong>."
 msgstr "このディレクトリは、<strong> %s の異なる潜在的なサーバーURL </strong>を認識しています。"
 
 #: src\templates\statistics.phtml:29
-msgid "Out of those, there are <strong>%s domains (%s)</strong> that have been a Friendica server at least once."
-msgstr "それらのうち、少なくとも一度はFriendicaサーバーであった<strong> %s のドメイン（ %s ）</strong>があります。"
+msgid ""
+"Out of those, there are <strong>%s domains (%s)</strong> that have been a "
+"Friendica server at least once."
+msgstr ""
+"それらのうち、少なくとも一度はFriendicaサーバーであった<strong> %s のドメイン（ %s ）</strong>があります。"
 
 #: src\templates\statistics.phtml:33
 msgid "Out of those, there are:"
@@ -278,8 +275,11 @@ msgid "Out of <strong>%s</strong> servers reporting their version there are:"
 msgstr "バージョンを報告している<strong> %s </strong>のサーバーのうち、次のものがあります。"
 
 #: src\templates\statistics.phtml:7
-msgid "Out of those, there are <strong>%s profiles (%s)</strong> that opted in the public directory at least once."
-msgstr "これらのうち、<strong> %s のプロファイル（ %s ）</strong>があり、パブリックディレクトリで少なくとも1回選択しました。"
+msgid ""
+"Out of those, there are <strong>%s profiles (%s)</strong> that opted in the "
+"public directory at least once."
+msgstr ""
+"これらのうち、<strong> %s のプロファイル（ %s ）</strong>があり、パブリックディレクトリで少なくとも1回選択しました。"
 
 #: src\templates\statistics.phtml:35
 msgid "<strong>%s available servers (%s)</strong>"
@@ -294,9 +294,13 @@ msgid "Source Code on GitHub"
 msgstr "GitHubのソースコード"
 
 #: src\templates\statistics.phtml:11
-msgid "Out of those, there currently are <strong>%s available profiles (%s)</strong>. <a href=\"%s\">Check them out!</a>"
+msgid ""
+"Out of those, there currently are <strong>%s available profiles "
+"(%s)</strong>. <a href=\"%s\">Check them out!</a>"
 msgstr ""
 
 #: src\templates\statistics.phtml:39
-msgid "<strong>%s public servers (%s)</strong> currently open for registration. <a href=\"%s\">Check them out!</a>"
+msgid ""
+"<strong>%s public servers (%s)</strong> currently open for registration. <a "
+"href=\"%s\">Check them out!</a>"
 msgstr ""

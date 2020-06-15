@@ -1,25 +1,27 @@
+# 
+# Translators:
+# ButterflyOfFire, 2019
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-16T04:17:37+00:00\n"
+"PO-Revision-Date: 2018-11-16 20:30+0000\n"
 "Last-Translator: ButterflyOfFire, 2019\n"
 "Language-Team: Arabic (https://www.transifex.com/Friendica/teams/12172/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2018-11-16T04:17:37+00:00\n"
-"PO-Revision-Date: 2018-11-16 20:30+0000\n"
 "Language: ar\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: Poedit 2.2\n"
 
-#: src\classes\Content\Pager.php:168
-#: src\classes\Content\Pager.php:216
+#: src\classes\Content\Pager.php:168 src\classes\Content\Pager.php:216
 msgid "Previous"
 msgstr "السابقة"
 
-#: src\classes\Content\Pager.php:173
-#: src\classes\Content\Pager.php:273
+#: src\classes\Content\Pager.php:173 src\classes\Content\Pager.php:273
 msgid "Next"
 msgstr "التالية"
 
@@ -59,29 +61,23 @@ msgstr "البلد"
 msgid "Public Servers"
 msgstr "الخوادم العمومية"
 
-#: src\templates\layout.phtml:4
-#: src\templates\layout.phtml:18
+#: src\templates\layout.phtml:4 src\templates\layout.phtml:18
 msgid "Friendica Directory"
 msgstr ""
 
-#: src\templates\layout.phtml:23
-#: src\templates\layout.phtml:25
-#: src\templates\layout.phtml:43
-#: src\templates\layout.phtml:45
-#: src\templates\search.phtml:4
-#: src\templates\search.phtml:12
+#: src\templates\layout.phtml:23 src\templates\layout.phtml:25
+#: src\templates\layout.phtml:43 src\templates\layout.phtml:45
+#: src\templates\search.phtml:4 src\templates\search.phtml:12
 msgid "Search terms"
 msgstr ""
 
-#: src\templates\layout.phtml:24
-#: src\templates\layout.phtml:45
+#: src\templates\layout.phtml:24 src\templates\layout.phtml:45
 #: src\templates\search.phtml:11
 msgctxt "noun"
 msgid "Search"
 msgstr "البحث"
 
-#: src\templates\layout.phtml:27
-#: src\templates\layout.phtml:47
+#: src\templates\layout.phtml:27 src\templates\layout.phtml:47
 #: src\templates\search.phtml:14
 msgctxt "verb"
 msgid "Search"
@@ -134,8 +130,7 @@ msgctxt "verb"
 msgid "Follow"
 msgstr "اتبع"
 
-#: src\templates\layout.phtml:65
-#: src\templates\sub\profile.phtml:47
+#: src\templates\layout.phtml:65 src\templates\sub\profile.phtml:47
 msgid "Language"
 msgstr "اللغة"
 
@@ -155,23 +150,19 @@ msgstr ""
 msgid "Account type tabs"
 msgstr ""
 
-#: src\templates\sub\profiles.phtml:4
-#: src\templates\sub\profiles.phtml:7
+#: src\templates\sub\profiles.phtml:4 src\templates\sub\profiles.phtml:7
 msgid "Top %s pagination"
 msgstr ""
 
-#: src\templates\sub\profiles.phtml:13
-#: src\templates\sub\profiles.phtml:16
+#: src\templates\sub\profiles.phtml:13 src\templates\sub\profiles.phtml:16
 msgid "Bottom %s pagination"
 msgstr ""
 
-#: src\templates\statistics.phtml:66
-#: src\templates\sub\server.phtml:15
+#: src\templates\statistics.phtml:66 src\templates\sub\server.phtml:15
 msgid "Stable Version"
 msgstr "إصدار ثابت"
 
-#: src\templates\statistics.phtml:68
-#: src\templates\sub\server.phtml:17
+#: src\templates\statistics.phtml:68 src\templates\sub\server.phtml:17
 msgid "Develop Version"
 msgstr "إصدار قيد التطوير"
 
@@ -203,8 +194,7 @@ msgstr "اللغات الشائعة"
 msgid "Popular Tags"
 msgstr "الوسوم الشائعة"
 
-#: src\templates\sub\server.phtml:44
-#: src\templates\sub\server.phtml:45
+#: src\templates\sub\server.phtml:44 src\templates\sub\server.phtml:45
 msgid "Default Language"
 msgstr "اللغة الافتراضية"
 
@@ -252,16 +242,18 @@ msgid "Profiles"
 msgstr "الملفات الشخصية"
 
 #: src\templates\statistics.phtml:6
-msgid "This directory knows about <strong>%s distinct potential profile URLs</strong>."
+msgid ""
+"This directory knows about <strong>%s distinct potential profile "
+"URLs</strong>."
 msgstr ""
 
-#: src\templates\statistics.phtml:16
-#: src\templates\statistics.phtml:46
+#: src\templates\statistics.phtml:16 src\templates\statistics.phtml:46
 msgid "Languages"
 msgstr "اللغات"
 
 #: src\templates\statistics.phtml:17
-msgid "Out of <strong>%s</strong> profiles reporting their language there are:"
+msgid ""
+"Out of <strong>%s</strong> profiles reporting their language there are:"
 msgstr ""
 
 #: src\templates\statistics.phtml:27
@@ -269,11 +261,15 @@ msgid "Servers"
 msgstr "الخوادم"
 
 #: src\templates\statistics.phtml:28
-msgid "This directory knows about <strong>%s distinct potential server URLs</strong>."
+msgid ""
+"This directory knows about <strong>%s distinct potential server "
+"URLs</strong>."
 msgstr ""
 
 #: src\templates\statistics.phtml:29
-msgid "Out of those, there are <strong>%s domains (%s)</strong> that have been a Friendica server at least once."
+msgid ""
+"Out of those, there are <strong>%s domains (%s)</strong> that have been a "
+"Friendica server at least once."
 msgstr ""
 
 #: src\templates\statistics.phtml:33
@@ -293,7 +289,9 @@ msgid "Out of <strong>%s</strong> servers reporting their version there are:"
 msgstr ""
 
 #: src\templates\statistics.phtml:7
-msgid "Out of those, there are <strong>%s profiles (%s)</strong> that opted in the public directory at least once."
+msgid ""
+"Out of those, there are <strong>%s profiles (%s)</strong> that opted in the "
+"public directory at least once."
 msgstr ""
 
 #: src\templates\statistics.phtml:35
@@ -309,9 +307,13 @@ msgid "Source Code on GitHub"
 msgstr "الشفرة المصدرية على غيت هب"
 
 #: src\templates\statistics.phtml:11
-msgid "Out of those, there currently are <strong>%s available profiles (%s)</strong>. <a href=\"%s\">Check them out!</a>"
+msgid ""
+"Out of those, there currently are <strong>%s available profiles "
+"(%s)</strong>. <a href=\"%s\">Check them out!</a>"
 msgstr ""
 
 #: src\templates\statistics.phtml:39
-msgid "<strong>%s public servers (%s)</strong> currently open for registration. <a href=\"%s\">Check them out!</a>"
+msgid ""
+"<strong>%s public servers (%s)</strong> currently open for registration. <a "
+"href=\"%s\">Check them out!</a>"
 msgstr ""
