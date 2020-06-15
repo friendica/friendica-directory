@@ -1,25 +1,27 @@
+# 
+# Translators:
+# Aditoo, 2019
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-16T04:17:37+00:00\n"
+"PO-Revision-Date: 2018-11-16 20:30+0000\n"
 "Last-Translator: Aditoo, 2019\n"
 "Language-Team: Czech (https://www.transifex.com/Friendica/teams/12172/cs/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2018-11-16T04:17:37+00:00\n"
-"PO-Revision-Date: 2018-11-16 20:30+0000\n"
 "Language: cs\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 "X-Generator: Poedit 2.2\n"
 
-#: src\classes\Content\Pager.php:168
-#: src\classes\Content\Pager.php:216
+#: src\classes\Content\Pager.php:168 src\classes\Content\Pager.php:216
 msgid "Previous"
 msgstr "Předchozí"
 
-#: src\classes\Content\Pager.php:173
-#: src\classes\Content\Pager.php:273
+#: src\classes\Content\Pager.php:173 src\classes\Content\Pager.php:273
 msgid "Next"
 msgstr "Další"
 
@@ -59,29 +61,23 @@ msgstr "Země"
 msgid "Public Servers"
 msgstr "Veřejné servery"
 
-#: src\templates\layout.phtml:4
-#: src\templates\layout.phtml:18
+#: src\templates\layout.phtml:4 src\templates\layout.phtml:18
 msgid "Friendica Directory"
 msgstr "Adresář Friendica"
 
-#: src\templates\layout.phtml:23
-#: src\templates\layout.phtml:25
-#: src\templates\layout.phtml:43
-#: src\templates\layout.phtml:45
-#: src\templates\search.phtml:4
-#: src\templates\search.phtml:12
+#: src\templates\layout.phtml:23 src\templates\layout.phtml:25
+#: src\templates\layout.phtml:43 src\templates\layout.phtml:45
+#: src\templates\search.phtml:4 src\templates\search.phtml:12
 msgid "Search terms"
 msgstr "Termíny vyhledávání"
 
-#: src\templates\layout.phtml:24
-#: src\templates\layout.phtml:45
+#: src\templates\layout.phtml:24 src\templates\layout.phtml:45
 #: src\templates\search.phtml:11
 msgctxt "noun"
 msgid "Search"
 msgstr "Hledání"
 
-#: src\templates\layout.phtml:27
-#: src\templates\layout.phtml:47
+#: src\templates\layout.phtml:27 src\templates\layout.phtml:47
 #: src\templates\search.phtml:14
 msgctxt "verb"
 msgid "Search"
@@ -132,8 +128,7 @@ msgctxt "verb"
 msgid "Follow"
 msgstr "Sledovat"
 
-#: src\templates\layout.phtml:65
-#: src\templates\sub\profile.phtml:47
+#: src\templates\layout.phtml:65 src\templates\sub\profile.phtml:47
 msgid "Language"
 msgstr "Jazyk"
 
@@ -153,23 +148,19 @@ msgstr "Hledat podle štítku"
 msgid "Account type tabs"
 msgstr "Záložky typů účtů"
 
-#: src\templates\sub\profiles.phtml:4
-#: src\templates\sub\profiles.phtml:7
+#: src\templates\sub\profiles.phtml:4 src\templates\sub\profiles.phtml:7
 msgid "Top %s pagination"
 msgstr "Horní stránkování %s"
 
-#: src\templates\sub\profiles.phtml:13
-#: src\templates\sub\profiles.phtml:16
+#: src\templates\sub\profiles.phtml:13 src\templates\sub\profiles.phtml:16
 msgid "Bottom %s pagination"
 msgstr "Spodní stránkování %s"
 
-#: src\templates\statistics.phtml:66
-#: src\templates\sub\server.phtml:15
+#: src\templates\statistics.phtml:66 src\templates\sub\server.phtml:15
 msgid "Stable Version"
 msgstr "Stabilní verze"
 
-#: src\templates\statistics.phtml:68
-#: src\templates\sub\server.phtml:17
+#: src\templates\statistics.phtml:68 src\templates\sub\server.phtml:17
 msgid "Develop Version"
 msgstr "Vývojová verze"
 
@@ -201,8 +192,7 @@ msgstr "Populární jazyky"
 msgid "Popular Tags"
 msgstr "Populární štítky"
 
-#: src\templates\sub\server.phtml:44
-#: src\templates\sub\server.phtml:45
+#: src\templates\sub\server.phtml:44 src\templates\sub\server.phtml:45
 msgid "Default Language"
 msgstr "Výchozí jazyk"
 
@@ -246,16 +236,20 @@ msgid "Profiles"
 msgstr "Profily"
 
 #: src\templates\statistics.phtml:6
-msgid "This directory knows about <strong>%s distinct potential profile URLs</strong>."
-msgstr "Tento adresář ví o <strong>%s zřetelných potenciálních profilových URL adresách</strong>."
+msgid ""
+"This directory knows about <strong>%s distinct potential profile "
+"URLs</strong>."
+msgstr ""
+"Tento adresář ví o <strong>%s zřetelných potenciálních profilových URL "
+"adresách</strong>."
 
-#: src\templates\statistics.phtml:16
-#: src\templates\statistics.phtml:46
+#: src\templates\statistics.phtml:16 src\templates\statistics.phtml:46
 msgid "Languages"
 msgstr "Jazyky"
 
 #: src\templates\statistics.phtml:17
-msgid "Out of <strong>%s</strong> profiles reporting their language there are:"
+msgid ""
+"Out of <strong>%s</strong> profiles reporting their language there are:"
 msgstr "Ze všech <strong>%s</strong> profilů hlásících svůj jazyk je tu:"
 
 #: src\templates\statistics.phtml:27
@@ -263,12 +257,20 @@ msgid "Servers"
 msgstr "Servery"
 
 #: src\templates\statistics.phtml:28
-msgid "This directory knows about <strong>%s distinct potential server URLs</strong>."
-msgstr "Tento adresář ví o <strong>%s zřetelných potenciálních serverových URL adresách</strong>."
+msgid ""
+"This directory knows about <strong>%s distinct potential server "
+"URLs</strong>."
+msgstr ""
+"Tento adresář ví o <strong>%s zřetelných potenciálních serverových URL "
+"adresách</strong>."
 
 #: src\templates\statistics.phtml:29
-msgid "Out of those, there are <strong>%s domains (%s)</strong> that have been a Friendica server at least once."
-msgstr "Z těch je tu <strong>%s domén (%s)</strong>, které byly alespoň jednou serverem Friendica."
+msgid ""
+"Out of those, there are <strong>%s domains (%s)</strong> that have been a "
+"Friendica server at least once."
+msgstr ""
+"Z těch je tu <strong>%s domén (%s)</strong>, které byly alespoň jednou "
+"serverem Friendica."
 
 #: src\templates\statistics.phtml:33
 msgid "Out of those, there are:"
@@ -287,8 +289,12 @@ msgid "Out of <strong>%s</strong> servers reporting their version there are:"
 msgstr "Ze všech <strong>%s</strong> serverů hlásících svou verzi je tu:"
 
 #: src\templates\statistics.phtml:7
-msgid "Out of those, there are <strong>%s profiles (%s)</strong> that opted in the public directory at least once."
-msgstr "Z těch je tu <strong>%s profilů (%s)</strong>, které byly alespoň jednou publikovány ve veřejném adresáři."
+msgid ""
+"Out of those, there are <strong>%s profiles (%s)</strong> that opted in the "
+"public directory at least once."
+msgstr ""
+"Z těch je tu <strong>%s profilů (%s)</strong>, které byly alespoň jednou "
+"publikovány ve veřejném adresáři."
 
 #: src\templates\statistics.phtml:35
 msgid "<strong>%s available servers (%s)</strong>"
@@ -303,9 +309,13 @@ msgid "Source Code on GitHub"
 msgstr "Zdrojový kód na GitHubu"
 
 #: src\templates\statistics.phtml:11
-msgid "Out of those, there currently are <strong>%s available profiles (%s)</strong>. <a href=\"%s\">Check them out!</a>"
+msgid ""
+"Out of those, there currently are <strong>%s available profiles "
+"(%s)</strong>. <a href=\"%s\">Check them out!</a>"
 msgstr ""
 
 #: src\templates\statistics.phtml:39
-msgid "<strong>%s public servers (%s)</strong> currently open for registration. <a href=\"%s\">Check them out!</a>"
+msgid ""
+"<strong>%s public servers (%s)</strong> currently open for registration. <a "
+"href=\"%s\">Check them out!</a>"
 msgstr ""
