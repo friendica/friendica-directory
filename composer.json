@@ -27,7 +27,7 @@
         "laminas/laminas-escaper": "^2.6",
         "masterminds/html5": "^2.3",
         "monolog/monolog": "^1.17",
-        "mrpetovan/net_ping": "^1.0",
+        "mrpetovan/net_ping": "^1.2",
         "sarahman/simple-filesystem-cache": "^1.0",
         "seld/cli-prompt": "^1.0",
         "slim/slim": "^3.1",
