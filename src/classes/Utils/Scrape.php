@@ -23,7 +23,7 @@ class Scrape
 		}
 
 		$params = json_decode($data, true);
-		if (!$params || !count($params)) {
+		if (empty($params) || !is_array($params)) {
 			return false;
 		}
 

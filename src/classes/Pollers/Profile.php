@@ -141,7 +141,7 @@ class Profile
 		}
 
 		// Empty result is due to an offline site.
-		if (count($params) < 2) {
+		if (empty($params) || count($params) < 2) {
 			//But for sites that are already in bad status. Do a cleanup now.
 			if ($profile_id && $server['health_score'] < $this->settings['remove_profile_health_threshold']) {
 				$this->profileModel->deleteById($profile_id);
