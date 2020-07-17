@@ -2,6 +2,8 @@
 
 namespace Friendica\Directory\Pollers;
 
+use Friendica\Directory\Utils\Network;
+
 /**
  * @author Hypolite Petovan <hypolite@mrpetovan.com>
  */
@@ -96,7 +98,7 @@ class Directory
 			CURLOPT_SSL_VERIFYHOST => 2,
 			CURLOPT_PROTOCOLS => CURLPROTO_HTTP | CURLPROTO_HTTPS,
 			//Basic request
-			CURLOPT_USERAGENT => 'friendica-directory-probe-1.0',
+			CURLOPT_USERAGENT => Network::USER_AGENT,
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_URL => $directory_url . $path
 		);

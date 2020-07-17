@@ -15,6 +15,8 @@ namespace Friendica\Directory\Utils;
  */
 class Network
 {
+	const USER_AGENT = 'friendica-directory-probe-1.0';
+
 	public static function fetchURL(string $url, bool $binary = false, int $timeout = 20): string
 	{
 		$ch = curl_init($url);
@@ -27,6 +29,7 @@ class Network
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 		curl_setopt($ch, CURLOPT_MAXREDIRS, 8);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_USERAGENT, self::USER_AGENT);
 		if ($binary) {
 			curl_setopt($ch, CURLOPT_BINARYTRANSFER, 1);
 		}
@@ -49,6 +52,7 @@ class Network
 		curl_setopt($ch, CURLOPT_MAXREDIRS     , 8);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
 		curl_setopt($ch, CURLOPT_NOBODY        , true);
+		curl_setopt($ch, CURLOPT_USERAGENT     , self::USER_AGENT);
 
 		curl_exec($ch);
 
