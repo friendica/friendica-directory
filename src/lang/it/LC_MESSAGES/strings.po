@@ -1,6 +1,7 @@
 # 
 # Translators:
 # fabrixxm <fabrix.xm@gmail.com>, 2019
+# Sylke Vicious <silkevicious@gmail.com>, 2020
 # 
 msgid ""
 msgstr ""
@@ -8,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-11-16T04:17:37+00:00\n"
 "PO-Revision-Date: 2018-11-16 20:30+0000\n"
-"Last-Translator: fabrixxm <fabrix.xm@gmail.com>, 2019\n"
+"Last-Translator: Sylke Vicious <silkevicious@gmail.com>, 2020\n"
 "Language-Team: Italian (https://www.transifex.com/Friendica/teams/12172/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -308,9 +309,13 @@ msgid ""
 "Out of those, there currently are <strong>%s available profiles "
 "(%s)</strong>. <a href=\"%s\">Check them out!</a>"
 msgstr ""
+"Di questi, ci sono <strong>%s profili disponibili (%s)</strong>. <a "
+"href=\"%s\">Dacci un'occhiata!</a>"
 
 #: src\templates\statistics.phtml:39
 msgid ""
 "<strong>%s public servers (%s)</strong> currently open for registration. <a "
 "href=\"%s\">Check them out!</a>"
 msgstr ""
+"<strong>%s server pubblici (%s)</strong> attualmente con registrazione "
+"libera. <a href=\"%s\">Dacci un'occhiata!</a>"
