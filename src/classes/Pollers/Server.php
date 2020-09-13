@@ -369,7 +369,9 @@ class Server
 				$rc_version = str_replace('-dev', '-rc', $dev_version);
 
 				if ($version == $dev_version || $version == $rc_version) {
-					$max_health = 95; //Develop/RC can be unstable
+					$old_max_health = $max_health;
+					$new_max_health = 95; //Develop/RC can be unstable
+					$max_health = min($old_max_health, $new_max_health);
 				} elseif ($version !== $stable_version) {
 					$delta = min($delta, 0) - 10; // Losing score as time passes if node isn't updated
 				}
