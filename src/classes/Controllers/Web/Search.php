@@ -69,7 +69,7 @@ class Search extends BaseController
 			}
 
 		} else {
-			$sql_where = "MATCH (p.`name`, p.`pdesc`, p.`profile_url`, p.`locality`, p.`region`, p.`country`, p.`tags` )
+			$sql_where = "MATCH (p.`name`, p.`pdesc`, p.`username`, p.`locality`, p.`region`, p.`country`, p.`tags` )
 AGAINST (:query IN BOOLEAN MODE)";
 		}
 
