@@ -1,0 +1,3 @@
+BEGIN;
+ALTER TABLE `server` DROP COLUMN `path`;
+COMMIT;
