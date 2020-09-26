@@ -333,9 +333,6 @@ class Profile
 	private static function validateParams(array $params): int
 	{
 		$errors = 0;
-		if (empty($params['key'])) {
-			$errors++;
-		}
 		if (empty($params['dfrn-request'])) {
 			$errors++;
 		}
