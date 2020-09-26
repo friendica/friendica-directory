@@ -33,7 +33,9 @@ class Server extends \Friendica\Directory\Model
 			SET `server_id` = :server_id,
 				`alias` = :alias,
 				`timestamp` = NOW()
-			ON DUPLICATE KEY UPDATE `timestamp` = NOW()',
+			ON DUPLICATE KEY UPDATE 
+				`server_id` = :server_id,
+				`timestamp` = NOW()',
 			[
 				'server_id' => $server_id,
 				'alias' => strtolower($server_alias)
