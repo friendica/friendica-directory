@@ -129,7 +129,7 @@ class Scrape
 
 		$nodes_left = max(intval($max_nodes), $minNodes);
 		$items = $dom->getElementsByTagName('*');
-		$targets = array('fn', 'pdesc', 'photo', 'key', 'locality', 'region', 'postal-code', 'country-name');
+		$targets = array('fn', 'pdesc', 'photo', 'locality', 'region', 'postal-code', 'country-name');
 		$targets_left = count($targets);
 		foreach ($items as $item) {
 			if (self::attributeContains($item->getAttribute('class'), 'vcard')) {
@@ -146,10 +146,6 @@ class Scrape
 					if (self::attributeContains($vcard_element->getAttribute('class'), 'photo')) {
 						$params['photo'] = $vcard_element->getAttribute('src');
 						$targets_left = self::popScrapeTarget($targets, 'photo');
-					}
-					if (self::attributeContains($vcard_element->getAttribute('class'), 'key')) {
-						$params['key'] = $vcard_element->textContent;
-						$targets_left = self::popScrapeTarget($targets, 'key');
 					}
 					if (self::attributeContains($vcard_element->getAttribute('class'), 'locality')) {
 						$params['locality'] = $vcard_element->textContent;
