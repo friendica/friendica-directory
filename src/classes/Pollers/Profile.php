@@ -9,6 +9,10 @@ use Friendica\Directory\Utils\Network;
  */
 class Profile
 {
+	const PROFILE_MISSING_REQUEST = 1;
+	const PROFILE_MISSING_CONFIRM = 2;
+	const PROFILE_MISSING_NOTIFY = 4;
+	const PROFILE_MISSING_POLL = 8;
 
 	/**
 	 * @var \Atlas\Pdo\Connection
@@ -171,8 +175,21 @@ class Profile
 		}
 
 		// This is most likely a problem with the site configuration. Ignore.
-		if (self::validateParams($params)) {
+		if ($error = self::validateParams($params)) {
 			$this->logger->warning('Poll aborted, parameters invalid.', ['params' => $params]);
+			if ($error & Profile::PROFILE_MISSING_REQUEST) {
+				$this->logger->notice('dfrn-request parameter is empty.');
+			}
+			if ($error & Profile::PROFILE_MISSING_CONFIRM) {
+				$this->logger->notice('dfrn-confirm parameter is empty.');
+			}
+			if ($error & Profile::PROFILE_MISSING_NOTIFY) {
+				$this->logger->notice('dfrn-notify parameter is empty.');
+			}
+			if ($error & Profile::PROFILE_MISSING_POLL) {
+				$this->logger->notice('dfrn-poll parameter is empty.');
+			}
+
 			return false;
 		}
 
@@ -330,20 +347,24 @@ class Profile
 		return true;
 	}
 
+	/**
+	 * @param array $params
+	 * @return int
+	 */
 	private static function validateParams(array $params): int
 	{
 		$errors = 0;
 		if (empty($params['dfrn-request'])) {
-			$errors++;
+			$errors &= self::PROFILE_MISSING_REQUEST;
 		}
 		if (empty($params['dfrn-confirm'])) {
-			$errors++;
+			$errors &= self::PROFILE_MISSING_CONFIRM;
 		}
 		if (empty($params['dfrn-notify'])) {
-			$errors++;
+			$errors &= self::PROFILE_MISSING_NOTIFY;
 		}
 		if (empty($params['dfrn-poll'])) {
-			$errors++;
+			$errors &= self::PROFILE_MISSING_POLL;
 		}
 
 		return $errors;
