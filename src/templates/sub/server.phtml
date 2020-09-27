@@ -41,10 +41,10 @@ $base_url_display = substr($base_url, strpos($base_url, '/') + 2);
                     <i class="fa fa-heartbeat"></i> <?php echo $server['health_score'] ?>
                 </span>
             <?php if ($server['language']):?>
-                <span class="badge badge-secondary" title="<?php echo $this->__('Default Language')?>">
+                <a href="<?php echo $this->r('servers', ['language' => $server['language']])?>" class="badge badge-secondary" title="<?php echo $this->__('Default Language')?>">
                     <i class="fa fa-language" alt="<?php echo $this->__('Default Language')?>"></i>
                     <?php echo $this->e(Friendica\Directory\Utils\L10n::localeToLanguageString($server['language'])) ?>
-                </span>
+                </a>
             <?php endif;?>
 	            <span class="badge badge-secondary" title="<?php echo $this->__('Known Users')?>">
                     <i class="fa fa-user"></i>

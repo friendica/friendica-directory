@@ -10,7 +10,7 @@ use Slim\Http\Response;
  */
 
 $app->get('/servers/surprise', \Friendica\Directory\Routes\Http\Surprise::class);
-$app->get('/servers', \Friendica\Directory\Routes\Web\Servers::class)->setName('servers');
+$app->get('/servers[/{language}]', \Friendica\Directory\Routes\Web\Servers::class)->setName('servers');
 
 $app->get('/search[/{account_type}]', function (Request $request, Response $response, $args) {
 	if ($request->getAttribute('negotiation')->getMediaType() == 'application/json') {

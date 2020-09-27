@@ -2,7 +2,8 @@
 
 namespace Friendica\Directory\Controllers\Web;
 
-use \Friendica\Directory\Content\Pager;
+use Friendica\Directory\Content\Pager;
+use Friendica\Directory\Views\Widget\PopularServerLanguages;
 use PDO;
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -58,19 +59,32 @@ class Servers extends BaseController
 
 		$rc_version = str_replace('-dev', '-rc', $dev_version);
 
+		$popularLanguages = new PopularServerLanguages($this->atlas, $this->renderer);
+
 		$pager = new Pager($this->l10n, $request, 20);
+
+		$sql_where = '';
+		$values = [];
+
+		if ($args['language']) {
+			$sql_where .= '
+AND LEFT(`language`, 2) = LEFT(:language, 2)';
+			$values['language'] = $args['language'];
+		}
 
 		$stmt = 'SELECT *
 FROM `server` s
 WHERE `reg_policy` != "REGISTER_CLOSED"
 AND `available`
 AND NOT `hidden`
+' . $sql_where . '
 ORDER BY `health_score` DESC, `ssl_state` DESC, `info` != "" DESC, `last_seen` DESC
 LIMIT :start, :limit';
-		$servers = $this->atlas->fetchAll($stmt, [
+		$listValues = array_merge($values, [
 			'start' => [$pager->getStart(), PDO::PARAM_INT],
 			'limit' => [$pager->getItemsPerPage(), PDO::PARAM_INT]
 		]);
+		$servers = $this->atlas->fetchAll($stmt, $listValues);
 
 		foreach ($servers as $key => $server) {
 			$servers[$key]['user_count'] = $this->atlas->fetchValue(
@@ -83,16 +97,20 @@ LIMIT :start, :limit';
 FROM `server` s
 WHERE `reg_policy` != "REGISTER_CLOSED"
 AND `available`
-AND NOT `hidden`';
-		$count = $this->atlas->fetchValue($stmt);
+AND NOT `hidden`
+' . $sql_where;
+		$count = $this->atlas->fetchValue($stmt, $values);
 
 		$vars = [
 			'title' => $this->l10n->gettext('Public Servers'),
+			'total' => $count,
+			'language' => $args['language'],
 			'servers' => $servers,
 			'pager' => $pager->renderFull($count),
 			'stable_version' => $stable_version,
 			'rc_version' => $rc_version,
 			'dev_version' => $dev_version,
+			'popularLanguages' => $popularLanguages->render(),
 		];
 
 		$content = $this->renderer->fetch('servers.phtml', $vars);
