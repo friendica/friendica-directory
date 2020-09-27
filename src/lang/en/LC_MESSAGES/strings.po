@@ -175,15 +175,15 @@ msgstr ""
 msgid "Outdated Version"
 msgstr ""
 
-#: src\templates\sub\server.phtml:55
+#: src\templates\sub\server.phtml:72
 msgid "Admin"
 msgstr ""
 
-#: src\templates\sub\server.phtml:62
+#: src\templates\sub\server.phtml:79
 msgid "No description provided"
 msgstr ""
 
-#: src\templates\sub\server.phtml:65
+#: src\templates\sub\server.phtml:82
 msgid "Visit Server"
 msgstr ""
 
@@ -220,7 +220,7 @@ msgid_plural "People (%d)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src\classes\Views\Widget\AccountTypeTabs.php:57
+#: src\classes\Views\Widget\AccountTypeTabs.php:59
 msgctxt "account-type"
 msgid "Forum (%d)"
 msgid_plural "Forums (%d)"
@@ -302,4 +302,45 @@ msgstr ""
 
 #: src\templates\statistics.phtml:39
 msgid "<strong>%s public servers (%s)</strong> currently open for registration. <a href=\"%s\">Check them out!</a>"
+msgstr ""
+
+#: src\classes\Views\Widget\AccountTypeTabs.php:57
+msgctxt "account-type"
+msgid "News (%d)"
+msgid_plural "News (%d)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src\classes\Views\Widget\AccountTypeTabs.php:58
+msgctxt "account-type"
+msgid "Organization (%d)"
+msgid_plural "Organizations (%d)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src\templates\sub\server.phtml:40
+msgid "Health Score"
+msgstr ""
+
+#: src\templates\sub\server.phtml:52
+msgid "%s User"
+msgid_plural "%s Users"
+msgstr[0] ""
+msgstr[1] ""
+
+#: src\templates\sub\server.phtml:54
+msgid "None"
+msgstr ""
+
+#: src\templates\sub\server.phtml:59
+#: src\templates\sub\server.phtml:63
+msgid "Registration Policy"
+msgstr ""
+
+#: src\templates\sub\server.phtml:60
+msgid "By Approval"
+msgstr ""
+
+#: src\templates\sub\server.phtml:64
+msgid "Open"
 msgstr ""
