@@ -4,7 +4,7 @@ namespace Friendica\Directory\Controllers\Web;
 
 use Friendica\Directory\Content\Pager;
 use Friendica\Directory\Views\Widget\PopularCountries;
-use Friendica\Directory\Views\Widget\PopularLanguages;
+use Friendica\Directory\Views\Widget\PopularProfileLanguages;
 use Friendica\Directory\Views\Widget\PopularTags;
 use Slim\Http\Request;
 use Slim\Http\Response;
@@ -54,7 +54,7 @@ class Directory extends BaseController
 	{
 		$popularTags = new PopularTags($this->atlas, $this->renderer);
 		$popularCountries = new PopularCountries($this->atlas, $this->renderer);
-		$popularLanguages = new PopularLanguages($this->atlas, $this->renderer);
+		$popularLanguages = new PopularProfileLanguages($this->atlas, $this->renderer);
 
 		$pager = new Pager($this->l10n, $request, 20);
 

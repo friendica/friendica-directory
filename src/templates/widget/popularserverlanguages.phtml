@@ -1,0 +1,13 @@
+<div>
+    <h3><?php echo $this->__('Filter by language')?></h3>
+    <ul>
+		<?php foreach ($languages as $language): ?>
+            <li>
+                <a href="<?php echo $this->escapeHtmlAttr($this->r('servers', ['language' => $language['language']])) ?>">
+					<?php echo $this->e(Friendica\Directory\Utils\L10n::localeToLanguageString($language['language'])) ?>
+	                (<?php echo $this->e($language['total'])?>)
+                </a>
+            </li>
+		<?php endforeach; ?>
+    </ul>
+</div>
