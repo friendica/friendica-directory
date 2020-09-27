@@ -199,7 +199,8 @@ class Server
 				$probe_result['time'],
 				$version,
 				$probe_result['ssl_state'],
-				$avg_ping
+				$avg_ping,
+				$probe_result['data']['info'] ?? null
 			);
 
 			$this->atlas->perform(
@@ -324,7 +325,8 @@ class Server
 		?int $time,
 		?string $version,
 		?int $ssl_state,
-		?float $avg_ping
+		?float $avg_ping,
+		?string $description
 	): int
 	{
 		//Probe failed, costs you 30 points.
@@ -394,6 +396,11 @@ class Server
 					$delta = min($delta, 0) - 10; // Losing score as time passes if node isn't updated
 				}
 			}
+		}
+
+		// No description available penalty
+		if (!$description) {
+			$max_health = min(75, $max_health);
 		}
 
 		// No ping penalty
