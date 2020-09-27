@@ -16,6 +16,7 @@
         "ext-curl": "*",
         "ext-gd": "*",
         "ext-json": "*",
+        "ext-pdo": "*",
         "asika/simple-console": "^1.0",
         "atlas/pdo": "^1.1",
         "boronczyk/localization-middleware": "^1.4",

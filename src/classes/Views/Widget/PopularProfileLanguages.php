@@ -5,7 +5,7 @@ namespace Friendica\Directory\Views\Widget;
 /**
  * @author Hypolite Petovan <hypolite@mrpetovan.com>
  */
-class PopularLanguages
+class PopularProfileLanguages
 {
 	/**
 	 * @var \Atlas\Pdo\Connection
@@ -36,6 +36,6 @@ class PopularLanguages
 			'languages' => $languages
 		];
 
-		return $this->renderer->fetch('widget/popularlanguages.phtml', $vars);
+		return $this->renderer->fetch('widget/popularprofilelanguages.phtml', $vars);
 	}
 }

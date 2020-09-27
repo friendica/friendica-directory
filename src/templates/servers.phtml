@@ -1,4 +1,9 @@
-<h1><?php echo $this->e($title) ?></h1>
+<h1><?php echo $this->e($title) ?> (<?php echo $this->e($total)?>)</h1>
+<?php if ($language):?>
+	<p><?php echo $this->__('Filtered by language:')?> <span class="badge badge-secondary"><?php echo $this->e(\Friendica\Directory\Utils\L10n::localeToLanguageString($language)) ?></span> <a href="<?php echo $this->r('servers')?>"><?php echo $this->__('Clear language filter')?></a></p>
+<?php else:?>
+<?php echo $popularLanguages?>
+<?php endif;?>
 <nav aria-label="<?php echo $this->__('Top servers pagination')?>">
 	<?php echo $this->fetch('sub/pager_full.phtml', $pager) ?>
 </nav>
