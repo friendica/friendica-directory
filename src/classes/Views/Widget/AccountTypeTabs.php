@@ -53,8 +53,10 @@ class AccountTypeTabs
 
 		foreach ($account_types as $account_type) {
 			switch ($account_type['account_type']) {
-				case 'People': $title = $this->renderer->np__('account-type', 'People (%d)', 'People (%d)', $account_type['count']); break;
-				case 'Forum' : $title = $this->renderer->np__('account-type', 'Forum (%d)', 'Forums (%d)', $account_type['count']); break;
+				case 'People'      : $title = $this->renderer->np__('account-type', 'People (%d)'      , 'People (%d)'       , $account_type['count']); break;
+				case 'News'        : $title = $this->renderer->np__('account-type', 'News (%d)'        , 'News (%d)'         , $account_type['count']); break;
+				case 'Organization': $title = $this->renderer->np__('account-type', 'Organization (%d)', 'Organizations (%d)', $account_type['count']); break;
+				case 'Forum'       : $title = $this->renderer->np__('account-type', 'Forum (%d)'       , 'Forums (%d)'       , $account_type['count']); break;
 				default: $title = $this->renderer->np__('account-type', $account_type['account_type']. ' (%d)', $account_type['account_type']. ' (%d)', $account_type['count']);
 			}
 
