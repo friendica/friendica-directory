@@ -37,7 +37,7 @@ $base_url_display = substr($base_url, strpos($base_url, '/') + 2);
                 <a href="<?php echo $this->escapeHtmlAttr($this->u($base_url)); ?>"><?php echo $this->e($base_url_display); ?></a>
             </h6>
             <p class="card-text">
-                <span class="badge <?php echo $badge_class ?>">
+                <span class="badge <?php echo $badge_class ?>" title="<?php echo $this->__('Health Score')?>">
                     <i class="fa fa-heartbeat"></i> <?php echo $server['health_score'] ?>
                 </span>
             <?php if ($server['language']):?>
@@ -46,9 +46,23 @@ $base_url_display = substr($base_url, strpos($base_url, '/') + 2);
                     <?php echo $this->e(Friendica\Directory\Utils\L10n::localeToLanguageString($server['language'])) ?>
                 </span>
             <?php endif;?>
-                <span class="badge badge-secondary" title="<?php echo $this->__('Known Users')?>">
-                    <i class="fa fa-user"></i> <?php echo $this->e($server['user_count'] ?: '~'); ?> Users
+	            <span class="badge badge-secondary" title="<?php echo $this->__('Known Users')?>">
+                    <i class="fa fa-user"></i>
+		        <?php if ($server['user_count']):?>
+			        <?php echo $this->n__('%s User', '%s Users', $server['user_count'])?>
+		        <?php else: ?>
+			        <?php echo $this->__('None');?>
+		        <?php endif; ?>
                 </span>
+	        <?php if ($server['reg_policy'] == 'REGISTER_APPROVE'):?>
+	            <span class="badge badge-primary" title="<?php echo $this->__('Registration Policy')?>">
+					<i class="fa fa-dungeon"></i> <?php echo $this->__('By Approval')?>
+	            </span>
+			<?php else:?>
+	            <span class="badge badge-success" title="<?php echo $this->__('Registration Policy')?>">
+                    <i class="fa fa-door-open"></i> <?php echo $this->__('Open')?>
+	            </span>
+			<?php endif;?>
 				<?php echo $version_badge; ?>
             <?php if ($server['admin_profile'] && $server['admin_name']): ?>
                 <a href="<?php echo $this->escapeHtmlAttr($this->u($server['admin_profile'])); ?>" class="badge badge-primary">
