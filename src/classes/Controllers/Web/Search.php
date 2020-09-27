@@ -47,7 +47,9 @@ class Search extends BaseController
 
 	public function render(\Slim\Http\Request $request, \Slim\Http\Response $response, array $args): array
 	{
-		$pager = new Pager($this->l10n, $request, 20);
+		$limit = min(100, filter_input(INPUT_GET, 'limit', FILTER_SANITIZE_NUMBER_INT) ?: 20);
+
+		$pager = new Pager($this->l10n, $request, $limit);
 
 		$originalQuery = $query = $request->getParam('q', '');
 		$field = $request->getParam('field', '');

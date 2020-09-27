@@ -11,14 +11,16 @@ Redirects to the base URL of a random server with open registration policy and a
 ## Search
 
 ```
-GET /search[/account_type]?q=...
+GET /search[/account_type]?q=...[&page=...][&limit=...]
 Accept: application/json
 ```
 
-Parameters:
+URI Parameter:
+- `account_type` (optional): An arbitrary account type string. Expected values are `all`, `people`, `news`, `organization` and `forum`. Default is `all`.
+Query parameters:
 - `q`: The search query.
-- `account_type` (optional): An arbitrary account type string. Currently supported are `all`, `people` and `forum`. Default is `all`.
 - `page` (optional): The page number, default is 1.
+- `limit` (optional): The page size, default is 20, max is 100.
 
 Returns a JSON structure containing a paginated list profiles matching the search query and the optional account type.
 
