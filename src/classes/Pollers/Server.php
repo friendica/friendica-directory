@@ -90,6 +90,8 @@ class Server
 
 		$parse_success = !empty($probe_result['data']['url']);
 
+		$avg_ping = null;
+
 		if ($parse_success) {
 			$base_url = $probe_result['data']['url'];
 
@@ -184,12 +186,21 @@ class Server
 			}
 
 			$this->discoverPoco($base_url);
+		} else {
+			$this->logger->debug('Parse unsuccessful', ['$polled_url' => $polled_url, '$probe_result' => $probe_result]);
 		}
 
 		if ($server) {
 			//Get the new health.
 			$version = $parse_success ? $probe_result['data']['version'] : '';
-			$health_score = $this->computeHealthScore($server['health_score'], $parse_success, $probe_result['time'], $version, $probe_result['ssl_state']);
+			$health_score = $this->computeHealthScore(
+				$server['health_score'],
+				$parse_success,
+				$probe_result['time'],
+				$version,
+				$probe_result['ssl_state'],
+				$avg_ping
+			);
 
 			$this->atlas->perform(
 				'UPDATE `server` SET `health_score` = :health_score WHERE `id` = :server_id',
@@ -307,7 +318,14 @@ class Server
 		return ['data' => $data, 'time' => $time, 'curl_info' => $curl_info, 'ssl_state' => $ssl_state];
 	}
 
-	private function computeHealthScore(int $original_health, bool $probe_success, int $time = null, string $version = null, int $ssl_state = null): int
+	private function computeHealthScore(
+		int $original_health,
+		bool $probe_success,
+		?int $time,
+		?string $version,
+		?int $ssl_state,
+		?float $avg_ping
+	): int
 	{
 		//Probe failed, costs you 30 points.
 		if (!$probe_success) {
@@ -376,6 +394,11 @@ class Server
 					$delta = min($delta, 0) - 10; // Losing score as time passes if node isn't updated
 				}
 			}
+		}
+
+		// No ping penalty
+		if (!$avg_ping) {
+			$max_health -= 5;
 		}
 
 		return max(min($max_health, $original_health + $delta), -100);
