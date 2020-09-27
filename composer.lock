@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32addc73d4c20158a63877c57d3654dc",
+    "content-hash": "a8bc1750aa6136e10ea28799a0974f6b",
     "packages": [
         {
             "name": "asika/simple-console",
@@ -1773,6 +1773,7 @@
             "keywords": [
                 "tokenizer"
             ],
+            "abandoned": true,
             "time": "2017-12-04T08:55:13+00:00"
         },
         {
@@ -3056,6 +3057,20 @@
                 "Xdebug",
                 "performance"
             ],
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
             "time": "2020-06-04T11:16:35+00:00"
         },
         {
@@ -3750,10 +3765,12 @@
         "php": ">=7.1.0",
         "ext-curl": "*",
         "ext-gd": "*",
-        "ext-json": "*"
+        "ext-json": "*",
+        "ext-pdo": "*"
     },
     "platform-dev": [],
     "platform-overrides": {
         "php": "7.1.0"
-    }
+    },
+    "plugin-api-version": "1.1.0"
 }
