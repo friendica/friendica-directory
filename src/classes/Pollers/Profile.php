@@ -193,9 +193,16 @@ class Profile
 			return false;
 		}
 
-		$account_type = 'People';
-		if (!empty($params['comm'])) {
-			$account_type = 'Forum';
+		switch ($params['account-type'] ?? 0) {
+			case 1: $account_type = 'News'; break;
+			case 2: $account_type = 'Organization'; break;
+			case 3: $account_type = 'Forum'; break;
+			case 0:
+			default:
+				$account_type = 'People';
+				if (!empty($params['comm'])) {
+					$account_type = 'Forum';
+				}
 		}
 
 		$tags = [];
