@@ -11,7 +11,7 @@ class DirectoryPoll extends BaseRoute
 	{
 		return (new \Friendica\Directory\Controllers\Console\DirectoryPoll(
 			$this->container->get('atlas'),
-			$this->container->get('\Friendica\Directory\Pollers\Directory'),
+			$this->container->get(\Friendica\Directory\Pollers\Directory::class),
 			$args
 		));
 	}

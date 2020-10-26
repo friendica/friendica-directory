@@ -11,7 +11,7 @@ class ServerHide extends BaseRoute
 	{
 		return (new \Friendica\Directory\Controllers\Console\ServerHide(
 			$this->container->get('atlas'),
-			$this->container->get('\Friendica\Directory\Models\Server'),
+			$this->container->get(\Friendica\Directory\Models\Server::class),
 			$args
 		));
 	}

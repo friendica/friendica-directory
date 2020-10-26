@@ -11,7 +11,7 @@ class Search extends BaseRoute
 	{
 		return (new \Friendica\Directory\Controllers\Api\Search(
 			$this->container->atlas,
-			$this->container->get('\Friendica\Directory\Models\Profile'),
+			$this->container->get(\Friendica\Directory\Models\Profile::class),
 			$this->container->l10n
 		))->render($request, $response, $args);
 	}

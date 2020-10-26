@@ -11,7 +11,7 @@ class Submit extends BaseRoute
 	{
 		return (new \Friendica\Directory\Controllers\Api\Submit(
 			$this->container->atlas,
-			$this->container->get('\Friendica\Directory\Models\ProfilePollQueue'),
+			$this->container->get(\Friendica\Directory\Models\ProfilePollQueue::class),
 			$this->container->logger
 		))->execute($request, $response);
 	}

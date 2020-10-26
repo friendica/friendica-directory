@@ -91,52 +91,52 @@ $container['migration'] = function (ContainerInterface $c): ByJG\DbMigration\Mig
 
 // Internal Dependency Injection
 
-$container['\Friendica\Directory\Models\Profile'] = function (ContainerInterface $c): Friendica\Directory\Models\Profile {
+$container[\Friendica\Directory\Models\Profile::class] = function (ContainerInterface $c): Friendica\Directory\Models\Profile {
 	return new Friendica\Directory\Models\Profile($c->get('atlas'));
 };
 
-$container['\Friendica\Directory\Models\ProfilePollQueue'] = function (ContainerInterface $c): Friendica\Directory\Models\ProfilePollQueue {
+$container[\Friendica\Directory\Models\ProfilePollQueue::class] = function (ContainerInterface $c): Friendica\Directory\Models\ProfilePollQueue {
 	return new Friendica\Directory\Models\ProfilePollQueue($c->get('atlas'));
 };
 
-$container['\Friendica\Directory\Models\Server'] = function (ContainerInterface $c): Friendica\Directory\Models\Server {
+$container[\Friendica\Directory\Models\Server::class] = function (ContainerInterface $c): Friendica\Directory\Models\Server {
 	return new Friendica\Directory\Models\Server($c->get('atlas'));
 };
 
-$container['\Friendica\Directory\Pollers\Directory'] = function (ContainerInterface $c): Friendica\Directory\Pollers\Directory {
+$container[\Friendica\Directory\Pollers\Directory::class] = function (ContainerInterface $c): Friendica\Directory\Pollers\Directory {
 	$settings = $c->get('settings')['poller'];
 	return new Friendica\Directory\Pollers\Directory(
 		$c->get('atlas'),
-		$c->get('\Friendica\Directory\Models\ProfilePollQueue'),
+		$c->get(\Friendica\Directory\Models\ProfilePollQueue::class),
 		$c->get('logger'),
 		$settings ?: []
 	);
 };
 
-$container['\Friendica\Directory\Pollers\Profile'] = function (ContainerInterface $c): Friendica\Directory\Pollers\Profile {
+$container[\Friendica\Directory\Pollers\Profile::class] = function (ContainerInterface $c): Friendica\Directory\Pollers\Profile {
 	$settings = $c->get('settings')['poller'];
 	return new Friendica\Directory\Pollers\Profile(
 		$c->get('atlas'),
-		$c->get('\Friendica\Directory\Models\Server'),
-		$c->get('\Friendica\Directory\Models\Profile'),
+		$c->get(\Friendica\Directory\Models\Server::class),
+		$c->get(\Friendica\Directory\Models\Profile::class),
 		$c->get('logger'),
 		$settings ?: []
 	);
 };
 
-$container['\Friendica\Directory\Pollers\Server'] = function (ContainerInterface $c): Friendica\Directory\Pollers\Server {
+$container[\Friendica\Directory\Pollers\Server::class] = function (ContainerInterface $c): Friendica\Directory\Pollers\Server {
 	$settings = $c->get('settings')['poller'];
 	return new Friendica\Directory\Pollers\Server(
 		$c->get('atlas'),
-		$c->get('\Friendica\Directory\Models\ProfilePollQueue'),
-		$c->get('\Friendica\Directory\Models\Server'),
+		$c->get(\Friendica\Directory\Models\ProfilePollQueue::class),
+		$c->get(\Friendica\Directory\Models\Server::class),
 		$c->get('simplecache'),
 		$c->get('logger'),
 		$settings ?: []
 	);
 };
 
-$container['\Friendica\Directory\Views\Widget\AccountTypeTabs'] = function (ContainerInterface $c): Friendica\Directory\Views\Widget\AccountTypeTabs {
+$container[\Friendica\Directory\Views\Widget\AccountTypeTabs::class] = function (ContainerInterface $c): Friendica\Directory\Views\Widget\AccountTypeTabs {
 	return new Friendica\Directory\Views\Widget\AccountTypeTabs(
 		$c->get('atlas'),
 		$c->get('renderer'),
