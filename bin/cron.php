@@ -15,9 +15,9 @@ require __DIR__ . '/../src/dependencies.php';
 
 (new \Friendica\Directory\Controllers\Cron(
 	$container->get('atlas'),
-	$container->get('\Friendica\Directory\Pollers\Profile'),
-	$container->get('\Friendica\Directory\Pollers\Server'),
-	$container->get('\Friendica\Directory\Pollers\Directory'),
+	$container->get(\Friendica\Directory\Pollers\Profile::class),
+	$container->get(\Friendica\Directory\Pollers\Server::class),
+	$container->get(\Friendica\Directory\Pollers\Directory::class),
 	$container->get('logger')
 ))->execute();
 

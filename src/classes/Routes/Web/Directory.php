@@ -13,8 +13,8 @@ class Directory extends BaseRoute
 
 		$this->controller = new \Friendica\Directory\Controllers\Web\Directory(
 			$this->container->atlas,
-			$this->container->get('\Friendica\Directory\Models\Profile'),
-			$this->container->get('\Friendica\Directory\Views\Widget\AccountTypeTabs'),
+			$this->container->get(\Friendica\Directory\Models\Profile::class),
+			$this->container->get(\Friendica\Directory\Views\Widget\AccountTypeTabs::class),
 			$this->container->renderer,
 			$this->container->l10n
 		);

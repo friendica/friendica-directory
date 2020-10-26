@@ -11,7 +11,7 @@ class ServerPoll extends BaseRoute
 	{
 		return (new \Friendica\Directory\Controllers\Console\ServerPoll(
 			$this->container->get('atlas'),
-			$this->container->get('\Friendica\Directory\Pollers\Server'),
+			$this->container->get(\Friendica\Directory\Pollers\Server::class),
 			$args
 		));
 	}
