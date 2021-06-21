@@ -73,6 +73,8 @@ class Search extends BaseController
 		} else {
 			$sql_where = "MATCH (p.`name`, p.`pdesc`, p.`username`, p.`locality`, p.`region`, p.`country`, p.`tags` )
 AGAINST (:query IN BOOLEAN MODE)";
+			// At sign (@) is a reserved symbol in InnoDB full-text search, it can't be escaped
+			$query = str_replace('@', ' ', $query);
 		}
 
 		$values = ['query' => $query];
