@@ -48,6 +48,8 @@ class MatchSearch
 		$pager->setPage(filter_input(INPUT_POST, 'p', FILTER_SANITIZE_NUMBER_INT));
 
 		$sql_where = "MATCH (p.`tags`) AGAINST (:query)";
+		// At sign (@) is a reserved symbol in InnoDB full-text search, it can't be escaped
+		$query = str_replace('@', ' ', $query);
 
 		$values = ['query' => $query];
 
