@@ -1,0 +1,373 @@
+# 
+# Translators:
+# GunChleoc, 2021
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-16T04:17:37+00:00\n"
+"PO-Revision-Date: 2018-11-16 20:30+0000\n"
+"Last-Translator: GunChleoc, 2021\n"
+"Language-Team: Gaelic, Scottish (https://www.transifex.com/Friendica/teams/12172/gd/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: gd\n"
+"Plural-Forms: nplurals=4; plural=(n==1 || n==11) ? 0 : (n==2 || n==12) ? 1 : (n > 2 && n < 20) ? 2 : 3;\n"
+"X-Generator: Poedit 2.2\n"
+
+#: src\classes\Content\Pager.php:168 src\classes\Content\Pager.php:216
+msgid "Previous"
+msgstr "Air ais"
+
+#: src\classes\Content\Pager.php:173 src\classes\Content\Pager.php:273
+msgid "Next"
+msgstr "Air adhart"
+
+#: src\classes\Content\Pager.php:211
+msgid "First"
+msgstr "Toiseach"
+
+#: src\classes\Content\Pager.php:278
+msgid "Last"
+msgstr "Deireadh"
+
+#: src\classes\Controllers\Web\Directory.php:73
+msgid "People"
+msgstr "Daoine"
+
+#: src\classes\Controllers\Web\Search.php:64
+msgctxt "field"
+msgid "Language"
+msgstr "Cànan"
+
+#: src\classes\Controllers\Web\Search.php:65
+msgctxt "field"
+msgid "Locality"
+msgstr "Ionad"
+
+#: src\classes\Controllers\Web\Search.php:66
+msgctxt "field"
+msgid "Region"
+msgstr "Sgìre"
+
+#: src\classes\Controllers\Web\Search.php:67
+msgctxt "field"
+msgid "Country"
+msgstr "Dùthaich"
+
+#: src\classes\Controllers\Web\Servers.php:90
+msgid "Public Servers"
+msgstr "Frithealaichean poblach"
+
+#: src\templates\layout.phtml:4 src\templates\layout.phtml:18
+msgid "Friendica Directory"
+msgstr "Eòlaire Friendica"
+
+#: src\templates\layout.phtml:23 src\templates\layout.phtml:25
+#: src\templates\layout.phtml:43 src\templates\layout.phtml:45
+#: src\templates\search.phtml:4 src\templates\search.phtml:12
+msgid "Search terms"
+msgstr "Faclan-luirg"
+
+#: src\templates\layout.phtml:24 src\templates\layout.phtml:45
+#: src\templates\search.phtml:11
+msgctxt "noun"
+msgid "Search"
+msgstr "Lorg"
+
+#: src\templates\layout.phtml:27 src\templates\layout.phtml:47
+#: src\templates\search.phtml:14
+msgctxt "verb"
+msgid "Search"
+msgstr "Lorg"
+
+#: src\templates\layout.phtml:33
+msgid "Toggle navigation"
+msgstr "Toglaich an t-seòladaireachd"
+
+#: src\templates\layout.phtml:55
+msgid "Directory"
+msgstr "Eòlaire"
+
+#: src\templates\layout.phtml:60
+msgid "Public servers"
+msgstr "Frithealaichean poblach"
+
+#: src\templates\search.phtml:19
+msgid "%d result for \"%s\""
+msgid_plural "%d results for \"%s\""
+msgstr[0] "%d toradh airson “%s”"
+msgstr[1] "%d thoradh airson “%s”"
+msgstr[2] "%d thoraidhean airson “%s”"
+msgstr[3] "%d toradh airson “%s”"
+
+#: src\templates\servers.phtml:2
+msgid "Top servers pagination"
+msgstr "Duilleagachadh fhrithealaichean aig a’ bhàrr"
+
+#: src\templates\servers.phtml:12
+msgid "Bottom servers pagination"
+msgstr "Duilleagachadh fhrithealaichean aig a’ bhonn"
+
+#: src\templates\sub\profile.phtml:5
+msgid "Filter by locality"
+msgstr "Criathraich a-rèir ionaid"
+
+#: src\templates\sub\profile.phtml:11
+msgid "Filter by region"
+msgstr "Criathraich a-rèir sgìre"
+
+#: src\templates\sub\profile.phtml:17
+msgid "Filter by country"
+msgstr "Criathraich a-rèir dùthcha"
+
+#: src\templates\sub\profile.phtml:31
+msgctxt "verb"
+msgid "Follow"
+msgstr "Lean air"
+
+#: src\templates\layout.phtml:65 src\templates\sub\profile.phtml:47
+msgid "Language"
+msgstr "Cànan"
+
+#: src\templates\sub\profile.phtml:50
+msgid "Filter by language"
+msgstr "Criathraich a-rèir cànain"
+
+#: src\templates\sub\profile.phtml:56
+msgid "Location"
+msgstr "Ionad"
+
+#: src\templates\sub\profile.phtml:69
+msgid "Search Tag"
+msgstr "Taga luirg"
+
+#: src\templates\sub\profiles.phtml:1
+msgid "Account type tabs"
+msgstr "Tabaichean seòrsa a’ chunntais"
+
+#: src\templates\sub\profiles.phtml:4 src\templates\sub\profiles.phtml:7
+msgid "Top %s pagination"
+msgstr "Duilleagachadh %s aig a’ bhàrr"
+
+#: src\templates\sub\profiles.phtml:13 src\templates\sub\profiles.phtml:16
+msgid "Bottom %s pagination"
+msgstr "Duilleagachadh %s aig a’ bhonn"
+
+#: src\templates\statistics.phtml:66 src\templates\sub\server.phtml:15
+msgid "Stable Version"
+msgstr "Tionndadh seasmhach"
+
+#: src\templates\statistics.phtml:68 src\templates\sub\server.phtml:17
+msgid "Develop Version"
+msgstr "Tionndadh leasachaidh"
+
+#: src\templates\sub\server.phtml:19
+msgid "Outdated Version"
+msgstr "Seann-tionndadh"
+
+#: src\templates\sub\server.phtml:72
+msgid "Admin"
+msgstr "Rianaire"
+
+#: src\templates\sub\server.phtml:79
+msgid "No description provided"
+msgstr "Cha deach tuairisgeul a sholarachadh"
+
+#: src\templates\sub\server.phtml:82
+msgid "Visit Server"
+msgstr "Tadhail air frithealaiche"
+
+#: src\templates\widget\popularcountries.phtml:2
+msgid "Popular Countries"
+msgstr "Dùthchannan fèillmhor"
+
+#: src\templates\widget\popularlanguages.phtml:2
+msgid "Popular Languages"
+msgstr "Cànanan fèillmhor"
+
+#: src\templates\widget\populartags.phtml:2
+msgid "Popular Tags"
+msgstr "Tagaichean fèillmhor"
+
+#: src\templates\sub\server.phtml:44 src\templates\sub\server.phtml:45
+msgid "Default Language"
+msgstr "An cànan tùsail"
+
+#: src\templates\sub\server.phtml:49
+msgid "Known Users"
+msgstr "Cleachdaichean as aithne"
+
+#: src\classes\Views\Widget\AccountTypeTabs.php:48
+msgctxt "account-type"
+msgid "All"
+msgstr "Na h-uile"
+
+#: src\classes\Views\Widget\AccountTypeTabs.php:56
+msgctxt "account-type"
+msgid "People (%d)"
+msgid_plural "People (%d)"
+msgstr[0] "Daoine (%d)"
+msgstr[1] "Daoine (%d)"
+msgstr[2] "Daoine (%d)"
+msgstr[3] "Daoine (%d)"
+
+#: src\classes\Views\Widget\AccountTypeTabs.php:59
+msgctxt "account-type"
+msgid "Forum (%d)"
+msgid_plural "Forums (%d)"
+msgstr[0] "Fòraman (%d)"
+msgstr[1] "Fòraman (%d)"
+msgstr[2] "Fòraman (%d)"
+msgstr[3] "Fòraman (%d)"
+
+#: src\templates\layout.phtml:97
+msgid "Stats"
+msgstr "Stadastaireachd"
+
+#: src\templates\statistics.phtml:4
+msgid "Directory statistics"
+msgstr "Staitistearachd an eòlaire"
+
+#: src\templates\statistics.phtml:5
+msgid "Profiles"
+msgstr "Pròifilean"
+
+#: src\templates\statistics.phtml:6
+msgid ""
+"This directory knows about <strong>%s distinct potential profile "
+"URLs</strong>."
+msgstr ""
+"Fhuair an t-eòlaire lorg air <strong>%s URL gu pròifilean fa leth</strong>."
+
+#: src\templates\statistics.phtml:16 src\templates\statistics.phtml:46
+msgid "Languages"
+msgstr "Cànanan"
+
+#: src\templates\statistics.phtml:17
+msgid ""
+"Out of <strong>%s</strong> profiles reporting their language there are:"
+msgstr "Am measg <strong>%s</strong> pròifil a dh’innseas an cànan, tha:"
+
+#: src\templates\statistics.phtml:27
+msgid "Servers"
+msgstr "Frithealaichean"
+
+#: src\templates\statistics.phtml:28
+msgid ""
+"This directory knows about <strong>%s distinct potential server "
+"URLs</strong>."
+msgstr ""
+"Fhuair an t-eòlaire lorg air <strong>%s URL gu frithealaichean fa "
+"leth</strong>."
+
+#: src\templates\statistics.phtml:29
+msgid ""
+"Out of those, there are <strong>%s domains (%s)</strong> that have been a "
+"Friendica server at least once."
+msgstr ""
+"Tha <strong>%s àrainn (%s)</strong> ’nam measg a tha ’nam frithealaichean "
+"Friendica no a bha uair."
+
+#: src\templates\statistics.phtml:33
+msgid "Out of those, there are:"
+msgstr "Am measg an fheadhainn sin, tha:"
+
+#: src\templates\statistics.phtml:47
+msgid "Out of <strong>%s</strong> servers reporting their language there are:"
+msgstr ""
+"Am measg <strong>%s</strong> frithealaiche a dh’innseas an cànan, tha:"
+
+#: src\templates\statistics.phtml:57
+msgid "Versions"
+msgstr "Tionndaidhean"
+
+#: src\templates\statistics.phtml:58
+msgid "Out of <strong>%s</strong> servers reporting their version there are:"
+msgstr ""
+"Am measg <strong>%s</strong> frithealaiche a dh’innseas an tionndadh, tha:"
+
+#: src\templates\statistics.phtml:7
+msgid ""
+"Out of those, there are <strong>%s profiles (%s)</strong> that opted in the "
+"public directory at least once."
+msgstr ""
+"Am measg an fhadhainn sin, tha <strong>%s pròifil (%s)</strong> a tha ag "
+"aontachadh ri gabhail a-steach dhan eòlaire poblach no a dh’aontaich ris "
+"uair."
+
+#: src\templates\statistics.phtml:35
+msgid "<strong>%s available servers (%s)</strong>"
+msgstr "<strong>%s frithealaiche ri fhaighinn (%s)</strong>"
+
+#: src\templates\layout.phtml:91
+msgid "Friendica Directory version %s"
+msgstr "Eòlaire Friendica tionndadh %s"
+
+#: src\templates\layout.phtml:94
+msgid "Source Code on GitHub"
+msgstr "Bun-tùs air GitHub"
+
+#: src\templates\statistics.phtml:11
+msgid ""
+"Out of those, there currently are <strong>%s available profiles "
+"(%s)</strong>. <a href=\"%s\">Check them out!</a>"
+msgstr ""
+"Am measg an fheadhainn sin, tha <strong>%s pròifilean rim faighinn "
+"(%s)</strong>. <a href=\"%s\">Nach doir thu sùil orra?</a>"
+
+#: src\templates\statistics.phtml:39
+msgid ""
+"<strong>%s public servers (%s)</strong> currently open for registration. <a "
+"href=\"%s\">Check them out!</a>"
+msgstr ""
+"Tha <strong>%s frithealaichean poblach (%s)</strong> fosgailte airson "
+"clàradh. <a href=\"%s\">Nach doir thu sùil orra?</a>"
+
+#: src\classes\Views\Widget\AccountTypeTabs.php:57
+msgctxt "account-type"
+msgid "News (%d)"
+msgid_plural "News (%d)"
+msgstr[0] "Naidheachdan (%d)"
+msgstr[1] "Naidheachdan (%d)"
+msgstr[2] "Naidheachdan (%d)"
+msgstr[3] "Naidheachdan (%d)"
+
+#: src\classes\Views\Widget\AccountTypeTabs.php:58
+msgctxt "account-type"
+msgid "Organization (%d)"
+msgid_plural "Organizations (%d)"
+msgstr[0] "Buidhnean (%d)"
+msgstr[1] "Buidhnean (%d)"
+msgstr[2] "Buidhnean (%d)"
+msgstr[3] "Buidhnean (%d)"
+
+#: src\templates\sub\server.phtml:40
+msgid "Health Score"
+msgstr "Sgòr slàinte"
+
+#: src\templates\sub\server.phtml:52
+msgid "%s User"
+msgid_plural "%s Users"
+msgstr[0] "%s chleachdaiche"
+msgstr[1] "%s chleachdaiche"
+msgstr[2] "%s cleachdaichean"
+msgstr[3] "%s cleachdaiche"
+
+#: src\templates\sub\server.phtml:54
+msgid "None"
+msgstr "Chan eil gin"
+
+#: src\templates\sub\server.phtml:59 src\templates\sub\server.phtml:63
+msgid "Registration Policy"
+msgstr "Poileasaidh clàraidh"
+
+#: src\templates\sub\server.phtml:60
+msgid "By Approval"
+msgstr "Le aontachadh"
+
+#: src\templates\sub\server.phtml:64
+msgid "Open"
+msgstr "Fosgailte"
